@@ -82,14 +82,59 @@
                               <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
                             </div>
                           </div>
-                                              
+                             
+                
+                 
+                  <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left">
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">วันที่เริ่มจอง :</font></label>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                          
+                        
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                   
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                        </div>
+                      </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">วันที่ใช้คิว :</font></label>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                          
+                        
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                   
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                        </div>
+                      </div>
+                      
+                      
+                      
+
+                   
+
+                    </form>
+               
+              </div>             
 
                         </form>
 
                       </div>
                       <div id="step-2">
                          <form class="form-horizontal form-label-left">
-
+						<div class="checkbox">
+                            <label>
+                              <input type="checkbox" value="">กำหนดช่วงเวลาแต่ละวัน
+                            </label>
+                          </div>
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">จำนวนช่วงเวลา</font><span class="required"><font color="red">*</font></span>
                             </label>
@@ -98,12 +143,29 @@
                               							<option value = ‘2’> 2 </option> 
                               							<option value = ‘3’> 3 </option> 
                               							<option value = ‘4’> 4 </option> </select>
-                              							
-                              	
-                              							
-							
+                             	
                             </div> 
                           </div>
+                           <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                          
+                        
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                   
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                        </div></br>
+                         <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                          
+                        
+                        </div>
+                        
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                   
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                        </div>
                                               
 
                         </form>
@@ -127,10 +189,7 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-2" >
                             </div>
-                            <div class="radio">
-                            	<label><input type="radio" name="optradio"><font color="black">นักศึกษาทุกคนมีสิทธิ์</font></label>
-                          	</div>
-                          </div>
+                           </div>
                                               
 
                         </form>
@@ -138,6 +197,9 @@
                         
                       </div>
                       <div id="step-4">
+                      <div class="title_left">
+                		<h4><font color="black">กำหนดสิทธิ์การจองคิวของนักศึกษา</font></h4>
+              		</div>
                           <div class="radio">
                             <label><input type="radio" name="optradio"><font color="black">นักศึกษาทุกคนมีสิทธิ์</font></label>
                           </div>
@@ -197,3 +259,5 @@
           </div>
         </div>
         <!-- /page content -->
+       
+
