@@ -94,8 +94,12 @@
                         <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
                           
-                        
+                      
                         </div>
+                        <div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
+                        </div>
+                          
                         
                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                    
@@ -107,20 +111,16 @@
                         <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
                           
-                        
                         </div>
-                        
+                        <div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
+                        </div>
                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                    
                           <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
                         </div>
                       </div>
-                      
-                      
-                      
-
-                   
-
+                     
                     </form>
                
               </div>             
@@ -138,7 +138,7 @@
                           <div class="form-group">
                             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">จำนวนช่วงเวลา</font><span class="required"><font color="red">*</font></span>
                             </label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                           <div class="col-md-6 col-sm-6 col-xs-12">
                               <select name = ‘select’>	<option value = ‘1’> 1 </option> 
                               							<option value = ‘2’> 2 </option> 
                               							<option value = ‘3’> 3 </option> 
@@ -146,28 +146,37 @@
                              	
                             </div> 
                           </div>
-                           <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
-                          
-                        
-                        </div>
-                        
+                           <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">ช่วงที่ 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เวลาที่เริ่มต้น :</font></label>
                         <div class="col-md-2 col-sm-2 col-xs-2">
-                                                   
-                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
-                        </div></br>
-                         <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
                           
-                        
+                      
                         </div>
-                        
+                       <div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
+                        </div>
                         <div class="col-md-2 col-sm-2 col-xs-2">
                                                    
                           <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
                         </div>
-                                              
-
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">ช่วงที่ 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เวลาที่เริ่มต้น :</font></label>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                          
+                      
+                        </div>
+                       <div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2">
+                                                   
+                          <input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
+                        </div>
+                      </div>
+                          
                         </form>
                         
                         
@@ -227,18 +236,14 @@
 
                       </div>
                       <div id="step-5">
-                        <h2 class="StepTitle">Step 4 Content</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                          in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
+                        <b><font color="black">ระบบคิวกองทุนเงินให้กู้ยืมเพื่อการศึกษา</font></b></br>
+                         <font color="black">วันที่เริ่มจองคิว&nbsp;&nbsp;&nbsp;01/04/2561&nbsp;ถึง&nbsp;05/04/2561</font></br>
+                         <font color="black">วันที่ใช้คิว &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;07/04/2561&nbsp;ถึง&nbsp;09/04/2561</font></br>
+                        </br>
+                        <b><font color="black">จำนวนช่วงเวลา 3 ช่วง คือ</font></b></br>
+                         <font color="black">ช่วงเวลาที่ 1&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;09:00&nbsp;ถึง&nbsp;10:00 </font></br>
+                         <font color="black">ช่วงเวลาที่ 2&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;10:01&nbsp;ถึง&nbsp;11:00 </font></br>
+                         <font color="black">ช่วงเวลาที่ 3&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;11:01&nbsp;ถึง&nbsp;12:00 </font></br>
                       </div>
 
 

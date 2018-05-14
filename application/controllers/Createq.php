@@ -39,5 +39,13 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
+    public function login()
+    {
+       
+        $this->load->view('login');
+  
+        
+    }
+    
     
 }
