@@ -99,6 +99,8 @@
                               							<option value = ‘3’> 3 </option> 
                               							<option value = ‘4’> 4 </option> </select>
                               							
+                              	
+                              							
 							
                             </div> 
                           </div>
@@ -125,6 +127,9 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-2" >
                             </div>
+                            <div class="radio">
+                            	<label><input type="radio" name="optradio"><font color="black">นักศึกษาทุกคนมีสิทธิ์</font></label>
+                          	</div>
                           </div>
                                               
 

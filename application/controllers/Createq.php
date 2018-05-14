@@ -22,5 +22,22 @@ class Createq extends CI_Controller {
         $this->load->view('student/student_list',$data );
         $this->load->view('foot');
     }
+    public function index1()
+    {
+        $this->load->model('Graph_model');
+        $res = $this->Graph_model->get_reservq();
+        $data['reservq_res'] = $res;
+        
+        $this->load->model('Graph_model');
+        $res = $this->Graph_model->get_useq();
+        $data['useq_res'] = $res;
+        
+        
+        
+        $this->load->view('head');
+        $this->load->view('chart1', $data);
+        $this->load->view('foot');
+        
+    }
     
 }
