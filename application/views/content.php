@@ -185,7 +185,7 @@
                         <form class="form-horizontal form-label-left">
 
                           <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">รายละเอียดการทำงาน</font><span class="required"><font color="red">*</font></span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">รายละเอียดการทำงาน</font>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <textarea name = ‘testTextarea’ cols = ’30’ rows = ‘30’>  Default value  </textarea>
@@ -221,7 +221,7 @@
                           <form class="form-horizontal form-label-left">
 
                           <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">นำข้อมูลเข้า</font><span class="required"><font color="red">*</font></span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">นำข้อมูลเข้า</font>
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                               <textarea name = ‘testTextarea’ cols = ’150’ rows = ‘150’>  Default value  </textarea>
