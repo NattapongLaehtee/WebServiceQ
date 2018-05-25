@@ -41,11 +41,16 @@ class Createq extends CI_Controller {
     }
     public function login()
     {
-       
-        $this->load->view('login');
+       $this->load->view('login');
   
-        
     }
-    
+    public function device()
+    {
+        $this->load->view('head1');
+        $this->load->view('devices');
+        $this->load->view('foot');
+    }
+ 
+
     
 }

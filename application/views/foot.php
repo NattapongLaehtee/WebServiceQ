@@ -20,7 +20,15 @@
     <script src="<?php echo base_url();?>Q_css/vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?php echo base_url();?>Q_css/build/js/custom.min.js"></script>
-
+     
+  
+    
+    
+ 
+  
+    
+    
+  
 	
   </body>
 </html>

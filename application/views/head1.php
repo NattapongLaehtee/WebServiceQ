@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Web Service Q </title>
+    <title>Service Q </title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url();?>Q_css/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,9 +18,9 @@
 
     <!-- Custom Theme Style -->
     <link href="<?php echo base_url();?>Q_css/build/css/custom.min.css" rel="stylesheet">
-     
+ 
    
-    
+ 
   </head>
 
   <body class="nav-md">
@@ -56,26 +56,16 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> การสร้างคิว <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i>อุปกรณ์ <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/index")?>">การบันทึกการสร้างคิว</a></li>
+                      <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
+                       <li><a href="<?php echo site_url("Createq/")?>">แสดงข้อมูลอุปกรณ์</a></li>
                       
                       
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> การจัดการงานคิว <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="form.html">การเลื่อนคิว</a></li>
-                      
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-desktop"></i> การออกรายงาน <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/student")?>">แสดงรายชื่อนักศึกษา</a></li>
-                      <li><a href="<?php echo site_url("Createq/index1")?>">แสดงกราฟการจองคิว</a></li>
-                     
-                    </ul>
-                  </li>
+                 
+                 
                   
                   
                   
@@ -201,3 +191,4 @@
           </div>
         </div>
         <!-- /top navigation -->
+        
