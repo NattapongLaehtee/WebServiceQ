@@ -24,6 +24,7 @@
   </head>
 
   <body class="login">
+  <form action="<?php echo site_url("Login/checklogin")?>" method="post">
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
@@ -31,40 +32,38 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
-            <div>
-                  <h1>Gentelella Alela!</h1>
-                 
-                </div>
+           
               <h1>เข้าสู่ระบบ</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" placeholder="Username" required="" name="username" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="<?php echo site_url("Createq/index")?>">Log in</a>
+                <button class="btn btn-default submit" type="submit">Log in</button>
+               
                 
               </div>
+              <br>
               </br>
 			<div>
                  
                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
-           
-           
-                
-             
-
-                
-            
+                </div> 
+                    </section>
+           </div>
+        
+             </div>
+             </div>
             </form>
-          </section>
-        </div>
+        
+        
+        
 
 
-      </div>
-    </div>
+     
+   
+   
   </body>
 </html>

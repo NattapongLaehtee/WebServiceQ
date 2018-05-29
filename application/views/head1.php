@@ -78,8 +78,8 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo site_url("Createq/indexad")?>">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="FullScreen">
                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
@@ -189,6 +189,9 @@
               </ul>
             </nav>
           </div>
+          </div>
+          </div>
+          
         </div>
         <!-- /top navigation -->
         

@@ -9,22 +9,25 @@
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
  
         <!-- page content -->
-        <div class="right_col" role="main">
+       <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Form Elements</h3>
+                <h3><font color="black">บันทึกข้อมูลอุปกรณ์</font></h3>
               </div>
 
-             
+              <div class="title_right">
+                
+              </div>
             </div>
-           
+            <div class="clearfix"></div>
+
             <div class="row">
+
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
-                  
-                  <div class="x_content">
-                    <br />
+                  <div class="x_title">
+                  <br>
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
@@ -57,14 +60,15 @@
                       </div>
                            <!-- page content -->
         
-          <div class="">
-        <div class="row">
-              <div class="col-md-12">
+        
 
-            <div class="row">
+        
+            <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้
+                        </label>
 
-                <div class='col-sm-4'>
-                    Only Date Picker
+                <div class='col-sm-2'>
+                  
                     <div class="form-group">
                         <div class='input-group date' id='myDatepicker2'>
                             <input type='text' class="form-control" />
@@ -74,18 +78,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1" for="last-name">ถึง
+                        </label>
+
+                <div class='col-sm-2'>
+                  
+                    <div class="form-group">
+                        <div class='input-group date' id='myDatepicker3'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
    
             </div>
-    
-              </div>
             </div>
-          </div>
-      
+            
+    
+             
+        
         <!-- /page content -->
    
     
            
-                      </br>
+                      <br></br>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button type="submit" class="btn btn-success">บันทึก</button>
@@ -137,7 +156,7 @@
     });
     
     $('#myDatepicker3').datetimepicker({
-        format: 'hh:mm A'
+        format: 'DD/MM/YYYY'
     });
     
     $('#myDatepicker4').datetimepicker({

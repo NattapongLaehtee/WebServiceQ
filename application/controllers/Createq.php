@@ -4,8 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Createq extends CI_Controller {
     
-    
     public function index()
+    {
+        $this->load->view('head');
+        $this->load->view('index');
+        $this->load->view('foot');
+        
+    }
+    public function content()
     {
         $this->load->view('head');
         $this->load->view('content');
@@ -39,17 +45,35 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    public function login()
-    {
-       $this->load->view('login');
-  
-    }
+    
     public function device()
     {
-        $this->load->view('head1');
+        $this->load->view('head');
         $this->load->view('devices');
         $this->load->view('foot');
     }
+    public function content2()
+    {
+        $this->load->view('head');
+        $this->load->view('content2');
+        $this->load->view('foot');
+        
+    }
+    public function indexad()
+    {
+        $this->load->view('head');
+        $this->load->view('indexadmin');
+        $this->load->view('foot');
+        
+    }
+    public function editq()
+    {
+        $this->load->view('head');
+        $this->load->view('editq');
+        $this->load->view('foot');
+        
+    }
+   
  
 
     
