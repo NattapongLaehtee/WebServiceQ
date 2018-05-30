@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Createq extends CI_Controller {
     
-    public function index()
+    public function indexqm()
     {
         $this->load->view('head');
-        $this->load->view('index');
+        $this->load->view('indexqm');
         $this->load->view('foot');
         
     }
@@ -70,6 +70,13 @@ class Createq extends CI_Controller {
     {
         $this->load->view('head');
         $this->load->view('editq');
+        $this->load->view('foot');
+        
+    }
+    public function outdevice()
+    {
+        $this->load->view('head');
+        $this->load->view('outdevice');
         $this->load->view('foot');
         
     }

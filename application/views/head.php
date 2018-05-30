@@ -57,7 +57,7 @@
                   <li><a><i class="fa fa-home"></i>อุปกรณ์ <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
-                       <li><a href="<?php echo site_url("Createq/")?>">แสดงข้อมูลอุปกรณ์</a></li>
+                       <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
                       
                       
                     </ul>
@@ -176,7 +176,7 @@
                   <li><a><i class="fa fa-desktop"></i>ออกรายงาน <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/student")?>">แสดงรายชื่อนักศึกษา</a></li>
-                      <li><a href="<?php echo site_url("Createq/index1")?>">แสดงกราฟการจองคิว</a></li>
+                      <li><a href="<?php echo site_url("Createq/index1")?>">แสดงข้อมูลการเปรียบเทียบการจองคิว</a></li>
                      
                     </ul>
                   </li>
@@ -192,7 +192,7 @@
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo site_url("Createq/index")?>">
+              <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo site_url("Createq/indexqm")?>">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
            		<a data-toggle="tooltip" data-placement="top" title="Home">
@@ -302,6 +302,5 @@
             <?php }?>
             </div>
         </div>
-        </div>
-        </div>
+        
        </body>     

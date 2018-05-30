@@ -35,7 +35,7 @@ class Login extends CI_Controller {
         if($u=="na" && $p=="14"){
             $this -> session -> set_userdata ( 'user_login' ,  true );
             $this -> session -> set_userdata ( 'user_autority' ,  2 );
-            redirect("createq/index");
+            redirect("createq/indexqm");
         }
         
         
