@@ -33,23 +33,26 @@
         <div class="animate form login_form">
           <section class="login_content">
            
-              <h1>เข้าสู่ระบบ</h1>
+             <h3>ระบบเว็บเซอร์วิสการจัดการงานคิว</h3>
+          	<br>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" name="username" />
+                <input type="text" class="form-control" placeholder="Username" name="username" />
               </div>
+              <br>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" name="password" />
+                <input type="password" class="form-control" placeholder="Password"  name="password" />
               </div>
+              <br>
               <div>
-                <button class="btn btn-default submit" type="submit">Log in</button>
+                <button type="submit" class="btn btn-success">เข้าสู่ระบบ</button>
                
                 
               </div>
               <br>
-              </br>
+              
 			<div>
                  
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                  <p>©2018 All Rights Reserved. By Division of Student Affairs Walailak University </p>
                 </div> 
                     </section>
            </div>

@@ -1,4 +1,4 @@
-
+<form action="<?php echo site_url("Createq/editdevice")?>" method="post">
 
         <!-- page content -->
         <div class="right_col" role="main">
@@ -26,6 +26,7 @@
                           <th>วันที่เริ่มใช้อุปกรณ์</th>
                           <th>วันที่สิ้นสุดการใช้อุปกรณ์</th>
                           <th>จำนวนอุปกรณ์</th>
+                          
                          
                        
                         </tr>
@@ -37,6 +38,8 @@
                           <td>Otto</td>
                           <td>@mdo</td>
                           <td>ำพ</td>
+                          <td><button type="submit" class="btn btn-success">แก้ไขข้อมูลอุปกรณ์</button></td>
+                          
                          
                                     	
                                     	   
@@ -69,7 +72,7 @@
               
             </div>
           </div>
-
+</form>
           
      
                 

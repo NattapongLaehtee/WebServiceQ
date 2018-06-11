@@ -8,7 +8,7 @@ class Createq extends CI_Controller {
     {
         $this->load->view('head');
         $this->load->view('indexqm');
-        $this->load->view('foot');
+        //$this->load->view('foot');
         
     }
     public function content()
@@ -80,6 +80,21 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
+    public function editdevice()
+    {
+        $this->load->view('head');
+        $this->load->view('editdevice');
+        $this->load->view('foot');
+        
+    }
+    public function calldevice()
+    {
+        $this->load->view('head');
+        $this->load->view('calldevice');
+        $this->load->view('foot');
+        
+    }
+    
    
  
 

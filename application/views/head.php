@@ -58,7 +58,7 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
                        <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
-                      
+                      <li><a href="<?php echo site_url("Createq/editdevice")?>">แก้ไขข้อมูลอุปกรณ์</a></li>
                       
                     </ul>
                   </li>
@@ -80,10 +80,10 @@
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                
               </a>
               <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+               
               </a>
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginfrom")?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
@@ -170,7 +170,7 @@
                   <li><a><i class="fa fa-edit"></i> การจัดการงานคิว <span class="fa fa-chevron-down "></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/content2")?>">การเลื่อนคิว</a></li>
-                      
+                      <li><a href="<?php echo site_url("Createq/calldevice")?>">การเรียกใช้อุปกรณ์</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i>ออกรายงาน <span class="fa fa-chevron-down"></span></a>
@@ -229,70 +229,7 @@
                   </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <span class="image"><img src="<?php echo base_url();?>Q_css/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="<?php echo base_url();?>Q_css/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="<?php echo base_url();?>Q_css/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <a>
-                        <span class="image"><img src="<?php echo base_url();?>Q_css/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
+                
               </ul>
             </nav>
           

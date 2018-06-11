@@ -6,9 +6,9 @@
           <div class="clearfix"></div>
         </footer>
         <!-- /footer content -->
-      </div>
+
     
-    <!-- jQuery -->
+   <!-- jQuery -->
     <script src="<?php echo base_url();?>Q_css/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="<?php echo base_url();?>Q_css/vendors/bootstrap/dist/js/bootstrap.min.js"></script>

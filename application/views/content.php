@@ -8,7 +8,7 @@
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
 
 <div class="right_col" role="main">
-	<div class="">
+	
 		<div class="page-title">
 			<div class="title_left">
 				<h3><font color="black">บันทึกการสร้างคิว</font></h3>
@@ -80,10 +80,41 @@
                             				</div>
                           				</div>
                           				<div class="form-group">
-                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้
-                        					</label>
+                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่เริ่มจอง                     					</label>
 											<div class='col-sm-2'>
                   								<div class='input-group date' id='myDatepicker2'>
+                            						<input type='text' class="form-control" />
+                            						<span class="input-group-addon">
+                               							<span class="glyphicon glyphicon-calendar"></span>
+                            						</span>
+                        						</div>
+                        					</div>
+                        					<label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
+                        					</label>
+											<div class='col-sm-2'>
+                  								<div class='input-group date' id='myDatepicker3'>
+                            						<input type='text' class="form-control" />
+                            						<span class="input-group-addon">
+                               							<span class="glyphicon glyphicon-calendar"></span>
+                            						</span>
+                        						</div>
+                        					</div>
+                         				</div>
+                          				<div class="form-group">
+                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้คิว
+                        					</label>
+											<div class='col-sm-2'>
+                  								<div class='input-group date' id='myDatepicker4'>
+                            						<input type='text' class="form-control" />
+                            						<span class="input-group-addon">
+                               							<span class="glyphicon glyphicon-calendar"></span>
+                            						</span>
+                        						</div>
+                        					</div>
+                        					<label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
+                        					</label>
+											<div class='col-sm-2'>
+                  								<div class='input-group date' id='myDatepicker5'>
                             						<input type='text' class="form-control" />
                             						<span class="input-group-addon">
                                							<span class="glyphicon glyphicon-calendar"></span>
@@ -95,22 +126,32 @@
 								</div>
                       			<div id="step-2">
                          			<form class="form-horizontal form-label-left">
-										<div class="checkbox">
+                         		
+                          				<div class="form-group">
+                          				<div class="checkbox">
                             				<label>
                               					<input type="checkbox" value="">กำหนดช่วงเวลาแต่ละวัน
                             				</label>
                           				</div>
-                          				<div class="form-group">
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">จำนวนช่วงเวลา</font><span class="required"><font color="red">*</font></span>
                             				</label>
                            					<div class="col-md-6 col-sm-6 col-xs-12">
-                              					<select name = ‘select’>	<option value = ‘1’> 1 </option> 
+                              					<select name = ‘many’>	
+                              					<option value = ‘1’> 1 </option> 
                               						<option value = ‘2’> 2 </option> 
                               						<option value = ‘3’> 3 </option> 
                               						<option value = ‘4’> 4 </option> </select>
                              				</div> 
                           				</div>
-                           				<div class="form-group">
+                          				<?php
+                          				if(isset($_POST["many"])) { 
+                          				    $many = $_POST["many"]; 
+                          				for($i=0; $i>= $many; $i++){
+                          				   echo ""; 
+                          				
+                          				}
+                          				}?>
+                          				<div class="form-group">
                        						<label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">ช่วงที่ 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เวลาที่เริ่มต้น :</font></label>
                         					<div class="col-md-2 col-sm-2 col-xs-2">
                           						<input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
@@ -122,18 +163,8 @@
                                 				<input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
                         					</div>
                       					</div>
-                      					<div class="form-group">
-                        					<label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">ช่วงที่ 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เวลาที่เริ่มต้น :</font></label>
-                        					<div class="col-md-2 col-sm-2 col-xs-2">
-                          						<input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
-                          					</div>
-                       						<div>
-                        						<label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
-                        					</div>
-                        					<div class="col-md-2 col-sm-2 col-xs-2">
-                                   				<input type="text" class="form-control" data-inputmask="'mask': '99/99/9999'">
-                        					</div>
-                      					</div>
+                      					
+                        			
                           			</form>
                         		</div>
                       			<div id="step-3">
@@ -188,12 +219,13 @@
                          			<font color="black">ช่วงเวลาที่ 3&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;11:01&nbsp;ถึง&nbsp;12:00 </font></br>
                       			</div>
 							</div>
+							
                     <!-- End SmartWizard Content -->
                     	</div>
                     <!-- End SmartWizard Content -->
                   	</div>
             	</div>
-			</div>
+		
 	</div>
 </div>
    	
@@ -235,11 +267,12 @@
     });
     
     $('#myDatepicker4').datetimepicker({
-        ignoreReadonly: true,
-        allowInputToggle: true
+    	format: 'DD/MM/YYYY'
     });
 
-    $('#datetimepicker6').datetimepicker();
+    $('#myDatepicker5').datetimepicker({
+    	format: 'DD/MM/YYYY'
+    });
     
     $('#datetimepicker7').datetimepicker({
         useCurrent: false

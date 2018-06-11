@@ -16,11 +16,50 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   
+                             	
 
                   <div class="x_content">
-
-         
-                    <div class="table-responsive">
+               	<label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">ชื่อคิว</font>
+                            				</label>
+                           					<div class="col-md-1 col-sm-1 col-xs-1">
+                              					<select name = ‘many’>	
+                              					<option value = ‘1’>กองทุนกู้ยืม(รายใหม่)</option> 
+                              						 </select>
+                             				</div> 
+                             				<br></br>
+ <label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">วันที่จองคิว</font>
+                            				</label>
+                           					<div class="col-md-1 col-sm-1 col-xs-1">
+                              					<select name = ‘many’>	
+                              					<option value = ‘1’>1 ธันวาคม 2561</option> 
+                              						<option value = ‘2’> 2 </option> 
+                              						<option value = ‘3’> 3 </option> 
+                              						<option value = ‘4’> 4 </option> </select>
+                             				</div> 
+                             				<br></br>
+  <label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">สำนักวิชา</font>
+                            				</label>
+                           					<div class="col-md-1 col-sm-1 col-xs-1">
+                              					<select name = ‘many’>	
+                              					<option value = ‘1’>สำนักวิชาการจัดการ</option> 
+                              						<option value = ‘2’> 2 </option> 
+                              						<option value = ‘3’> 3 </option> 
+                              						<option value = ‘4’> 4 </option> </select>
+                             				</div> 
+  
+                             				<br></br>
+   <label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">การแสดงผล</font>
+                            				</label>
+                           					<div class="col-md-1 col-sm-1 col-xs-1">
+                              					<select name = ‘many’>	
+                              					<option value = ‘1’>ตามช่วงเวลา</option> 
+                              						<option value = ‘2’>เรียงตามรหัสนักศึกษา</option> 
+                              						 </select>
+                             				</div> 
+			
+         		<br></br>
+         		<p >
+                    <div class="table-responsive ">
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
