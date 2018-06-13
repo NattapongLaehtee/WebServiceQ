@@ -87,10 +87,31 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    public function calldevice()
+    public function setdevice()
     {
         $this->load->view('head');
-        $this->load->view('calldevice');
+        $this->load->view('setdevice');
+        $this->load->view('foot');
+        
+    }
+    public function staff()
+    {
+        $this->load->view('head');
+        $this->load->view('Staff');
+        $this->load->view('foot');
+        
+    } 
+    public function outstaff()
+    {
+        $this->load->view('head');
+        $this->load->view('outstaff');
+        $this->load->view('foot');
+        
+    }
+    public function outstudent()
+    {
+        $this->load->view('head');
+        $this->load->view('outstudent');
         $this->load->view('foot');
         
     }

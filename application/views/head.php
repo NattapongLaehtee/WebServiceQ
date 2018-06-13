@@ -37,12 +37,10 @@
 
             <!-- menu profile quick info -->
             <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="<?php echo base_url();?>Q_css/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
+              
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+                 <h2>John Doe</h2>
+                 <span>Welcome,</span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -54,14 +52,24 @@
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
+                <li><a><i class="fa fa-edit"></i>การจัดการข้อมูลผู้ใช้งาน<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="<?php echo site_url("Createq/staff")?>">บันทึกข้อมูลเจ้าหน้าที่</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstaff")?>">แสดงข้อมูลเจ้าหน้าที่</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstudent")?>">แสดงข้อมูลนักศึกษา</a></li>
+                      
+                      
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-home"></i>อุปกรณ์ <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
                        <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
-                      <li><a href="<?php echo site_url("Createq/editdevice")?>">แก้ไขข้อมูลอุปกรณ์</a></li>
+                   <li><a href="<?php echo site_url("Createq/setdevice")?>">กำหนดอุปกรณ์</a></li>
                       
                     </ul>
                   </li>
+                  
                  
                  
                   
@@ -104,7 +112,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo base_url(); ?>Q_css/images/img.jpg" alt="">John Doe
+                    John Doe
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -144,9 +152,7 @@
 
             <!-- menu profile quick info -->
             <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="<?php echo base_url();?>Q_css/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
+             
               <div class="profile_info">
                 <span>Welcome,</span>
                 <h2>John Doe</h2>
@@ -170,14 +176,14 @@
                   <li><a><i class="fa fa-edit"></i> การจัดการงานคิว <span class="fa fa-chevron-down "></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/content2")?>">การเลื่อนคิว</a></li>
-                      <li><a href="<?php echo site_url("Createq/calldevice")?>">การเรียกใช้อุปกรณ์</a></li>
+                      
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i>ออกรายงาน <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/student")?>">แสดงรายชื่อนักศึกษา</a></li>
+                      <li><a href="<?php echo site_url("Createq/student")?>">แสดงรายชื่อนักศึกษาจองคิว</a></li>
                       <li><a href="<?php echo site_url("Createq/index1")?>">แสดงข้อมูลการเปรียบเทียบการจองคิว</a></li>
-                     
+                      <li><a href="<?php echo site_url("Createq/outstudent")?>">พิมพ์รายชื่อนักศึกษา</a></li>
                     </ul>
                   </li>
                   
@@ -219,7 +225,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?php echo base_url(); ?>Q_css/images/img.jpg" alt="">John Doe
+                    John Doe
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

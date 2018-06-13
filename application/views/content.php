@@ -16,7 +16,7 @@
 			<div class="title_right">
             </div>
 		</div>
-		<div class="clearfix"></div>
+		
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
                 	<div class="x_panel">
@@ -47,7 +47,7 @@
                             				<span class="step_no">3</span>
                             				<span class="step_descr">
                                               	<b><font color="black">ขั้นตอนที่ 3</font></b><br />
-                                              	<h5><small><font color="black">ขั้นตอนการทำงาน</font></small></h5>
+                                              <font color="black"><h5>ขั้นตอนการทำงาน</h5></font>
                                    			</span>
                           				</a>
                         			</li>
@@ -56,7 +56,7 @@
                             				<span class="step_no">4</span>
                             				<span class="step_descr">
                                              	<b><font color="black">ขั้นตอนที่ 4</font></b><br />
-                                              	<small><font color="black"><h5>สิทธิ์การจองคิว</h5></font></small>
+                                              	<font color="black"><h5>สิทธิ์การจองคิว</h5></font>
                                           	</span>
                           				</a>
                         			</li>
@@ -65,7 +65,7 @@
                             				<span class="step_no">5</span>
                             				<span class="step_descr">
                                                   <b><font color="black">ขั้นตอนที่ 5</font></b><br />
-                                                  <small><h5><font color="black">แสดงข้อมูลคิว</font></h5></small>
+                                                  <h5><font color="black">แสดงข้อมูลคิว</font></h5>
                                           	</span>
                           				</a>
                         			</li>
@@ -76,7 +76,7 @@
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span class="required">*</span>
                             				</label>
                             				<div class="col-md-3 col-sm-3 col-xs-12">
-                              					<input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                              					<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
                             				</div>
                           				</div>
                           				<div class="form-group">
@@ -128,29 +128,32 @@
                          			<form class="form-horizontal form-label-left">
                          		
                           				<div class="form-group">
-                          				<div class="checkbox">
-                            				<label>
-                              					<input type="checkbox" value="">กำหนดช่วงเวลาแต่ละวัน
-                            				</label>
-                          				</div>
-                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">จำนวนช่วงเวลา</font><span class="required"><font color="red">*</font></span>
+                          				<div class="radio ">
+                            			<label><input type="radio" name="optradio"><font color="black">เลือกเหมือนกันทุกช่วงเวลา</font></label>
+                          			</div>
+                          			<div class="radio ">
+                            			<label><input type="radio" name="optradio"><font color="black">กำหนดช่วงเวลาแต่ละวัน</font></label>
+                          			</div>
+                          			
+                          				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
+                          				   <font color="black">จำนวนช่วงเวลา</font><span class="required"><font color="red">*</font></span>
                             				</label>
                            					<div class="col-md-6 col-sm-6 col-xs-12">
-                              					<select name = ‘many’>	
+                              					<font color="black"><select name = ‘many’>	
                               					<option value = ‘1’> 1 </option> 
                               						<option value = ‘2’> 2 </option> 
                               						<option value = ‘3’> 3 </option> 
-                              						<option value = ‘4’> 4 </option> </select>
-                             				</div> 
-                          				</div>
-                          				<?php
-                          				if(isset($_POST["many"])) { 
-                          				    $many = $_POST["many"]; 
-                          				for($i=0; $i>= $many; $i++){
-                          				   echo ""; 
+                              						<option value = ‘4’> 4 </option> 
+                              						<option value = ‘5’> 5 </option>
+                              						<option value = ‘6’> 6 </option>
+                              						<option value = ‘7’> 7 </option>
+                              						<option value = ‘8’> 8 </option>
+                              						<option value = ‘9’> 9 </option>
+                              						<option value = ‘10’> 10 </option></select></font>
+                             				</div> ; 
                           				
-                          				}
-                          				}?>
+                          				</div>
+                          				
                           				<div class="form-group">
                        						<label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">ช่วงที่ 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; เวลาที่เริ่มต้น :</font></label>
                         					<div class="col-md-2 col-sm-2 col-xs-2">
@@ -179,7 +182,7 @@
                            				<div class="form-group">
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><font color="black">จำนวนช่องบริการ</font><span class="required"><font color="red">*</font></span>
                             				</label>
-                            				<div class="col-md-6 col-sm-6 col-xs-12">
+                            				<div class="col-md-2 col-sm-2 col-xs-12">
                               					<input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-2" >
                             				</div>
                            				</div>
