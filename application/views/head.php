@@ -38,9 +38,9 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               
-              <div class="profile_info">
-                 <h2>John Doe</h2>
-                 <span>Welcome,</span>
+              <div class="profile_info" >
+                 <h2>มนัส ใจกล้า</h2>
+                 <span>ผู้ดูแลระบบ</span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -56,12 +56,12 @@
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/staff")?>">บันทึกข้อมูลเจ้าหน้าที่</a></li>
                        <li><a href="<?php echo site_url("Createq/outstaff")?>">แสดงข้อมูลเจ้าหน้าที่</a></li>
-                       <li><a href="<?php echo site_url("Createq/outstudent")?>">แสดงข้อมูลนักศึกษา</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstudent1")?>">แสดงข้อมูลนักศึกษา</a></li>
                       
                       
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-home"></i>อุปกรณ์ <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-eyedropper"></i>อุปกรณ์ <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
                        <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
@@ -112,11 +112,11 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    John Doe
+                    	มนัส ใจกล้า
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
+                    
                    
                    
                     <li><a href="<?php echo site_url("Login/loginfrom")?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
@@ -153,9 +153,9 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
              
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+              <div class="profile_info" >
+                 <h2>สุกัญญา มีใจ</h2>
+                 <span>ผู้จัดการคิว</span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -181,9 +181,10 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i>ออกรายงาน <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                    <li><a href="<?php echo site_url("Createq/outstudent")?>">พิมพ์รายชื่อนักศึกษา</a></li>
                       <li><a href="<?php echo site_url("Createq/student")?>">แสดงรายชื่อนักศึกษาจองคิว</a></li>
                       <li><a href="<?php echo site_url("Createq/index1")?>">แสดงข้อมูลการเปรียบเทียบการจองคิว</a></li>
-                      <li><a href="<?php echo site_url("Createq/outstudent")?>">พิมพ์รายชื่อนักศึกษา</a></li>
+                      
                     </ul>
                   </li>
                   
@@ -225,11 +226,11 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    John Doe
+                    	สุกัญญา มีใจ
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
+                   
                    
                     <li><a href="<?php echo site_url("Login/loginfrom")?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                   </ul>

@@ -1,5 +1,5 @@
 <div class="right_col" role="main">
-          <div class="">
+     <font color="black">     <div class="">
             <div class="page-title">
               <div class="title_left">
                 <h3>บันทึกข้อมูลเจ้าหน้าที่</h3>
@@ -45,4 +45,5 @@
             </div>
 
           </div>
+          </font>
         </div>

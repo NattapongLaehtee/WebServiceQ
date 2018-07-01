@@ -7,15 +7,15 @@
 
     <!-- Custom styling plus plugins -->
     <link href="<?php echo base_url();?>Q_css/build/css/custom.min.css" rel="stylesheet">
-  </head>
+ 
 
   
         <!-- page content -->
         <div class="right_col" role="main">
-          <div class="">
+       <font color="black">   <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>ปฏิทินการจองคิว</h3>
+             <h3>ปฏิทินการใช้คิว</h3>
               </div>
 
             
@@ -36,6 +36,7 @@
               </div>
             </div>
           </div>
+          </font>
         </div>
         
 
@@ -60,6 +61,3 @@
 
     <!-- Custom Theme Scripts -->
     <script src="<?php echo base_url();?>Q_css/build/js/custom.min.js"></script>
-
-  </body>
-</html>

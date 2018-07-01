@@ -1,13 +1,37 @@
  <!-- page content -->
         <div class="right_col" role="main">
           <div class="">
-           
+           <div class="page-title">
+              <div class="title_left">
+                <h3><font color="black">แสดงข้อมูลการเปรียบเทียบการจองคิว</font></h3>
+              </div>
+
+              <div class="title_right">
+                
+              </div>
+            </div>
 
 
             <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
-                 
+                <form >
+                 <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">
+                          				   <font color="black">ชื่อคิว</font>
+                            				</label>
+                           					<div class="col-md-2 col-sm-2 col-xs-12">
+                              					<font color="black"><select name = ‘many’>	
+                              					<option value = ‘1’>กองทุนกู้ยืมเพื่อการศึกษา (รายใหม่) </option> 
+                              						<option value = ‘2’>กองทุนกู้ยืมเพื่อการศึกษา (รายเก่า)</option> 
+                              						 
+                              						 
+                              						</select></font>
+                              						
+                             				</div> 
+                             				</form>
+                             				 <br>
+                          				 
+                            			
 				<div id='myChart'><a class="zc-ref" href="https://www.zingchart.com/"></a></div>
 
                   

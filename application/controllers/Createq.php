@@ -115,6 +115,20 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
+    public function setdevice1()
+    {
+        $this->load->view('head');
+        $this->load->view('setdevice1');
+        $this->load->view('foot');
+        
+    }
+    public function outstudent1()
+    {
+        $this->load->view('head');
+        $this->load->view('outstudent1');
+        $this->load->view('foot');
+        
+    }
     
    
  

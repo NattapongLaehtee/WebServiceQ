@@ -10,7 +10,7 @@
  
         <!-- page content -->
        <div class="right_col" role="main">
-          <div class="">
+       <font color="black">  <div class="">
             <div class="page-title">
               <div class="title_left">
                 <h3><font color="black">แก้ไขข้อมูลอุปกรณ์</font></h3>
@@ -31,12 +31,12 @@
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัส <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัส 
                         </label>
-                         <label class="control-label col-md-0 col-sm-0 col-xs- for="first-name">D1002</label>
+                         <label class="control-label col-md-0 col-sm-0 col-xs- for="first-name">1001</label>
                         </div>
                         <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่อ <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่อ 
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-">
                           <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
@@ -45,56 +45,30 @@
                      <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">รายละเอียด</label>
                        
-                         <div class="col-md-9 col-sm-9 col-xs-12">
+                         <div class="col-md-6 col-sm-6 col-xs-12">
                       <textarea class="resizable_textarea form-control" placeholder=""></textarea>
                     </div>
                         
                       </div>
-                      <div class="form-group">
-                        <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">จำนวนช่องบริการ</label>
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
-                        </div>
+                       <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">จำนวนอุปกรณ์ 
+                        </label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                         <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
+                        
+                        
+                 
+                        
                       </div>
+                        
+                      </div>
+                      
                            <!-- page content -->
         
         
 
         
-            <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้
-                        </label>
-
-                <div class='col-sm-2'>
-                  
-                    <div class="form-group">
-                        <div class='input-group date' id='myDatepicker2'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                        <label class="control-label col-md-1 col-sm-1 col-xs-1" for="last-name">ถึง
-                        </label>
-
-                <div class='col-sm-2'>
-                  
-                    <div class="form-group">
-                        <div class='input-group date' id='myDatepicker3'>
-                            <input type='text' class="form-control" />
-                            <span class="input-group-addon">
-                               <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-   
-            </div>
-            </div>
-            
+         
     
              
         

@@ -2,7 +2,7 @@
 <form action="<?php echo site_url("Createq/editq")?>" method="post">
  <!-- page content -->
 	<div class="right_col" role="main">
-		<div class="">
+	<font color="black"><div class="">
 			<div class="page-title">
           		<div class="title_left">
                 	<h3>การเลื่อนคิว</h3>
@@ -17,30 +17,29 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 60px;">ชื่อคิว</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">วันที่เริ่มจองคิวถึงวันสิ้นสุี่ด</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 117px;">วันที่ใช้คิวถึงวันที่สิ้นสุด</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 130px;">ช่วงเวลาทั้งหมด</th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">ชื่อคิว</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 150px;">วันที่เริ่มจองคิวถึงวันสิ้นสุด</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 157px;">วันที่ใช้คิวถึงวันที่สิ้นสุด</th>
+                        					
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 115px;">จำนวนช่องบริการ</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 90px;"></th>
                         					</tr>
                       					</thead>
 										<tbody>
                        						<tr role="row" class="odd">
-                          						<td class="sorting_1">Airi Satou</td>
-                          						<td>Accountant</td>
-                          						<td>Tokyo</td>
-                          						<td>33</td>
-                          						<td>2008/11/28</td>
+                          						<td class="sorting_1">กองทุนกู้ยื่มเพื่อการศึกษา (รายใหม่)</td>
+                          						<td>02/03/2561</td>
+                          						
+                          						<td>04/03/2561</td>
+                          						<td>6</td>
                           						<td><button type="submit" class="btn btn-success">เลื่อนคิว</button></td>
                         					</tr>
                        						<tr role="row" class="even">
-                          						<td class="sorting_1">Cedric Kelly</td>
-                          						<td>Senior Javascript Developer</td>
-                          						<td>Edinburgh</td>
-                          						<td>22</td>
-                          						<td>2012/03/29</td>
-                          						<td>$433,060</td>
+                          						<td class="sorting_1">กองทุนกู้ยื่มเพื่อการศึกษา (รายเก่า)</td>
+                          						<td>04/04/2561</td>
+                          						<td>08/04/02561</td>
+                          						<td>10</td>
+                          						<td><button type="submit" class="btn btn-success">เลื่อนคิว</button></td>
                         					</tr>
                         				</tbody>
                     				</table>
@@ -51,6 +50,7 @@
               	</div>
       		</div>
        	</div>
+       	</font>
 	</div>
 	<!-- /page content -->
  </form>
