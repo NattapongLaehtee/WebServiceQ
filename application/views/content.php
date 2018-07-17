@@ -7,7 +7,8 @@
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
 
-<font color="black"><div class="right_col" role="main">
+<font color="black">
+<div class="right_col" role="main">
 	
 		<div class="page-title">
 			<div class="title_left">
@@ -288,7 +289,8 @@
             	</div>
 		
 	</div>
-</div></font>
+</div>
+</font>
    	
       
           
