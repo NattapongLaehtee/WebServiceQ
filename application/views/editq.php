@@ -28,7 +28,7 @@
                           				<a href="#step-1">
                             				<span class="step_no">1</span>
                             				<span class="step_descr">
-                                            	<b><font color="black">ขั้นตอนที่ 1</font></b><br />
+                                            	<b><font color="black">ขั้นตอนที่  1</font></b><br />
                                               	<small><h5><font color="black">ข้อมูลคิว</font></h5></small>
                                        		</span>
                           				</a>
@@ -37,7 +37,7 @@
                           				<a href="#step-2">
                             				<span class="step_no">2</span>
                             				<span class="step_descr">
-                                            	<b><font color="black">ขั้นตอนที่ 2</font></b><br/>
+                                            	<b><font color="black">ขั้นตอนที่  2</font></b><br/>
                                               	<h5><font color="black">แสดงช่วงเวลา</font></h5>
                           				</a>
                         			</li>
@@ -45,7 +45,7 @@
                           				<a href="#step-3">
                             				<span class="step_no">3</span>
                             				<span class="step_descr">
-                                              	<b><font color="black">ขั้นตอนที่ 3</font></b><br />
+                                              	<b><font color="black">ขั้นตอนที่  3</font></b><br />
                                               	<h5><font color="black">เปลี่ยนแปลงช่วงเวลา</font></h5>
                                    			</span>
                           				</a>
@@ -54,8 +54,8 @@
                           				<a href="#step-4">
                             				<span class="step_no">4</span>
                             				<span class="step_descr">
-                                             	<b><font color="black">ขั้นตอนที่ 4</font></b><br />
-                                              	<font color="black"><h5>ผลการเลื่อนคืว</h5></font>
+                                             	<b><font color="black">ขั้นตอนที่  4</font></b><br />
+                                              	<font color="black"><h5>ผลการเลื่อนคิว</h5></font>
                                           	</span>
                           				</a>
                         			</li>
@@ -70,21 +70,21 @@
                             				</label>
                             			</div></font>
                             			<font color="black"><div class="form-group">
-                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">วันที่   02/03/2561
+                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">วันที่  02/03/2561
                             				</label>
-                            				<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">จำนวนทั้งหมด 7 ช่วง 
+                            				<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">จำนวนทั้งหมด 7 ช่วง
                             				</label>
                             			</div></font>
                             			<font color="black"><div class="form-group">
-                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">วันที่   03/03/2561
+                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">วันที่  03/03/2561
                             				</label>
                             				<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">จำนวนทั้งหมด 2 ช่วง 
                             				</label>
                             			</div></font>
                             			<font color="black"><div class="form-group">
-                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">วันที่   04/03/2561
+                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">วันที่  04/03/2561
                             				</label>
-                            				<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">จำนวนทั้งหมด 5  ช่วง 
+                            				<label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">จำนวนทั้งหมด 5 ช่วง
                             				</label>
                             			</div></font>
                           				
@@ -103,7 +103,7 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row" align="center">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 60px;">วันที่ </th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 60px;">วันที่</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 60px;">ช่วงที่</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">เวลา</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 100px;">จำนวนนักศึกษา</th>
@@ -152,7 +152,7 @@
                         					<tr role="row" class="even">
                           						<td class="sorting_1"></td>
                           						<td>5</td>
-                          						<td>13:00-14:00 น.</td>
+                          						<td>13:00-14:00  น.</td>
                           						<td>100</td>
                           					<td><div class="checkbox">
   <label><input type="checkbox" value=""></label>
@@ -170,7 +170,7 @@
                         					<tr role="row" class="even">
                           						<td class="sorting_1"></td>
                           						<td>7</td>
-                          						<td>15:00-16:00 น.</td>
+                          						<td>15:00-16:00  น.</td>
                           						<td>80</td>
                           					<td><div class="checkbox">
   <label><input type="checkbox" value=""></label>
@@ -179,7 +179,7 @@
                         					<tr role="row" class="odd">
                           						<td class="sorting_1">03/03/2561</td>
                           						<td>1</td>
-                          						<td>08:00-12:00 น.</td>
+                          						<td>08:00-12:00  น.</td>
                           						<td>300</td>
                           						<td><div class="checkbox">
   <label><input type="checkbox" value=""></label>
@@ -187,7 +187,7 @@
  							<tr role="row" class="even">
                           						<td class="sorting_1"></td>
                           						<td>2</td>
-                          						<td>13:00-17:00 น.</td>
+                          						<td>13:00-17:00  น.</td>
                           						<td>300</td>
                           					<td><div class="checkbox">
   <label><input type="checkbox" value=""></label>
@@ -259,8 +259,8 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row" align="center">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">วันที่และช่วงเวลาเดิม </th>
-	                       						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 500px;">กำหนดวันที่และช่วงเวลาใหม่</th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">à¸§à¸±à¸™à¸—à¸µà¹ˆà¹�à¸¥à¸°à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¹€à¸”à¸´à¸¡ </th>
+	                       						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 500px;">à¸�à¸³à¸«à¸™à¸”à¸§à¸±à¸™à¸—à¸µà¹ˆà¹�à¸¥à¸°à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¹ƒà¸«à¸¡à¹ˆ</th>
                         					
           
                         					</tr>
@@ -269,9 +269,9 @@
                        						<tr role="row" class="odd">
                           						
                           						<td class="sorting_1">02/03/2561
-                          						 เวลา 10:00-11:00  น.</td>
+                          						 à¹€à¸§à¸¥à¸² 10:00-11:00  à¸™.</td>
                           						
-                          						<td><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">เวลา</font></label><div class='col-sm-8'>
+                          						<td><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">à¹€à¸§à¸¥à¸²</font></label><div class='col-sm-8'>
                   								<div class='input-group date' id='myDatepicker5'>
                             						 <input type='text' class="form-control" />
                             						<span class="input-group-addon">
@@ -281,14 +281,14 @@
                         					</div>
                           						
                           						<br><div class="form-group">
-                       						<label class="control-label col-md-4 col-sm-4 col-xs-4"><font color="black">เวลาที่เริ่มต้น :</font></label>
+                       						<label class="control-label col-md-4 col-sm-4 col-xs-4"><font color="black">à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ :</font></label>
                         					<div class="col-md-1 col-sm-1 col-xs-1">
                           						<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
                           					</div>
                           					
                        						</div>
                        						<div class="form-group">
-                       						<label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
+                       						<label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">à¸–à¸¶à¸‡</font></label>
                         					<div class="col-md-1 col-sm-1 col-xs-1">
                           						<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
                           					</div>
@@ -296,7 +296,7 @@
                        						<br>
                         					
                         					<br><div  class="form-group">
-                        						<label class="control-label col-md-5 col-sm-5 col-xs-5"><font color="black">จำนวนนักศึกษา</font></label>
+                        						<label class="control-label col-md-5 col-sm-5 col-xs-5"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</font></label>
                         					
                         					<div class="col-md1 col-sm-1 col-xs-1">
                                 				<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
@@ -316,27 +316,27 @@
                                 	</form>
                         		</div>
                       			<div id="step-4">
-                      				<b><font color="black">วันที่ 02/03/2561 &nbsp;&nbsp;&nbsp;&nbsp;ทั้งหมด 7 ช่วง &nbsp;&nbsp;&nbsp;&nbsp;เปลี่ยนแปลงเป็น</font></b>
+                      				<b><font color="black">à¸§à¸±à¸™à¸—à¸µà¹ˆ 02/03/2561 &nbsp;&nbsp;&nbsp;&nbsp;à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸” 7 à¸Šà¹ˆà¸§à¸‡ &nbsp;&nbsp;&nbsp;&nbsp;à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹�à¸›à¸¥à¸‡à¹€à¸›à¹‡à¸™</font></b>
                       				
-                        			<b><font color="black">&nbsp;&nbsp; วันที่  15/03/2561&nbsp;&nbsp; จำนวนช่วงเวลา 3 ช่วง คือ</font></b></br>
+                        			<b><font color="black">&nbsp;&nbsp; à¸§à¸±à¸™à¸—à¸µà¹ˆ  15/03/2561&nbsp;&nbsp; à¸ˆà¸³à¸™à¸§à¸™à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸² 3 à¸Šà¹ˆà¸§à¸‡ à¸„à¸·à¸­</font></b></br>
                         			
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 1&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;08:00&nbsp;ถึง&nbsp;11:00 </font></br>
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 2&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;13:00&nbsp;ถึง&nbsp;16:00 </font></br>
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 3&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;16:00&nbsp;ถึง&nbsp;19:00 </font></br>
-                         			<b><font color="black">วันที่ 03/03/2561 &nbsp;&nbsp;&nbsp;&nbsp;ทั้งหมด 2 ช่วง &nbsp;&nbsp;&nbsp;&nbsp;เปลี่ยนแปลงเป็น</font></b>
-                         			<b><font color="black"> &nbsp;&nbsp; วันที่  16/03/2561&nbsp;&nbsp; จำนวนช่วงเวลา 3 ช่วง คือ</font></b></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 1&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;08:00&nbsp;à¸–à¸¶à¸‡&nbsp;11:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 2&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;13:00&nbsp;à¸–à¸¶à¸‡&nbsp;16:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 3&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;16:00&nbsp;à¸–à¸¶à¸‡&nbsp;19:00 </font></br>
+                         			<b><font color="black">à¸§à¸±à¸™à¸—à¸µà¹ˆ 03/03/2561 &nbsp;&nbsp;&nbsp;&nbsp;à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸” 2 à¸Šà¹ˆà¸§à¸‡ &nbsp;&nbsp;&nbsp;&nbsp;à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹�à¸›à¸¥à¸‡à¹€à¸›à¹‡à¸™</font></b>
+                         			<b><font color="black"> &nbsp;&nbsp; à¸§à¸±à¸™à¸—à¸µà¹ˆ  16/03/2561&nbsp;&nbsp; à¸ˆà¸³à¸™à¸§à¸™à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸² 3 à¸Šà¹ˆà¸§à¸‡ à¸„à¸·à¸­</font></b></br>
                          			
                          			
                         			
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 1&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;09:00&nbsp;ถึง&nbsp;10:00 </font></br>
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 2&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;10:01&nbsp;ถึง&nbsp;12:00 </font></br>
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 3&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;13:01&nbsp;ถึง&nbsp;14:00 </font></br>
-                         			<b><font color="black">วันที่ 04/03/2561 &nbsp;&nbsp;&nbsp;&nbsp;ทั้งหมด 5 ช่วง &nbsp;&nbsp;&nbsp;&nbsp;เปลี่ยนแปลงเป็น</font></b>
-                         			<b><font color="black">&nbsp;&nbsp; วันที่  17/03/2561&nbsp;&nbsp; จำนวนช่วงเวลา 3 ช่วง คือ</font></b></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 1&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;09:00&nbsp;à¸–à¸¶à¸‡&nbsp;10:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 2&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;10:01&nbsp;à¸–à¸¶à¸‡&nbsp;12:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 3&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;13:01&nbsp;à¸–à¸¶à¸‡&nbsp;14:00 </font></br>
+                         			<b><font color="black">à¸§à¸±à¸™à¸—à¸µà¹ˆ 04/03/2561 &nbsp;&nbsp;&nbsp;&nbsp;à¸—à¸±à¹‰à¸‡à¸«à¸¡à¸” 5 à¸Šà¹ˆà¸§à¸‡ &nbsp;&nbsp;&nbsp;&nbsp;à¹€à¸›à¸¥à¸µà¹ˆà¸¢à¸™à¹�à¸›à¸¥à¸‡à¹€à¸›à¹‡à¸™</font></b>
+                         			<b><font color="black">&nbsp;&nbsp; à¸§à¸±à¸™à¸—à¸µà¹ˆ  17/03/2561&nbsp;&nbsp; à¸ˆà¸³à¸™à¸§à¸™à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸² 3 à¸Šà¹ˆà¸§à¸‡ à¸„à¸·à¸­</font></b></br>
                         			
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 1&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;08:00&nbsp;ถึง&nbsp;10:00 </font></br>
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 2&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;10:01&nbsp;ถึง&nbsp;12:00 </font></br>
-                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ช่วงเวลาที่ 3&nbsp;&nbsp;เวลาที่เริ่ม&nbsp;&nbsp;13:01&nbsp;ถึง&nbsp;15:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 1&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;08:00&nbsp;à¸–à¸¶à¸‡&nbsp;10:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 2&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;10:01&nbsp;à¸–à¸¶à¸‡&nbsp;12:00 </font></br>
+                         			<font color="black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ 3&nbsp;&nbsp;à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡&nbsp;&nbsp;13:01&nbsp;à¸–à¸¶à¸‡&nbsp;15:00 </font></br>
                       			
 							</div>
 							

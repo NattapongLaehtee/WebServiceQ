@@ -1,4 +1,4 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -40,7 +40,7 @@ $(document).ready(function(){
   <div class="right_col" role="main">
     <div class="page-title">
       <div class="title_left">
-        <h3><font color="black">à¸šà¸±à¸™à¸—à¸¶à¸�à¸�à¸²à¸£à¸ªà¸£à¹‰à¸²à¸‡à¸„à¸´à¸§</font></h3>
+        <h3><font color="black">บันทึกการสร้างคิว</font></h3>
       </div>
       <div class="title_right"></div>
     </div>
@@ -55,8 +55,8 @@ $(document).ready(function(){
                     <a href="#step-1">
                       <span class="step_no">1</span>
                       <span class="step_descr">
-                        <b><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 1</font></b><br />
-                        <small><h5><font color="black">à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸„à¸´à¸§</font></h5></small>
+                        <b><font color="black">กรอกข้อมูลคิว</font></b><br />
+                        <small><h5><font color="black">-------</font></h5></small>
                       </span>
                     </a>
                   </li>
@@ -64,8 +64,8 @@ $(document).ready(function(){
                     <a href="#step-2">
                       <span class="step_no">2</span>
                       <span class="step_descr">
-                        <b><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 2</font></b><br/>
-                        <small><h5><font color="black">à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²</font></h5></small>
+                        <b><font color="black">ระบุช่วงเวลา</font></b><br/>
+                        <small><h5><font color="black">-------</font></h5></small>
                       </span>
                     </a>
                   </li>
@@ -73,8 +73,8 @@ $(document).ready(function(){
                     <a href="#step-3">
                       <span class="step_no">3</span>
                       <span class="step_descr">
-                        <b><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 3</font></b><br />
-                        <font color="black"><h5>à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸�à¸²à¸£à¸—à¸³à¸‡à¸²à¸™</h5></font>
+                        <b><font color="black">ระบุขั้นตอนการทำงาน</font></b><br />
+                        <font color="black"><h5>-------</h5></font>
                       </span>
                     </a>
                   </li>
@@ -82,8 +82,8 @@ $(document).ready(function(){
                     <a href="#step-4">
                       <span class="step_no">4</span>
                       <span class="step_descr">
-                        <b><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 4</font></b><br />
-                        <font color="black"><h5>à¸ªà¸´à¸—à¸˜à¸´à¹Œà¸�à¸²à¸£à¸ˆà¸­à¸‡à¸„à¸´à¸§</h5></font>
+                        <b><font color="black">กำหนดสิทธิ์ผู้ใช้งาน</font></b><br />
+                        <font color="black"><h5>-------</h5></font>
                       </span>
                     </a>
                   </li>
@@ -91,8 +91,8 @@ $(document).ready(function(){
                     <a href="#step-5">
                       <span class="step_no">5</span>
                       <span class="step_descr">
-                        <b><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 5</font></b><br />
-                        <h5><font color="black">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸„à¸´à¸§</font></h5>
+                        <b><font color="black">แสดงผลข้อมูลคิว</font></b><br />
+                        <h5><font color="black">-------</font></h5>
                       </span>
                     </a>
                   </li>
@@ -105,14 +105,14 @@ $(document).ready(function(){
                   <div id="step-1">
 =========================
                     <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">à¸Šà¸·à¹ˆà¸­à¸„à¸´à¸§<span style="color:red" >*</span>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
                         <input type="text" name="qname" id="qnameID" class="form-control col-md-7 col-xs-12" value="xxxxx">
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">à¸§à¸±à¸™à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸ˆà¸­à¸‡<span style="color:red" >*</span> 
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่เริ่มจองคิว<span style="color:red" >*</span> 
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
@@ -122,7 +122,7 @@ $(document).ready(function(){
                           </span>
                         </div>
                       </div>
-                      <label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">à¸–à¸¶à¸‡
+                      <label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
@@ -135,7 +135,7 @@ $(document).ready(function(){
                     </div>
 
                     <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">à¸§à¸±à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸„à¸´à¸§<span style="color:red" >*</span>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้คิว<span style="color:red" >*</span>
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='startuse'>
@@ -145,7 +145,7 @@ $(document).ready(function(){
                           </span>
                         </div>
                       </div>
-                      <label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">à¸–à¸¶à¸‡
+                      <label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='enduse'>
@@ -165,29 +165,29 @@ $(document).ready(function(){
 =========================
                   <div class="form-group">
                     <div class="radio ">
-                      <label><input type="radio" name = "timeslot" id="slot1"><font color="black">à¹€à¸¥à¸·à¸­à¸�à¹€à¸«à¸¡à¸·à¸­à¸™à¸�à¸±à¸™à¸—à¸¸à¸�à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²</font>
+                      <label><input type="radio" name = "timeslot" id="slot1"><font color="black">กำหนดเหมือนกันทุกช่วงเวลา</font>
                       </label>
                     </div>
                     <div class="radio ">
-                      <label><input type="radio" name = "timeslot" id="slot2"><font color="black">à¸�à¸³à¸«à¸™à¸”à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¹�à¸•à¹ˆà¸¥à¸°à¸§à¸±à¸™</font>
+                      <label><input type="radio" name = "timeslot" id="slot2"><font color="black">กำหนดช่วงเวลาแต่ละวัน</font>
                       </label>
                     </div>
                   </div>
                   <div id="slottime1"> 
                     
-                    <div class="form-group slot_01" >
-                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ :</font></label>
+                    <div class="form-group slot_01" >à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                         <input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                       <div>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">à¸–à¸¶à¸‡</font></label>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
                       </div>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                         <input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                       <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</font></label>
+                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
                         <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12">
@@ -204,34 +204,29 @@ $(document).ready(function(){
                  
 =========================
                   </div>
+                  </div>
                   <!-- End Step 2 -->
                   <!-- Start Step 3 -->
                   <div id="step-3">
                     3
 =========================
                     <div class="form-group">
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">à¸£à¸²à¸¢à¸¥à¸°à¹€à¸­à¸µà¸¢à¸”à¸�à¸²à¸£à¸—à¸³à¸‡à¸²à¸™</font></label>
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 1 </font></label>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸™à¸²à¸—à¸µ</font></label>
+                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที</font></label>
                       </div><button class="fa fa-plus-square fa-1x"></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
                           <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
                       </div>              
                     </div>
                                 <div class="form-group">
-                                  <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black"></font></label>
-                                  <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">à¸‚à¸±à¹‰à¸™à¸•à¸­à¸™à¸—à¸µà¹ˆ 2 </font></label>
-                                  <div class="col-md-2 col-sm-2 col-xs-2">
                                   
-                                      <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
-                                    </div>
-                                  <div>
-                                    <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸™à¸²à¸—à¸µ</font></label>
-                                  </div>
+                                  
+                                  
                                   <div class="col-md-1 col-sm-1 col-xs-1">
                                         
                                       <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12"> 
