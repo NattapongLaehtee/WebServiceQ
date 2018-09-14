@@ -30,7 +30,6 @@
 <?php 
 
     if($this -> session -> userdata ( 'userautority' )=="2") {?>
-    
 
 
             <div class="clearfix"></div>
@@ -39,8 +38,8 @@
             <div class="profile clearfix">
               
               <div class="profile_info" >
-                 <h2>มนัส ใจกล้า</h2>
-                 <span>ผู้ดูแลระบบ</span>
+                 <h2><?php echo ($this -> session -> userdata ( 'userfname' )); ?></h2>
+                 <span>à¸œà¸¹à¹‰à¸”à¸¹à¹�à¸¥à¸£à¸°à¸šà¸š</span>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -52,20 +51,20 @@
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
-                <li><a><i class="fa fa-edit"></i>การจัดการข้อมูลผู้ใช้งาน<span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i>à¸�à¸²à¸£à¸ˆà¸±à¸”à¸�à¸²à¸£à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/staff")?>">บันทึกข้อมูลเจ้าหน้าที่</a></li>
-                       <li><a href="<?php echo site_url("Createq/outstaff")?>">แสดงข้อมูลเจ้าหน้าที่</a></li>
-                       <li><a href="<?php echo site_url("Createq/outstudent1")?>">แสดงข้อมูลนักศึกษา</a></li>
+                      <li><a href="<?php echo site_url("Createq/staff")?>">à¸šà¸±à¸™à¸—à¸¶à¸�à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸ˆà¹‰à¸²à¸«à¸™à¹‰à¸²à¸—à¸µà¹ˆ</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstaff")?>">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸ˆà¹‰à¸²à¸«à¸™à¹‰à¸²à¸—à¸µà¹ˆ</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstudent1")?>">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</a></li>
                       
                       
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-eyedropper"></i>อุปกรณ์ <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-eyedropper"></i>à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
-                       <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
-                   <li><a href="<?php echo site_url("Createq/setdevice")?>">กำหนดอุปกรณ์</a></li>
+                      <li><a href="<?php echo site_url("Createq/device")?>">à¸šà¸±à¸™à¸—à¸¶à¸�à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</a></li>
+                       <li><a href="<?php echo site_url("Createq/outdevice")?>">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</a></li>
+                   <li><a href="<?php echo site_url("Createq/setdevice")?>">à¸�à¸³à¸«à¸™à¸”à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</a></li>
                       
                     </ul>
                   </li>
@@ -112,7 +111,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    	มนัส ใจกล้า
+                    	à¸¡à¸™à¸±à¸ª à¹ƒà¸ˆà¸�à¸¥à¹‰à¸²
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -143,18 +142,10 @@
         
             <?php }else if($this -> session -> userdata ( 'userautority' )=="1"){ ?>
             
-
-   
-	
-
-  
-         
-
             <!-- menu profile quick info -->
             <div class="profile clearfix">
-              
               <div class="profile_info" >
-                 <h2>สุกัญญา มีใจ</h2>
+                 <h2><?php echo ($this -> session -> userdata ( 'userfname' )." ".$this -> session -> userdata ( 'userlname' )) ; ?></h2>
                  <span>ผู้จัดการคิว</span>
               </div>
             </div>
@@ -195,6 +186,7 @@
               
 
             </div>
+            
               <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
@@ -226,7 +218,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    	สุกัญญา มีใจ
+                    	<?php echo ($this -> session -> userdata ( 'userfname' )." ".$this -> session -> userdata ( 'userlname' )) ; ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -239,8 +231,6 @@
                 
               </ul>
             </nav>
-          
-      
         
         <!-- /top navigation -->
             <?php }?>

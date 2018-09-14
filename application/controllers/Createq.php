@@ -129,7 +129,8 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    //============================//
+    
+   
     public function insert_queue()
     {
      var_dump($_POST);

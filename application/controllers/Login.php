@@ -55,6 +55,7 @@ class Login extends CI_Controller {
     public function logout()
     {
         $this -> session -> set_userdata ( 'userlogin' ,  FALSE );
+
         $this->loginfrom();
         
     }

@@ -53,6 +53,7 @@ function SmartWizard(target, options) {
         $this.target.append($this.elmStepContainer);
         elmActionBar.append($this.buttons.previous)
                     .append($this.buttons.next)
+
                     .append($this.buttons.finish);
         $this.target.append(elmActionBar);
         this.contentWidth = $this.elmStepContainer.width();
