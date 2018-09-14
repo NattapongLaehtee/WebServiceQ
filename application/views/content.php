@@ -19,7 +19,7 @@ $(document).ready(function(){
         
     });
     $("#add").click(function(){
-      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">à¸–à¸¶à¸‡</font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
+      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
       
     });
      
@@ -175,7 +175,7 @@ $(document).ready(function(){
                   </div>
                   <div id="slottime1"> 
                     
-                    <div class="form-group slot_01" >à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆ
+                    <div class="form-group slot_01" >
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                         <input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12">

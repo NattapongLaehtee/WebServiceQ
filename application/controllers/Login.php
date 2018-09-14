@@ -43,10 +43,13 @@ class Login extends CI_Controller {
         $chk = $this->Login_model->checkLogin($username,$password);
         
         if($chk){
-           redirect("Createq/indexqm");
+            if ($this -> session -> userdata ( 'userautority' )=="1"){
+                redirect("Createq/indexqm");
+            }else {
+                redirect("Createq/indexad"); 
+            }
         }else{
-            redirect("Createq/indexad");
-
+            redirect("Login/loginfrom");
         }
 
         

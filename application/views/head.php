@@ -25,7 +25,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a class="site_title"><font align=center>ระบบการจัดการงานคิว</font></a>
+              <a class="site_title"><font align="center">ระบบการจัดการงานคิว</font></a>
             </div>
 <?php 
 
@@ -38,46 +38,33 @@
             <div class="profile clearfix">
               
               <div class="profile_info" >
-                 <h2><?php echo ($this -> session -> userdata ( 'userfname' )); ?></h2>
-                 <span>à¸œà¸¹à¹‰à¸”à¸¹à¹�à¸¥à¸£à¸°à¸šà¸š</span>
+                 <h2><?php echo ($this -> session -> userdata ( 'userfname' )." ".$this -> session -> userdata ( 'userlname' )) ; ?></h2>
+                 <span>ผู้ดูแลระบบ</span>
               </div>
             </div>
             <!-- /menu profile quick info -->
-
             <br />
-
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
-                <li><a><i class="fa fa-edit"></i>à¸�à¸²à¸£à¸ˆà¸±à¸”à¸�à¸²à¸£à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸œà¸¹à¹‰à¹ƒà¸Šà¹‰à¸‡à¸²à¸™<span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit"></i>การจัดการข้อมูลผู้ใช้งาน<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/staff")?>">à¸šà¸±à¸™à¸—à¸¶à¸�à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸ˆà¹‰à¸²à¸«à¸™à¹‰à¸²à¸—à¸µà¹ˆ</a></li>
-                       <li><a href="<?php echo site_url("Createq/outstaff")?>">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¹€à¸ˆà¹‰à¸²à¸«à¸™à¹‰à¸²à¸—à¸µà¹ˆ</a></li>
-                       <li><a href="<?php echo site_url("Createq/outstudent1")?>">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</a></li>
-                      
-                      
+                      <li><a href="<?php echo site_url("Createq/staff")?>">บันทึกข้อมูลเจ้าหน้าที่</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstaff")?>">แสดงข้อมูลเจ้าหน้าที่</a></li>
+                       <li><a href="<?php echo site_url("Createq/outstudent1")?>">แสดงข้อมูลนักศึกษา</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-eyedropper"></i>à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-eyedropper"></i>ข้อมูลอุปกรณ์<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/device")?>">à¸šà¸±à¸™à¸—à¸¶à¸�à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</a></li>
-                       <li><a href="<?php echo site_url("Createq/outdevice")?>">à¹�à¸ªà¸”à¸‡à¸‚à¹‰à¸­à¸¡à¸¹à¸¥à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</a></li>
-                   <li><a href="<?php echo site_url("Createq/setdevice")?>">à¸�à¸³à¸«à¸™à¸”à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</a></li>
-                      
+                      <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
+                       <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
+                   <li><a href="<?php echo site_url("Createq/setdevice")?>">กำหนดอุปกรณ์</a></li>    
                     </ul>
-                  </li>
-                  
-                 
-                 
-                  
-                  
-                  
+                  </li>           
                 </ul>
               </div>
-              
-
             </div>
             <!-- /sidebar menu -->
 
@@ -111,7 +98,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    	à¸¡à¸™à¸±à¸ª à¹ƒà¸ˆà¸�à¸¥à¹‰à¸²
+                    	<?php echo ($this -> session -> userdata ( 'userfname' )." ".$this -> session -> userdata ( 'userlname' )) ; ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
