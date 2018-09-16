@@ -20,7 +20,7 @@ class Devices_control extends CI_Controller {
             );
             $this->Device_model->insertdevice($data_device);
         }else{
-            echo "======E Lee=========";
+            echo "======E Lee 222=========";
         }
     }
 }
