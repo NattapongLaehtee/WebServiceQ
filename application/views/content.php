@@ -22,6 +22,23 @@ $(document).ready(function(){
       $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
       
     });
+    
+    $("#import1").hide();
+    $("#import2").hide();
+    $("#import3").hide();
+    $("#import1").click(function(){
+        $("#importfile").show();
+       
+    });
+    $("#simport2").click(function(){
+       
+        $("#importfile").show();
+    });
+    $("#simport3").click(function(){
+        $("#importfile").hide();
+        
+    });
+    
      
 });
 </script>
@@ -210,6 +227,7 @@ $(document).ready(function(){
                   <div id="step-3">
                     3
 =========================
+					
                     <div class="form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
@@ -218,38 +236,45 @@ $(document).ready(function(){
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที</font></label>
-                      </div><button class="fa fa-plus-square fa-1x"></button>
+                      </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
                           <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
                       </div>              
                     </div>
-                                <div class="form-group">
-                                  
-                                  
-                                  
-                                  <div class="col-md-1 col-sm-1 col-xs-1">
-                                        
-                                      <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12"> 
-                                  </div>
-                                  
-                                </div>
-                                  <div class="form-group">
-                                    <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸Šà¹ˆà¸­à¸‡à¸šà¸£à¸´à¸�à¸²à¸£</font><span class="required"><font color="red">*</font></span>
-                                    </label>
-                                    <div class="col-md-2 col-sm-2 col-xs-12">
-                                        <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-2" >
-                                    </div>
-                                  </div>
+                            
 =========================
                   </div>
                   <div id="step-4">
                     4
 =========================
+					<div class="form-group">
+                    <div class="radio ">
+                      <label><input type="radio" name = "import" id="import1"><font color="black">นักศึกษาทั้งหมด</font>
+                      </label>
+                    </div>
+                    <div class="radio ">
+                      <label><input type="radio" name = "import" id="import2"><font color="black">นักศึกษาแต่ละสำนักวิชา</font>
+                      </label>
+                    </div>
+                    <div class="radio ">
+                      <label><input type="radio" name = "import" id="import3"><font color="black">นักศึกษาแต่ละหลักสูตร</font>
+                      </label>
+                    </div>
+                  </div>
+	
+					<!-- File Button -->
+                        <div class="importfile">
+                           
+                            <div class="col-md-4">
+                                <input type="file" name="file" id="file" class="input-large">
+                            </div>
+                        </div>
 =========================
                   </div>
                   <div id="step-5">
                     5
 =========================
+
 =========================
                   </div>
                 </form>

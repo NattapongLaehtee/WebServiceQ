@@ -45,7 +45,7 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    
+ 
     public function device()
     {
         $this->load->view('head');

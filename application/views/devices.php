@@ -29,57 +29,28 @@
                 <div class="x_panel">
                   <div class="x_title">
                   <br>
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+                     action="<?php echo(site_url("Devices_control/insert_device")); ?>" method="post">
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัส <span class="required">*</span>
-                        </label>
-                        <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                        </div>
+                     
                         <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่อ <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่ออุปกรณ์<span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-">
-                          <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="last-name" name="devicename" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">รายละเอียด</label>
                        
                          <div class="col-md-6 col-sm-6 col-xs-12">
-                      <textarea class="resizable_textarea form-control" placeholder=""></textarea>
+                      <textarea class="resizable_textarea form-control" name="devicedetail" placeholder=""></textarea>
                     </div>
                     </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">จำนวนอุปกรณ์ 
-                        </label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                         <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
-                        
-                        
-                 
-                        
-                      </div>
-                        
-                      </div>
+                    
                       
-                           <!-- page content -->
-        
-        
-
-        
-           
-            
-    
-             
-        
-        <!-- /page content -->
-   
-    
-           
-                      <br></br>
+                       
+                    
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                           <button type="submit" class="btn btn-success">บันทึก</button>
