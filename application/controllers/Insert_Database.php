@@ -27,3 +27,4 @@ class Insert_Database extends CI_Controller {
         	//'Time_lastreser' => $
         );
     }
+}
