@@ -8,13 +8,7 @@ class Devices_control extends CI_Controller {
         
     }
     
-       public function outdevice()   {
-           
-        $this->load->view('head');
-        $this->load->view('outdevice');
-        $this->load->view('foot');
-        
-    }
+      
     public function editdevice()   {
         
         $this->load->view('head');
@@ -54,4 +48,18 @@ class Devices_control extends CI_Controller {
         }
         
     }
+    
+    public function out_device(){
+      
+        $this->load->model('Device_model');
+        $res = $this->Device_model->outdevice();
+    
+        $data['device_res'] = $res;
+        
+        $this->load->view('head');
+        $this->load->view('outdevice',$data );
+        $this->load->view('foot');
+    }
+   
+    
 }

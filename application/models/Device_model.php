@@ -13,9 +13,11 @@ class Device_model extends CI_Model {
           
     }
     public function outdevice(){
-        $query = $this->db->query('select * from Tool');
-        return $query->result();
+        $querydevice = $this->db->query('select Tool_name, Tool_detail,Tool_amount from Tool');
+        
+        return $querydevice->result();
         
     }
+   
     
 }
