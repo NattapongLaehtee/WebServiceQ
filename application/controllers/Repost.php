@@ -27,6 +27,17 @@ class Repost extends CI_Controller {
 	}
 	
 	
+	public function studentshow()
+	{
+	   // $this->load->model('Printstudent_Model');
+	    //$this->load->model('Util_model');
+	    //$res = $this->Queue_Model->get_q_print();
+	  
+	    
+	    $this->load->view('head');
+	    $this->load->view('report/QPrint');
+	    $this->load->view('foot'); 
+	}
 	
 	
 	public function student()

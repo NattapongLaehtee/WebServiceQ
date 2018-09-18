@@ -7,7 +7,7 @@
           		<div class="title_left">
                 	<h3>============<?php 
     echo $test_data ;
-    ?>พิมพ์รายชื่อ</h3>
+    ?></h3>
               	</div>
             </div>
 			<div class="col-md-12 col-sm-12 col-xs-12">
@@ -38,8 +38,11 @@
                           						<td class="sorting_1"><?php echo $row->Cq_name;?></td>
                           						<td><?php echo $row->Cq_reserdate;?></td>
                           						<td><?php echo ($row->Cq_lastreser);?></td>
-                          						<td>   <button type="submit" class="btn btn-success">พิมพ์</button></td>
+                          						<td> <a href="<?php echo site_url("studentshow/QPrint")?>">  <button type="submit" class="btn btn-success">พิมพ์</button></a></td>
                           					</tr>
+                          					
+                          					
+                          					
                        					<?php 
                        					
 									}

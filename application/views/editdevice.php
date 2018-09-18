@@ -76,8 +76,8 @@
                       <br></br>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-success">à¸šà¸±à¸™à¸—à¸¶à¸�</button> 
-                          <button class="btn btn-primary" type="reset">à¸¢à¸�à¹€à¸¥à¸´à¸�</button>
+                          <button type="submit" class="btn btn-success">บันทึก</button> 
+                          <button class="btn btn-primary" type="reset">ยกเลิก</button>
                           
                         </div>
                       </div>

@@ -59,7 +59,7 @@ $(document).ready(function(){
       <div class="title_left">
         <h3><font color="black">บันทึกการสร้างคิว</font></h3>
       </div>
-     \
+     
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12">
