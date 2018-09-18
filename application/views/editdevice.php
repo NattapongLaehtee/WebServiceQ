@@ -10,7 +10,8 @@
  
         <!-- page content -->
        <div class="right_col" role="main">
-       <font color="black">  <div class="">
+       <font color="black">  
+       <div class="">
             <div class="page-title">
               <div class="title_left">
                 <h3><font color="black">แก้ไขข้อมูลอุปกรณ์</font></h3>
@@ -30,13 +31,9 @@
                   <br>
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัส 
-                        </label>
-                         <label class="control-label col-md-0 col-sm-0 col-xs- for="first-name">1001</label>
-                        </div>
+                      
                         <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่อ 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่อ
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-">
                           <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
@@ -79,8 +76,8 @@
                       <br></br>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-success">บันทึก</button> 
-                          <button class="btn btn-primary" type="reset">ยกเลิก</button>
+                          <button type="submit" class="btn btn-success">à¸šà¸±à¸™à¸—à¸¶à¸�</button> 
+                          <button class="btn btn-primary" type="reset">à¸¢à¸�à¹€à¸¥à¸´à¸�</button>
                           
                         </div>
                       </div>

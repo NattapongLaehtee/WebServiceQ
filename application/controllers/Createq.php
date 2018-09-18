@@ -46,12 +46,7 @@ class Createq extends CI_Controller {
         
     }
  
-    public function device()
-    {
-        $this->load->view('head');
-        $this->load->view('devices');
-        $this->load->view('foot');
-    }
+    
     public function content2()
     {
         $this->load->view('head');
@@ -73,20 +68,7 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    public function outdevice()
-    {
-        $this->load->view('head');
-        $this->load->view('outdevice');
-        $this->load->view('foot');
-        
-    }
-    public function editdevice()
-    {
-        $this->load->view('head');
-        $this->load->view('editdevice');
-        $this->load->view('foot');
-        
-    }
+   
     public function setdevice()
     {
         $this->load->view('head');

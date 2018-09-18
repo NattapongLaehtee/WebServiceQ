@@ -58,9 +58,9 @@
                   </li>
                   <li><a><i class="fa fa-eyedropper"></i>ข้อมูลอุปกรณ์<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/device")?>">บันทึกอุปกรณ์</a></li>
-                       <li><a href="<?php echo site_url("Createq/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
-                   <li><a href="<?php echo site_url("Createq/setdevice")?>">กำหนดอุปกรณ์</a></li>    
+                      <li><a href="<?php echo site_url("Devices_control/device")?>">บันทึกอุปกรณ์</a></li>
+                       <li><a href="<?php echo site_url("Devices_control/outdevice")?>">แสดงข้อมูลอุปกรณ์</a></li>
+                   <li><a href="<?php echo site_url("Devices_control/setdevice")?>">กำหนดอุปกรณ์</a></li>    
                     </ul>
                   </li>           
                 </ul>
