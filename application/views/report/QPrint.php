@@ -42,7 +42,7 @@
                         
                          <th>ลำดับที่<th>
                           <th>ชื่อ-สกุล</th>
-                                                 <th>Age</th>
+                          <th>Age</th>
                           <th>Start date</th>
                           <th>Salary</th>
                         </tr>
