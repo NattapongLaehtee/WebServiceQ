@@ -4,11 +4,11 @@ class Device_model extends CI_Model {
     public function __construct() {
         parent::__construct();
     }
-    public function insertdevice($data_queue)
+    public function insertdevice($data_device)
     {
         //echo "string";
         
-        $this->db->set($data_queue);
+        $this->db->set($data_device);
         $this->db->insert('Tool');
           
     }
@@ -18,6 +18,21 @@ class Device_model extends CI_Model {
         return $querydevice->result();
         
     }
+    public function deletedevice(){
+        $deldevice = $this->db->delete('tool', array('Tool_id' => $id));
+        
+        return $deldevice->result();
+        
+    }
+    public function evice($data_queue)
+    {
+        //echo "string";
+        
+        $this->db->set($data_queue);
+        $this->db->insert('Tool');
+        
+    }
+    
    
     
 }
