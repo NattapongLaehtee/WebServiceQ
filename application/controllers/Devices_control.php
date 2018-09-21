@@ -60,6 +60,31 @@ class Devices_control extends CI_Controller {
         $this->load->view('outdevice',$data );
         $this->load->view('foot');
     }
-   
+    public function update_device(){
+        //var_dump($_POST);
+        
+        
+        $deviceid = $this->input->post('id');
+        $updevicename = $this->input->post('updevicename');
+        $updevicedetail = $this->input->post('updevicedetail');
+        $uptotaldevice = $this->input->post('uptotaldevice');
+        
+        if ($updevicename!="" &&  $updevicedetail!="" && $uptotaldevice !="" ) {
+            
+            $this->load->model("Device_model");
+            $data_updevice = array(
+                'Tool_id' => $deviceid,
+                'Tool_name' => $updevicename,
+                'Tool_detail' =>  $updevicedetail,
+                'Tool_amount' =>  $uptotaldevice
+                
+                
+            );
+            $this->Device_model->updatedevice($data_updevice);
+        }else{
+            echo "======E Lee 222=========";
+        }
+        
+    }
     
 }

@@ -1,4 +1,4 @@
-<form action="<?php echo site_url("Devices_control/editdevice")?>" method="post">
+
     <!-- page content -->
 	<div class="right_col" role="main">
 	<font color="black">
@@ -35,11 +35,9 @@
                            					 <td class=" "><?php echo $row->Tool_name; ?></td>
                         				    <td class=" "><?php echo $row->Tool_detail; ?> </td>
                             <td class=" "><?php echo $row->Tool_amount; ?></td>
-                            <td class=" "><button type="submit" class="btn btn-success">แก้ไข</button></td>
+                            <td class=" "><a href="<?php echo site_url("Devices_control/editdevice".$value->id);?>"><button type="submit" class="btn btn-success">แก้ไข</button></a></td>
                                <td class=" "><button type="submit" class="btn btn-success">ลบ</button></td>
-             
-                           
-                          </tr>
+                          				</tr>
                           			<?php }?>
                         				</tbody>
                     				</table>

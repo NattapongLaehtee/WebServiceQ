@@ -24,12 +24,12 @@ class Device_model extends CI_Model {
         return $deldevice->result();
         
     }
-    public function evice($data_queue)
+    public function updatedevice($data_updevice)
     {
         //echo "string";
         
-        $this->db->set($data_queue);
-        $this->db->insert('Tool');
+        $this->db->where('Tool_id', $id);
+        $this->db->update('Tool', $data_updevice);
         
     }
     
