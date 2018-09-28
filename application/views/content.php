@@ -23,21 +23,21 @@ $(document).ready(function(){
       
     });
     
-    $("#import1").hide();
-    $("#import2").hide();
-    $("#import3").hide();
-    $("#import1").click(function(){
-        $("#importfile").show();
+    //$("#import1").hide();
+    //$("#import2").hide();
+    //$("#import3").hide();
+   // $("#import1").click(function(){
+      //  $("#importfile").show();
        
-    });
-    $("#simport2").click(function(){
+   // });
+   // $("#simport2").click(function(){
        
-        $("#importfile").show();
-    });
-    $("#simport3").click(function(){
-        $("#importfile").hide();
+    //    $("#importfile").show();
+   // });
+   // $("#simport3").click(function(){
+     //   $("#importfile").hide();
         
-    });
+   // });
     
     //function calculateuseq() {
        // var du1 = $('#startuse').datepicker('getDate');
@@ -267,14 +267,13 @@ $(document).ready(function(){
                    
                   </div>
                   <div id="slottime1_001"></div>
-=========================
+
                  
                   </div>
                   <!-- End Step 2 -->
                   <!-- Start Step 3 -->
                   <div id="step-3">
-                    3
-=========================
+
 					
                     <div class="form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
@@ -290,11 +289,12 @@ $(document).ready(function(){
                       </div>              
                     </div>
                             
-=========================
+
                   </div>
+                      <!-- End Step 3 -->
+                  <!-- Start Step 4 -->
                   <div id="step-4">
-                    4
-=========================
+
 					<div class="form-group">
                     <div class="radio ">
                       <label><input type="radio" name = "import" id="import1"><font color="black">นักศึกษาทั้งหมด</font>
@@ -317,8 +317,10 @@ $(document).ready(function(){
                                 <input type="file" name="file" id="file" class="input-large">
                             </div>
                         </div>
-=========================
+
                   </div>
+                      <!-- End Step 4 -->
+                  <!-- Start Step 5 -->
                   <div id="step-5">
                     5
 =========================
