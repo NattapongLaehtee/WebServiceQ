@@ -31,35 +31,33 @@
                   <br>
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
                     action="<?php echo(site_url("Devices_control/update_device")); ?>" method="post">
+                    <input type="hidden" name="tool_id" value="<?php echo $device_row->Tool_id; ?>">
+                    
 
-                   
+                   	<div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tool_barcode 
+                        </label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                         <input type="text" name="Tool_barcode" value="<?php echo $device_row->Tool_barcode; ?>" required="required" class="form-control col-md-2 col-xs-12">
+                      </div>
+                        
+                      </div>
                         <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่อ
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-">
-                          <input type="text" name="updevicename" required="required" class="form-control col-md-7 col-xs-12">
+                          	<input type="text" id="last-name" name="Tool_name" value="<?php echo $device_row->Tool_name; ?>" required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       </div>
                      <div class="form-group">
                         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">รายละเอียด</label>
                        
                          <div class="col-md-6 col-sm-6 col-xs-12">
-                      <textarea class="resizable_textarea form-control" placeholder="" name="updevicedetail"></textarea>
+                      <textarea class="resizable_textarea form-control" placeholder="" name="Tool_detail "><?php echo $device_row->Tool_detail; ?></textarea>
                     </div>
                         
                       </div>
-                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">จำนวนอุปกรณ์ 
-                        </label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                         <input type="text" name="uptotaldevice" required="required" class="form-control col-md-2 col-xs-12">
-                        
-                        
-                 
-                        
-                      </div>
-                        
-                      </div>
+                       
                       
                            <!-- page content -->
         

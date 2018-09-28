@@ -13,18 +13,23 @@ class Device_model extends CI_Model {
           
     }
     public function outdevice(){
-        $querydevice = $this->db->query('select Tool_name, Tool_detail,Tool_amount from Tool');
-        
+        $querydevice = $this->db->query('select * from Tool');
         return $querydevice->result();
         
     }
-    public function deletedevice(){
-        $deldevice = $this->db->delete('tool', array('Tool_id' => $id));
+    
+    public function outdevice_by_id($id){
+        //$querydevice = $this->db->query("select * from Tool where Tool_id ='".$id."' ");
+        $query = $this->db->get_where('Tool', array('Tool_id' => $id));
+        $row = $query->row();
+        return $row;
         
-        return $deldevice->result();
+        
+        
         
     }
-    public function updatedevice($data_updevice)
+   
+    public function updatedevice($data_updevice,$id)
     {
         //echo "string";
         
@@ -32,7 +37,11 @@ class Device_model extends CI_Model {
         $this->db->update('Tool', $data_updevice);
         
     }
-    
+    function deletedevice($id)
+    {
+        $this->db->delete('tool', array('Tool_id' => $id));
+        
+    }
    
     
 }

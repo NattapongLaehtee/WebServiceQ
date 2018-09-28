@@ -39,7 +39,30 @@ $(document).ready(function(){
         
     });
     
-     
+    function calculateuseq() {
+        var du1 = $('#startuse').datepicker('getDate');
+        var du2 = $('.#enduse').datepicker('getDate');
+        var oneDay = 24*60*60*1000;
+        var diff = 0;
+        if (du1 && du2) {
+      
+          diff = Math.round(Math.abs((du2.getTime() - du1.getTime())/(oneDay)));
+        }
+        $('.calculated').val(diff);
+        $('.minim').val(d1)
+    }
+    function calculatereservq() {
+        var dr1 = $('#stratreserv').datepicker('getDate');
+        var dr2 = $('#endreserv').datepicker('getDate');
+        var oneDay = 24*60*60*1000;
+        var diff = 0;
+        if (dr1 && dr2) {
+      
+          diff = Math.round(Math.abs((dr2.getTime() - dr1.getTime())/(oneDay)));
+        }
+        $('.calculated').val(diff);
+        $('.minim').val(d1)
+    } 
 });
 </script>
 
@@ -172,6 +195,7 @@ $(document).ready(function(){
                           </span>
                         </div>
                       </div>
+                      
                     </div>
 =========================
                   </div>

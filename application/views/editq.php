@@ -103,11 +103,11 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row" align="center">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 60px;">วันที่</th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 50px;">วันที่</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 60px;">ช่วงที่</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">เวลา</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 100px;">จำนวนนักศึกษา</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 50px;">เลือกคิว</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 150px;">จำนวนนักศึกษา</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 90px;">เลือกคิว</th>
                         						
                         					</tr>
                       					</thead>
@@ -259,8 +259,8 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row" align="center">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">à¸§à¸±à¸™à¸—à¸µà¹ˆà¹�à¸¥à¸°à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¹€à¸”à¸´à¸¡ </th>
-	                       						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 500px;">à¸�à¸³à¸«à¸™à¸”à¸§à¸±à¸™à¸—à¸µà¹ˆà¹�à¸¥à¸°à¸Šà¹ˆà¸§à¸‡à¹€à¸§à¸¥à¸²à¹ƒà¸«à¸¡à¹ˆ</th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">วันที่และช่วงเวลา </th>
+	                       						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 500px;">กำหนดวันที่และช่วงเวลาใหม่</th>
                         					
           
                         					</tr>
@@ -269,9 +269,9 @@
                        						<tr role="row" class="odd">
                           						
                           						<td class="sorting_1">02/03/2561
-                          						 à¹€à¸§à¸¥à¸² 10:00-11:00  à¸™.</td>
+                          						 เวลา 10:00-11:00  น.</td>
                           						
-                          						<td><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">à¹€à¸§à¸¥à¸²</font></label><div class='col-sm-8'>
+                          						<td><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">วันที่</font></label><div class='col-sm-8'>
                   								<div class='input-group date' id='myDatepicker5'>
                             						 <input type='text' class="form-control" />
                             						<span class="input-group-addon">
@@ -281,14 +281,14 @@
                         					</div>
                           						
                           						<br><div class="form-group">
-                       						<label class="control-label col-md-4 col-sm-4 col-xs-4"><font color="black">à¹€à¸§à¸¥à¸²à¸—à¸µà¹ˆà¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™ :</font></label>
+                       						<label class="control-label col-md-4 col-sm-4 col-xs-4"><font color="black">เวลาที่เริ่มต้น :</font></label>
                         					<div class="col-md-1 col-sm-1 col-xs-1">
                           						<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
                           					</div>
                           					
                        						</div>
                        						<div class="form-group">
-                       						<label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">à¸–à¸¶à¸‡</font></label>
+                       						<label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
                         					<div class="col-md-1 col-sm-1 col-xs-1">
                           						<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
                           					</div>
@@ -296,7 +296,7 @@
                        						<br>
                         					
                         					<br><div  class="form-group">
-                        						<label class="control-label col-md-5 col-sm-5 col-xs-5"><font color="black">à¸ˆà¸³à¸™à¸§à¸™à¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</font></label>
+                        						<label class="control-label col-md-5 col-sm-5 col-xs-5"><font color="black">จำนวนนักศึกษา</font></label>
                         					
                         					<div class="col-md1 col-sm-1 col-xs-1">
                                 				<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">

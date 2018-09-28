@@ -9,18 +9,36 @@ class Devices_control extends CI_Controller {
     }
     
       
-    public function editdevice()   {
-        
-        $this->load->view('head');
-        $this->load->view('editdevice');
-        $this->load->view('foot');
+    public function editdevice($id=0)   {
+        if($id!=0){
+            echo "=====".$id."====";
+            
+            $this->load->model('Device_model');
+            $res = $this->Device_model->outdevice_by_id($id);
+            //var_dump($res);die();
+            $data['device_row'] = $res;
+            $this->load->view('head');
+            $this->load->view('editdevice',$data);
+            $this->load->view('foot');
+        }else{
+            //error
+        }
         
     }
     public function device()    {
         
+       
+        
         $this->load->view('head');
         $this->load->view('devices');
         $this->load->view('foot');
+    }
+    public function setdevice()
+    {
+        $this->load->view('head');
+        $this->load->view('setdevice');
+        $this->load->view('foot');
+        
     }
 
     public function insert_device(){
@@ -30,19 +48,20 @@ class Devices_control extends CI_Controller {
         
         $devicename = $this->input->post('devicename');
         $devicedetail = $this->input->post('devicedetail');
-        $totaldevice = $this->input->post('totaldevice');
+        $barcodedevice = $this->input->post('barcodedevice');
         
-        if ( $devicename!="" &&  $devicedetail!="" && $totaldevice !="" ) {
+        if ( $devicename!="" &&  $devicedetail!="" && $barcodedevice !="" ) {
            
             $this->load->model("Device_model");
             $data_device = array(
                 'Tool_name' => $devicename,
                 'Tool_detail' =>  $devicedetail,
-                'Tool_amount' =>  $totaldevice
+                'Tool_barcode' =>  $barcodedevice
                 
                 
             );
             $this->Device_model->insertdevice($data_device);
+            redirect("Devices_control/out_device");
         }else{
             echo "======E Lee 222=========";
         }
@@ -61,30 +80,33 @@ class Devices_control extends CI_Controller {
         $this->load->view('foot');
     }
     public function update_device(){
-        //var_dump($_POST);
+        $Tool_id = $this->input->post('tool_id');
+        $Tool_name = $this->input->post('Tool_name');
+        $Tool_detail = $this->input->post('Tool_detail_');
+        $Tool_barcode = $this->input->post('Tool_barcode');
         
-        
-        $deviceid = $this->input->post('id');
-        $updevicename = $this->input->post('updevicename');
-        $updevicedetail = $this->input->post('updevicedetail');
-        $uptotaldevice = $this->input->post('uptotaldevice');
-        
-        if ($updevicename!="" &&  $updevicedetail!="" && $uptotaldevice !="" ) {
+        if ($Tool_id!="" && $Tool_name!="" &&  $Tool_detail!="" && $Tool_barcode !="" ) {
             
             $this->load->model("Device_model");
             $data_updevice = array(
-                'Tool_id' => $deviceid,
-                'Tool_name' => $updevicename,
-                'Tool_detail' =>  $updevicedetail,
-                'Tool_amount' =>  $uptotaldevice
-                
-                
+                'Tool_name' => $Tool_name,
+                'Tool_detail' =>  $Tool_detail,
+                'Tool_barcode' =>  $Tool_barcode
             );
-            $this->Device_model->updatedevice($data_updevice);
+            $this->Device_model->updatedevice($data_updevice,$Tool_id);
+            redirect("Devices_control/out_device");
         }else{
             echo "======E Lee 222=========";
         }
         
+    }
+    
+    public function delete_device($id=0){
+        if($id!=0){
+            $this->load->model('Device_model');
+            $this->Device_model->deletedevice($id);
+            redirect('Devices_control/out_device');
+        }
     }
     
 }

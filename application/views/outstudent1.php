@@ -16,10 +16,10 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">à¸£à¸«à¸±à¸ªà¸™à¸±à¸�à¸¨à¸¶à¸�à¸©à¸²</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">à¸Šà¸·à¹ˆà¸­ - à¸ªà¸�à¸¸à¸¥</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 200px;">à¸«à¸¥à¸±à¸�à¸ªà¸¹à¸•à¸£</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 130px;">à¸ªà¸³à¸™à¸±à¸�à¸§à¸´à¸Šà¸²</th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">รหัสนักศึกษา</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">ชื่อ - นามสกุล</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 200px;">หลักสูตร</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 130px;">สำนักวิชา</th>
                         						
                         					</tr>
                       					</thead>

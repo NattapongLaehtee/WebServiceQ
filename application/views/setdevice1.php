@@ -22,18 +22,18 @@
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">à¸Šà¸·à¹ˆà¸­à¸„à¸´à¸§ 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว 
                         </label>
-                        <label class="control-label col-md-3 col-sm-2 col-xs-12" for="first-name">à¸�à¸­à¸‡à¸—à¸¸à¸™à¸�à¸¹à¹‰à¸¢à¸·à¸¡à¹€à¸žà¸·à¹ˆà¸­à¸�à¸²à¸£à¸¨à¸¶à¸�à¸©à¸² (à¸£à¸²à¸¢à¹€à¸�à¹ˆà¸²)
+                        <label class="control-label col-md-3 col-sm-2 col-xs-12" for="first-name">กองทุนกู้ยืมเพื่อการศึกษา (รายใหม่)
                         </label>
                         
                         </div>
                         <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">à¸§à¸±à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸„à¸´à¸§ 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้คิว 
                         </label>
                         <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">08/08/2561
                         </label>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">à¸–à¸¶à¸‡ 
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">ถึง 
                         </label>
                         <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">12/08/2561
                         </label>
@@ -41,19 +41,19 @@
                       </div>
                      <div class="form-group">
                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                          				   <font color="black">à¸Šà¸·à¹ˆà¸­à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ</font>
+                          				   <font color="black">ชื่ออุปกรณ์</font>
                             				</label>
                            					<div class="col-md-6 col-sm-6 col-xs-12">
                               					<font color="black"><select name = â€˜manyâ€™>	
                               					<option value = â€˜1â€™>Raspberry pi</option> 
-                              						<option value = â€˜2â€™>à¸›à¸¸à¹ˆà¸¡à¸�à¸” </option> 
-                              						<option value = â€˜3â€™>à¸ˆà¸­ LCD</option> 
+                              						<option value = â€˜2â€™>ชุดอปกณ์ที่1 </option> 
+                              						<option value = â€˜3â€™>จอ  LCD</option> 
                               						
                               				</select></font>
                              				</div> 
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">à¸ˆà¸³à¸™à¸§à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸­à¸¸à¸›à¸�à¸£à¸“à¹Œ 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัสบาร์โค้ดอุปกณ์ 
                         </label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                          <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
@@ -65,7 +65,7 @@
                     
                          			
                           				<div class="form-group">
-                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">à¸§à¸±à¸™à¸—à¸µà¹ˆà¹ƒà¸Šà¹‰à¸„à¸´à¸§
+                            				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้อุปกรณ์
                         					</label>
 											<div class='col-sm-2'>
                   								<div class='input-group date' id='myDatepicker4'>
@@ -75,7 +75,7 @@
                             						</span>
                         						</div>
                         					</div>
-                        					<label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">à¸–à¸¶à¸‡
+                        					<label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
                         					</label>
 											<div class='col-sm-2'>
                   								<div class='input-group date' id='myDatepicker5'>
@@ -92,8 +92,8 @@
                       <br></br>
                       <div class="form-group">
                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <button type="submit" class="btn btn-success">à¸šà¸±à¸™à¸—à¸¶à¸�</button>
-                          <button class="btn btn-primary" type="reset">à¸¢à¸�à¹€à¸¥à¸´à¸�</button>
+                          <button type="submit" class="btn btn-success">บันทึก</button>
+                          <button class="btn btn-primary" type="reset">ยกเลิก</button>
                           
                         </div>
                       </div>
