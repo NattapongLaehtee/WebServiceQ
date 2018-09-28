@@ -39,30 +39,30 @@ $(document).ready(function(){
         
     });
     
-    function calculateuseq() {
-        var du1 = $('#startuse').datepicker('getDate');
-        var du2 = $('.#enduse').datepicker('getDate');
-        var oneDay = 24*60*60*1000;
-        var diff = 0;
-        if (du1 && du2) {
+    //function calculateuseq() {
+       // var du1 = $('#startuse').datepicker('getDate');
+      //  var du2 = $('.#enduse').datepicker('getDate');
+       // var oneDay = 24*60*60*1000;
+       // var diff = 0;
+       // if (du1 && du2) {
       
-          diff = Math.round(Math.abs((du2.getTime() - du1.getTime())/(oneDay)));
-        }
-        $('.calculated').val(diff);
-        $('.minim').val(d1)
-    }
-    function calculatereservq() {
-        var dr1 = $('#stratreserv').datepicker('getDate');
-        var dr2 = $('#endreserv').datepicker('getDate');
-        var oneDay = 24*60*60*1000;
-        var diff = 0;
-        if (dr1 && dr2) {
+        //  diff = Math.round(Math.abs((du2.getTime() - du1.getTime())/(oneDay)));
+      //  }
+     ////   $('.calculated').val(diff);
+     //   $('.minim').val(d1)
+  //  }
+   // function calculatereservq() {
+     //   var dr1 = $('#stratreserv').datepicker('getDate');
+      //  var dr2 = $('#endreserv').datepicker('getDate');
+      //  var oneDay = 24*60*60*1000;
+      //  var diff = 0;
+       // if (dr1 && dr2) {
       
-          diff = Math.round(Math.abs((dr2.getTime() - dr1.getTime())/(oneDay)));
-        }
-        $('.calculated').val(diff);
-        $('.minim').val(d1)
-    } 
+        //  diff = Math.round(Math.abs((dr2.getTime() - dr1.getTime())/(oneDay)));
+      //  }
+      //  $('.calculated').val(diff);
+      //  $('.minim').val(d1)
+    //} 
 });
 </script>
 
@@ -97,7 +97,7 @@ $(document).ready(function(){
                       <span class="step_no">1</span>
                       <span class="step_descr">
                         <b><font color="black">กรอกข้อมูลคิว</font></b><br />
-                        <small><h5><font color="black">-------</font></h5></small>
+                        
                       </span>
                     </a>
                   </li>
@@ -106,7 +106,7 @@ $(document).ready(function(){
                       <span class="step_no">2</span>
                       <span class="step_descr">
                         <b><font color="black">ระบุช่วงเวลา</font></b><br/>
-                        <small><h5><font color="black">-------</font></h5></small>
+                        
                       </span>
                     </a>
                   </li>
@@ -115,7 +115,7 @@ $(document).ready(function(){
                       <span class="step_no">3</span>
                       <span class="step_descr">
                         <b><font color="black">ระบุขั้นตอนการทำงาน</font></b><br />
-                        <font color="black"><h5>-------</h5></font>
+                       
                       </span>
                     </a>
                   </li>
@@ -124,7 +124,7 @@ $(document).ready(function(){
                       <span class="step_no">4</span>
                       <span class="step_descr">
                         <b><font color="black">กำหนดสิทธิ์ผู้ใช้งาน</font></b><br />
-                        <font color="black"><h5>-------</h5></font>
+                       
                       </span>
                     </a>
                   </li>
@@ -133,7 +133,7 @@ $(document).ready(function(){
                       <span class="step_no">5</span>
                       <span class="step_descr">
                         <b><font color="black">แสดงผลข้อมูลคิว</font></b><br />
-                        <h5><font color="black">-------</font></h5>
+                        
                       </span>
                     </a>
                   </li>
@@ -144,7 +144,7 @@ $(document).ready(function(){
                   <!-- Start Step 1 -->
 
                   <div id="step-1">
-=========================
+
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
@@ -198,7 +198,7 @@ $(document).ready(function(){
                       </div>
                       
                     </div>
-=========================
+
                   </div>
                   <!-- End Step 1 -->
                   <!-- Start Step 2 -->
@@ -329,7 +329,7 @@ $(document).ready(function(){
 
               
             <!-- End SmartWizard Content -->
-            xxx
+           
             </div>
           </div>
           </div>
