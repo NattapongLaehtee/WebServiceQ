@@ -12,7 +12,6 @@ $(document).ready(function(){
         $("#slottime1").hide();
         $("#slottime2").show();
     });
-
     $(".buttonFinish").click(function(){
       alert(6666);
       $("#form_1").submit();
@@ -203,8 +202,7 @@ $(document).ready(function(){
                   <!-- End Step 1 -->
                   <!-- Start Step 2 -->
                   <div id="step-2">
-                    2
-=========================
+
                   <div class="form-group">
                     <div class="radio ">
                       <label><input type="radio" name = "timeslot" id="slot1"><font color="black">กำหนดเหมือนกันทุกช่วงเวลา</font>
@@ -279,13 +277,13 @@ $(document).ready(function(){
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที</font></label>
                       </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
+                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
                       </div>              
                     </div>
                             
@@ -327,6 +325,7 @@ $(document).ready(function(){
 
 =========================
                   </div>
+                  <!-- End Step 5 -->
                 </form>
 
               
@@ -377,7 +376,6 @@ $(document).ready(function(){
     $('#startuse').datetimepicker({
       format: 'DD/MM/YYYY'
     });
-
     $('#enduse').datetimepicker({
       format: 'DD/MM/YYYY'
     });

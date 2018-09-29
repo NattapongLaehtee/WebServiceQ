@@ -5,8 +5,8 @@ class Report_model extends CI_Model{
         
       
         $query = $this->db->query('select Studentid, Studentname, Studentsurname, Facultyname 
-                                    from student, faculty
-                                    where student.Studentid join faculty.Facultyid');
+                                    from student left join faculty
+                                    on student.Studentid = faculty.Facultyid');
            return $query->result();                          
      
     }
