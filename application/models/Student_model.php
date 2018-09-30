@@ -1,14 +1,15 @@
 <?php 
 class Student_model extends CI_Model {
 
-        public $title;
-        public $content;
-        public $date;
+      
 
-        public function get_student()
+        public function outstudent()
         {
-                $query = $this->db->query('select * from student');
-                return $query->result();
+            
+            $querystudent = $this->db->query('select s.Studentid, s.Studentname, s.Studentsurname, f.Facultyname , p.Programname
+                                    from student s ,faculty f , program p
+                                    where   s.Facultyid = f.Facultyid and   s.Programid = p.Programid');
+            return $querystudent->result();
         }
 
         public function insert_entry()

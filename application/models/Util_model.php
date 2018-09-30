@@ -21,6 +21,13 @@ class Util_model extends CI_Model {
             $re_date = $arr[2].'-'.$arr[1].'-'.$arr[0];
             return $re_date;
         }
+        
+        public function convertDBtoDate($date){
+            $arr= explode('-',$str_date);
+            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+            return $re_date;
+        }
+        
        
 
 }

@@ -47,8 +47,11 @@ class Createq extends CI_Controller {
     }
  
     
-    public function content2()  
+    public function content2()
+    
     {
+        
+        
         $this->load->model('Queue_model');
         $res = $this->Queue_model->outqueue();
         
@@ -89,9 +92,15 @@ class Createq extends CI_Controller {
         
     }
     public function outstudent()
+    
     {
+      
+        $this->load->model('Report_model');
+        $res = $this->Report_model->outqueue();
+        
+        $dataq['queue_res'] = $res;
         $this->load->view('head');
-        $this->load->view('outstudent');
+        $this->load->view('outstudent', $dataq);
         $this->load->view('foot');
         
     }
@@ -104,8 +113,12 @@ class Createq extends CI_Controller {
     }
     public function outstudent1()
     {
+        $this->load->model('Student_model');
+        $res = $this->Student_model-> outstudent();
+        
+        $datastudent['student_res'] = $res;
         $this->load->view('head');
-        $this->load->view('outstudent1');
+        $this->load->view('outstudent1',  $datastudent);
         $this->load->view('foot');
         
     }

@@ -22,9 +22,9 @@
                	<label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">ชื่อคิว</font>
                             				</label>
                            					<div class="col-md-1 col-sm-1 col-xs-1">
-                              					<select name = ‘many’>	
-                              					<option value = ‘1’>กองทุนกู้ยื่มเพื่อการศึกษา (รายใหม่)</option> 
-                              					<option value = ‘1’>กองทุนกู้ยื่มเพื่อการศึกษา (รายเก่า)</option> 
+                              					<select name = â€˜manyâ€™>	
+                              					<option value = â€˜1â€™>กองทุน</option> 
+                              					<option value = â€˜1â€™>กอนทุนรายใหม่</option> 
                               						 </select>
                              				</div> 
                              				
@@ -33,23 +33,23 @@
   <label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">สำนักวิชา</font>
                             				</label>
                            					<div class="col-md-1 col-sm-1 col-xs-1">
-                              					<select name = ‘many’>	
-                              					<option value = ‘1’>สำนักวิชาการจัดการ</option> 
-                              						<option value = ‘2’>สำนักวิชาเทคโนโลยีการเกษตร</option> 
-                              						<option value = ‘3’>สำนักวิชาพยาบาลศาสตร์</option> 
-                              						<option value = ‘4’>สำนักวิชาแพทยศาสตร์</option>
-                              						<option value = ‘5’>สำนักวิชาเภสัชศาสตร์</option>
-                              						<option value = ‘6’>สำนักวิชาวิทยาศาสตร์</option>
-                              						<option value = ‘7’>สำนักวิชาวิศวกรรมศาสตร์และทรัพยากร</option>
-                              						<option value = ‘8’>สำนักวิชาสถาปัตยกรรมศาสตร์และการออกแบบ</option>
-                              						<option value = ‘9’> สำนักวิชาสหเวชศาสตร์</option>
-                              						<option value = ‘10’> สำนักวิชาสารสนเทศศาสตร์</option>
-                              						<option value = ‘11’>สำนักวิชาศิลปศาสตร์</option>
-                              						<option value = ‘12’> สำนักวิชาสาธารณสุขศาสตร์</option>
-                              						<option value = ‘13’>สำนักวิชารัฐศาสตร์และนิติศาสตร์</option> 
-                              						<option value = ‘14’>วิทยาลัยสัตวแพทยศา​สตร์อัครราชกุมารี</option> 
-                              						<option value = ‘15’>วิทยาลัยทันตแพทยศาสตร์นานาชาติ</option> 
-                              						<option value = ‘16’> วิทยาลัยนานาชาติ</option> </select>
+                              					<select name = faculty>	
+                              					<option value = â€˜1â€™>สำนักวิชาการจัดการ</option> 
+                              						<option value = â€˜2â€™>สำนักวิชาพยาบาลศาสตร์</option> 
+                              						<option value = â€˜3â€™> สำนักวิชารัฐศาสตร์และนิติศาสตร์</option> 
+                              						<option value = â€˜4â€™>สำนักวิชาวิทยาศาสตร์</option>
+                              						<option value = â€˜5â€™>สำนักวิชาวิศวกรรมศาสตร์และทรัพยากร</option>
+                              						<option value = â€˜6â€™>สำนักวิชาศิลปศาสตร์</option>
+                              						<option value = â€˜7â€™>สำนักวิชาสถาปัตยกรรมศาสตร์และการออกแบบ</option>
+                              						<option value = â€˜8â€™>สำนักวิชาสหเวชศาสตร์</option>
+                              						<option value = â€˜9â€™> สำนักวิชาสาธารณสุขศาสตร์</option>
+                              						<option value = â€˜10â€™> สำนักวิชาสารสนเทศศาสตร์</option>
+                              						<option value = â€˜11â€™>สำนักวิชาเทคโนโลยีการเกษตร</option>
+                              						<option value = â€˜12â€™> สำนักวิชาเภสัชศาสตร์</option>
+                              						<option value = â€˜13â€™>สำนักวิชาแพทยศาสตร์</option> 
+                              						<option value = â€˜14â€™>วิทยาลัยทันตแพทยศาสตร์นานาชาติ</option> 
+                              						<option value = â€˜15â€™>วิทยาลัยสัตวแพทยศา​สตร์อัครราชกุมารี</option> 
+                              						<option value = â€˜16â€™>วิทยาลัยนานาชาติ</option> </select>
                              				</div> 
   
                              				<br></br>
@@ -61,9 +61,9 @@
                           <tr class="headings">
                             
                             <th class="column-title">รหัสนักศึกษา </th>
-                            <th class="column-title">ชื่อ</th>
-                            <th class="column-title">นามสกุล </th>
-                            <th class="column-title">สำนักวิชา </th>
+                            <th class="column-title">ชื่อ - สกุล</th>
+                            <th class="column-title">หลักสูตร </th>
+                            <th class="column-title">สำนักวิชา</th>
                            
                           
                             

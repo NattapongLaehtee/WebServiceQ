@@ -28,8 +28,7 @@
                           				<a href="#step-1">
                             				<span class="step_no">1</span>
                             				<span class="step_descr">
-                                            	<b><font color="black">ขั้นตอนที่  1</font></b><br />
-                                              	<small><h5><font color="black">ข้อมูลคิว</font></h5></small>
+                                            	 <b><font color="black">แสดงข้อมูลคิว</font></b><br />
                                        		</span>
                           				</a>
                         			</li>
@@ -37,16 +36,16 @@
                           				<a href="#step-2">
                             				<span class="step_no">2</span>
                             				<span class="step_descr">
-                                            	<b><font color="black">ขั้นตอนที่  2</font></b><br/>
-                                              	<h5><font color="black">แสดงช่วงเวลา</font></h5>
+                                            	<b><font color="black">แสดงช่วงเวลา</font></b><br/>
+                                              	
                           				</a>
                         			</li>
                         			<li>
                           				<a href="#step-3">
                             				<span class="step_no">3</span>
                             				<span class="step_descr">
-                                              	<b><font color="black">ขั้นตอนที่  3</font></b><br />
-                                              	<h5><font color="black">เปลี่ยนแปลงช่วงเวลา</font></h5>
+                                              	<b><font color="black">เปลี่ยนแปลงช่วงเวลา</font></b><br />
+                                              	
                                    			</span>
                           				</a>
                         			</li>
@@ -54,15 +53,17 @@
                           				<a href="#step-4">
                             				<span class="step_no">4</span>
                             				<span class="step_descr">
-                                             	<b><font color="black">ขั้นตอนที่  4</font></b><br />
-                                              	<font color="black"><h5>ผลการเลื่อนคิว</h5></font>
+                                             	<b><font color="black">แสดงผลการเลื่อนคิว</font></b><br />
+                                              	
                                           	</span>
                           				</a>
                         			</li>
                         			
                         		</ul>
                      			<div id="step-1">
-                     				<form class="form-horizontal form-label-left">
+                     				<form class="form-horizontal form-label-left" 
+                     				 method="post">
+                     				 <input type="hidden" name="Cq_id" >
                       					<font color="black"><div class="form-group">
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว :
                             				</label>

@@ -1,5 +1,5 @@
 
-<form action="<?php echo site_url("Createq/editq")?>" method="post">
+
  <!-- page content -->
 	<div class="right_col" role="main">
 	<font color="black"><div class="">
@@ -31,26 +31,15 @@
 										       <tr class="even pointer">
                             
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
-                        				    <td class=" "><?php echo $row->Cq_usedate . " ถึง " . $row->Cq_lastuse; ?> </td>
-                            <td class=" "><?php echo $row->Cq_reserdate .  " ถึง " . $row->Cq_lastreser; ?></td>
+                        				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
+                            <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
                             <td class=" "><a href="<?php echo site_url("Createq/editq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">เลื่อนคิว</button></a></td>
                               
                           				</tr>
-                          			<?php }?>
-                       						<tr role="row" class="odd">
-                          						<td class="sorting_1">กองทุนกู้ยื่มเพื่อการศึกษา (รายใหม่)</td>
-                          						<td>02/03/2561</td>
+                           			<?php }?>
+                       						
                           						
-                          						<td>04/03/2561</td>
                           						
-                          						<td><button type="submit" class="btn btn-success">เลื่อนคิว</button></td>
-                        					</tr>
-                       						<tr role="row" class="even">
-                          						<td class="sorting_1">กองทุนกู้ยื่มเพื่อการศึกษา (รายเก่า)</td>
-                          						<td>04/04/2561</td>
-                          						<td>08/04/02561</td>
-                          						
-                          						<td><button type="submit" class="btn btn-success">เลื่อนคิว</button></td>
                         					</tr>
                         				</tbody>
                     				</table>
@@ -64,10 +53,14 @@
        	</font>
 	</div>
 	<!-- /page content -->
- </form>
-          
+<?php 
+           function convertDBtoDate($date){
+            $arr= explode('-',$date);
+            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+            return $re_date;
+        }
      
-                
+      ?>          
         
     
 

@@ -10,7 +10,11 @@ class Report_model extends CI_Model{
            return $query->result();                          
      
     }
-    
+    public function outqueue(){
+        $queryqueue = $this->db->query('select * from queue');
+        return $queryqueue->result();
+        
+    }
     
     
     

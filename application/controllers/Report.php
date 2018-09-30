@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Repost extends CI_Controller {
+class Report extends CI_Controller {
 
     
 	
@@ -13,16 +13,13 @@ class Repost extends CI_Controller {
 	
 	public function outstudent()
 	{
-	    $this->load->model('Queue_Model');
-	    $this->load->model('Util_model');
-	    $res = $this->Queue_Model->get_q_all();
+	    $this->load->model('Report_model');
+	    $res = $this->Report_model->outqueue();
 	    
-	    $data['queue_res'] = $res;
-	    $data['test_data'] = "testxxxxxx";
-	    $data['Util_model'] = $this->Util_model;
+	    $dataq['queue_res'] = $res;
 	    
 	    $this->load->view('head');
-	    $this->load->view('outstudent',$data);
+	    $this->load->view('outstudent',$dataq);
 	    $this->load->view('foot'); 
 	}
 	
@@ -44,7 +41,7 @@ class Repost extends CI_Controller {
 	{
 	    $this->load->model('Student_model');
 	    $res = $this->Student_model->get_student();
-	    $data['student_res'] = $res;
+	    $data['student_res']  = $res;
 	    
 	    $this->load->view('head');
 	    $this->load->view('student/student_list',$data );

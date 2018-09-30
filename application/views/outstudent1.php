@@ -24,21 +24,19 @@
                         					</tr>
                       					</thead>
 										<tbody>
-									
-                          						<tr role="row" class="even">
-                          						<td class="sorting_1">58114067</td>
-                          						<td>à¸™à¸²à¸¢ à¸“à¸±à¸�à¸žà¸‡à¸¨à¹Œ à¹�à¸«à¸¥à¸°à¸•à¸µ</td>
-                          						<td>à¹€à¸—à¸„à¹‚à¸™à¹‚à¸¥à¸¢à¸µà¸ªà¸²à¸£à¸ªà¸™à¹€à¸—à¸¨</td>
-                          						<td>à¸ªà¸²à¸£à¸ªà¸™à¹€à¸—à¸¨à¸¨à¸²à¸ªà¸•à¸£à¹Œ</td>
-                          					</tr>
-                       						<tr role="row" class="even">
-                          						<td class="sorting_1">58140856</td>
-                          						<td>à¸™à¸²à¸‡à¸ªà¸²à¸§ à¸ˆà¸¸à¸£à¸µà¸£à¸±à¸•à¸™à¹Œ à¹€à¸—à¸žà¸ªà¸¸à¸§à¸£à¸£à¸“à¹Œ</td>
-                          						<td>à¹€à¸—à¸„à¹‚à¸™à¹‚à¸¥à¸¢à¸µà¸ªà¸²à¸£à¸ªà¸™à¹€à¸—à¸¨</td>
-                          						<td>à¸ªà¸²à¸£à¸ªà¸™à¹€à¸—à¸¨à¸¨à¸²à¸ªà¸•à¸£à¹Œ</td>
-                          					</tr>
-                          					
-                        					
+									<?php  
+                       						
+                       						 
+									foreach ($student_res as $row){?>
+										       <tr class="even pointer">
+                            
+                           					 <td class=" "><?php echo $row->Studentid; ?></td>
+                        				    <td class=" "><?php echo  $row->Studentname . "   " . $row->Studentsurname; ?> </td>
+                            <td class=" "><?php echo  $row->Programname; ?></td>
+                           <td class=" "><?php echo  $row->Facultyname; ?></td>
+                              
+                          				</tr>
+                           			<?php }?>
                         				</tbody>
                     				</table>
                     			</div>

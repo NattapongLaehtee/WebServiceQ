@@ -5,8 +5,8 @@
 		<font color="black"><div class="">
 			<div class="page-title">
           		<div class="title_left">
-                	<h3>============<?php 
-    echo $test_data ;
+                	<h3><?php 
+   // echo $test_data ;
     ?></h3>
               	</div>
             </div>
@@ -19,34 +19,29 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">ชื่อคิว</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">วันที่เริ่มจองคิว<th>
+
+                        							<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 200px;">ชื่อคิว</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">วันที่เริ่มจองคิว</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 200px;">วันที่สิ้นสุดจองคิว</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 130px;"></th>
-                        						
                         					</tr>
                       					</thead>
 										<tbody>
-									<?php 
-									foreach ($queue_res->result() as $row)
-									{
-									  
-									
-									
-									?>
-                          					<tr role="row" class="even">
-                          						<td class="sorting_1"><?php echo $row->Cq_name;?></td>
-                          						<td><?php echo $row->Cq_reserdate;?></td>
-                          						<td><?php echo ($row->Cq_lastreser);?></td>
-                          						<td> <a href="<?php echo site_url("studentshow/QPrint")?>">  <button type="submit" class="btn btn-success">พิมพ์</button></a></td>
+										 <?php 
+									foreach ($queue_res as $row){?>
+										       <tr class="even pointer">
+                            
+                           					 <td class=" "><?php echo $row->Cq_name; ?></td>
+                        				    <td class=" "><?php echo $row->Cq_usedate . " ถึง " . $row->Cq_lastuse; ?> </td>
+                            <td class=" "><?php echo $row->Cq_reserdate .  " ถึง " . $row->Cq_lastreser; ?></td>
+                          						<td> <a href="<?php echo site_url("Report/studentshow")?>"> <button type="submit" class="btn btn-success">พิมพ์</button></a></td>
                           					</tr>
                           					
                           					
                           					
-                       					<?php 
                        					
-									}
-                       					?>
+                       					
+									<?php }?>
                           					
                         					
                         				</tbody>

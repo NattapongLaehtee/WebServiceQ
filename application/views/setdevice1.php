@@ -39,19 +39,7 @@
                         </label>
                         
                       </div>
-                     <div class="form-group">
-                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                          				   <font color="black">ชื่ออุปกรณ์</font>
-                            				</label>
-                           					<div class="col-md-6 col-sm-6 col-xs-12">
-                              					<font color="black"><select name = â€˜manyâ€™>	
-                              					<option value = â€˜1â€™>Raspberry pi</option> 
-                              						<option value = â€˜2â€™>ชุดอปกณ์ที่1 </option> 
-                              						<option value = â€˜3â€™>จอ  LCD</option> 
-                              						
-                              				</select></font>
-                             				</div> 
-                    </div>
+                     
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัสบาร์โค้ดอุปกณ์ 
                         </label>

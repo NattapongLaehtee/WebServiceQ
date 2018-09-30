@@ -73,12 +73,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo site_url("Createq/indexad")?>">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-               
-              </a>
+              
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginfrom")?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
@@ -161,7 +156,7 @@
                     <ul class="nav child_menu">
                     <li><a href="<?php echo site_url("Createq/outstudent")?>">พิมพ์รายชื่อนักศึกษา</a></li>
                       <li><a href="<?php echo site_url("Createq/student")?>">แสดงรายชื่อนักศึกษาจองคิว</a></li>
-                      <li><a href="<?php echo site_url("Createq/index1")?>">แสดงข้อมูลการเปรียบเทียบการจองคิว</a></li>
+                      
                       
                     </ul>
                   </li>
@@ -181,11 +176,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Home" href="<?php echo site_url("Createq/indexqm")?>">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
-           		<a data-toggle="tooltip" data-placement="top" title="Home">
-                
-              </a><a data-toggle="tooltip" data-placement="top" title="Home" >
-               
-              </a>
+           		
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginfrom")?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>

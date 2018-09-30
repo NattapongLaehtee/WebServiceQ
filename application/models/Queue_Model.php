@@ -40,4 +40,5 @@ class Queue_Model extends CI_Model {
             $query = $this->db->get('queue');
             return $query ;
         }
+    
 }

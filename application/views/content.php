@@ -74,20 +74,27 @@ $(document).ready(function(){
     <link href="<?php echo base_url();?>Q_css/vendors/normalize-css/normalize.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+ <!-- Bootstrap Colorpicker -->
+    <link href="<?php echo base_url();?>Q_css/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>Q_css/vendors/cropper/dist/cropper.min.css" rel="stylesheet">
+   
+  
 
+  
 <font color="black">
   <div class="right_col" role="main">
     <div class="page-title">
       <div class="title_left">
         <h3><font color="black">บันทึกการสร้างคิว</font></h3>
-      </div>
-     <div class="title_right">
+     </div>
+			<div class="title_right">
             </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
+		</div>
+		<div class="clearfix"></div>
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+                	<div class="x_panel">
+                  		<div class="x_title">
             <!-- Smart Wizard -->
             <div id="wizard" class="form_wizard wizard_horizontal">
                 <ul class="wizard_steps">
@@ -104,7 +111,7 @@ $(document).ready(function(){
                     <a href="#step-2">
                       <span class="step_no">2</span>
                       <span class="step_descr">
-                        <b><font color="black">ระบุช่วงเวลา</font></b><br/>
+                        <b><font color="black">ระบุขั้นตอนการทำงาน</font></b><br/>
                         
                       </span>
                     </a>
@@ -113,7 +120,7 @@ $(document).ready(function(){
                     <a href="#step-3">
                       <span class="step_no">3</span>
                       <span class="step_descr">
-                        <b><font color="black">ระบุขั้นตอนการทำงาน</font></b><br />
+                        <b><font color="black">ระบุช่วงเวลา</font></b><br />
                        
                       </span>
                     </a>
@@ -148,11 +155,11 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" name="qname" id="qnameID" class="form-control col-md-7 col-xs-12" value="xxxxx">
+                        <input type="text" name="qname" id="qnameID" class="form-control col-md-7 col-xs-12" >
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่เริ่มจองคิว<span style="color:red" >*</span> 
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่บันทึกสถานะจองคิว<span style="color:red" >*</span> 
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
@@ -175,7 +182,7 @@ $(document).ready(function(){
                     </div>
 
                     <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้คิว<span style="color:red" >*</span>
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่จองคิว<span style="color:red" >*</span>
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='startuse'>
@@ -202,8 +209,27 @@ $(document).ready(function(){
                   <!-- End Step 1 -->
                   <!-- Start Step 2 -->
                   <div id="step-2">
+				<div class="form-group">
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
+                      <div class="col-md-2 col-sm-2 col-xs-2">
+                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      <div>
+                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที</font></label>
+                      </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
+                      <div class="col-md-1 col-sm-1 col-xs-1">
+                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
+                      </div>              
+                    </div>
+                  
 
-                  <div class="form-group">
+                 
+                  </div>
+                  <!-- End Step 2 -->
+                  <!-- Start Step 3 -->
+                  <div id="step-3">
+ <div class="form-group">
                     <div class="radio ">
                       <label><input type="radio" name = "timeslot" id="slot1"><font color="black">กำหนดเหมือนกันทุกช่วงเวลา</font>
                       </label>
@@ -217,15 +243,25 @@ $(document).ready(function(){
                     
                     <div class="form-group slot_01" >
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
+                       <div class='col-sm-2'>
+                      <div class='input-group date' id='starttime'>
+                            <input type='text' class="form-control" name='starttime' />
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        </div>
                       <div>
                         <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
                       </div>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
+                      <div class='col-sm-2'>
+                      <div class='input-group date' id='endtime'>
+                            <input type='text' class="form-control" name='endtime'/>
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
@@ -245,7 +281,7 @@ $(document).ready(function(){
                      <div class="form-group slot_01" >
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" name="strattime" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
                       </div>
                       <div>
                         <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
@@ -265,31 +301,13 @@ $(document).ready(function(){
                    
                   </div>
                   <div id="slottime1_001"></div>
-
-                 
-                  </div>
-                  <!-- End Step 2 -->
-                  <!-- Start Step 3 -->
-                  <div id="step-3">
-
 					
-                    <div class="form-group">
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที</font></label>
-                      </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
-                      <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
-                      </div>              
-                    </div>
+                    
                             
 
                   </div>
                       <!-- End Step 3 -->
+                      
                   <!-- Start Step 4 -->
                   <div id="step-4">
 
@@ -343,14 +361,7 @@ $(document).ready(function(){
 
        
         <!-- /page content -->
-           <!-- jQuery -->
-    <script src="<?php echo base_url();?>Q_css/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="<?php echo base_url();?>Q_css/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="<?php echo base_url();?>Q_css/vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="<?php echo base_url();?>Q_css/vendors/nprogress/nprogress.js"></script>
+          
     <!-- bootstrap-daterangepicker -->
     <script src="<?php echo base_url();?>Q_css/vendors/moment/min/moment.min.js"></script>
     <script src="<?php echo base_url();?>Q_css/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
@@ -361,6 +372,18 @@ $(document).ready(function(){
    
     <!-- jquery.inputmask -->
     <script src="<?php echo base_url();?>Q_css/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- Bootstrap Colorpicker -->
+    <script src="<?php echo base_url();?>Q_css/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+    
+   
+    
+    
+    <!-- jQuery Knob -->
+    <script src="<?php echo base_url();?>Q_css/vendors/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- Cropper -->
+    <script src="<?php echo base_url();?>Q_css/vendors/cropper/dist/cropper.min.js"></script>
+
+   
    
     <!-- Initialize datetimepicker -->
 <script>
@@ -379,5 +402,10 @@ $(document).ready(function(){
     $('#enduse').datetimepicker({
       format: 'DD/MM/YYYY'
     });
-    
+    $('#starttime').datetimepicker({
+        format: 'hh:mm A'
+    });
+    $('#endtime').datetimepicker({
+        format: 'hh:mm A'
+    });
 </script>
