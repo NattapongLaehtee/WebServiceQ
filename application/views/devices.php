@@ -28,20 +28,20 @@
                     			<form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
                      			action="<?php echo(site_url("Devices_control/insert_device")); ?>" method="post">
 									<div class="form-group">
-                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่ออุปกรณ์<span class="required">*</span>
+                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">ชื่ออุปกรณ์<span style="color:red" >*</span>
                         				</label>
                         				<div class="col-md-3 col-sm-3 col-xs-">
                           					<input type="text" id="last-name" name="devicename" required="required" class="form-control col-md-7 col-xs-12">
                         				</div>
                       				</div>
                      				<div class="form-group">
-                        				<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">รายละเอียด</label>
+                        				<label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">รายละเอียด<span style="color:red" >*</span></label>
                   						<div class="col-md-6 col-sm-6 col-xs-12">
                       						<textarea class="resizable_textarea form-control" name="devicedetail" placeholder=""></textarea>
                     					</div>
                     				</div>
                     				<div class="form-group">
-                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสอุปกรณ์<span class="required">*</span>
+                        				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสอุปกรณ์<span style="color:red" >*</span>
                         				</label>
                         				<div class="col-md-3 col-sm-3 col-xs-">
                           					<input type="text" id="barcodedevice" name="barcodedevice" required="required" class="form-control col-md-7 col-xs-12">

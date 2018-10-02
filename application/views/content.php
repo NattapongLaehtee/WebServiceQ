@@ -2,7 +2,7 @@
 
 <script>
 $(document).ready(function(){
-    $("#slottime1").hide();
+    $("#slottime1").show();
     $("#slottime2").hide();
     $("#slot1").click(function(){
         $("#slottime1").show();
@@ -210,13 +210,13 @@ $(document).ready(function(){
                   <!-- Start Step 2 -->
                   <div id="step-2">
 				<div class="form-group">
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน</font></label>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที</font></label>
+                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
                       </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
                           <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
@@ -231,7 +231,7 @@ $(document).ready(function(){
                   <div id="step-3">
  <div class="form-group">
                     <div class="radio ">
-                      <label><input type="radio" name = "timeslot" id="slot1"><font color="black">กำหนดเหมือนกันทุกช่วงเวลา</font>
+                      <label><input type="radio" name = "timeslot" id="slot1" checked><font color="black" >กำหนดช่วงเวลาเดียวกัน</font>
                       </label>
                     </div>
                     <div class="radio ">
@@ -313,7 +313,7 @@ $(document).ready(function(){
 
 					<div class="form-group">
                     <div class="radio ">
-                      <label><input type="radio" name = "import" id="import1"><font color="black">นักศึกษาทั้งหมด</font>
+                      <label><input type="radio" name = "import" id="import1" checked><font color="black">นักศึกษาทั้งหมด</font>
                       </label>
                     </div>
                     <div class="radio ">
@@ -338,10 +338,15 @@ $(document).ready(function(){
                       <!-- End Step 4 -->
                   <!-- Start Step 5 -->
                   <div id="step-5">
-                    5
-=========================
-
-=========================
+                  <label><font color="black"><h4>ระบบกองทุนกู้ยืมเพื่อการศึกษา(รายใหม่)</h4></font></label><br>
+                   		<label><font color="black">วันที่บันทึกสถานะจองคิว &nbsp;&nbsp;&nbsp; 03/10/2018&nbsp;ถึง&nbsp;05/10/2018</font></label></br>
+                   		 <label><font color="black">วันที่จองคิว&nbsp;&nbsp;&nbsp;15/10/2018&nbsp;ถึง&nbsp;16/10/2018</font></label><br>
+                   		 <label><font color="black"><h5>วันที่ 15/10/2018&nbsp;&nbsp;&nbsp;จำนวนช่องเวลา 2 ช่วง ตือ</h5></font></label><br>
+                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 1&nbsp;เวลาที่เริ่ม&nbsp;08:00&nbsp;ถึง&nbsp;12:00</font></label><br>
+                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 2&nbsp;เวลาที่เริ่ม&nbsp;13:00&nbsp;ถึง&nbsp;17:00</font></label><br>
+                   		 <label><font color="black"><h5>วันที่ 16/10/2018&nbsp;&nbsp;&nbsp;จำนวนช่องเวลา 2 ช่วง ตือ</h5></font></label><br>
+                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 1&nbsp;เวลาที่เริ่ม&nbsp;09:00&nbsp;ถึง&nbsp;11:00</font></label><br>
+                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 2&nbsp;เวลาที่เริ่ม&nbsp;14:00&nbsp;ถึง&nbsp;16:00</font></label>
                   </div>
                   <!-- End Step 5 -->
                 </form>
@@ -403,9 +408,9 @@ $(document).ready(function(){
       format: 'DD/MM/YYYY'
     });
     $('#starttime').datetimepicker({
-        format: 'hh:mm A'
+        format: 'hh:mm '
     });
     $('#endtime').datetimepicker({
-        format: 'hh:mm A'
+        format: 'hh:mm '
     });
 </script>

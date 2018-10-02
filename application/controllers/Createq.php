@@ -20,12 +20,10 @@ class Createq extends CI_Controller {
     }
     public function student()
     {
-        $this->load->model('Student_model');
-        $res = $this->Student_model->get_student();
-        $data['student_res'] = $res;
+        
         
         $this->load->view('head');
-        $this->load->view('student/student_list',$data );
+        $this->load->view('student/student_list' );
         $this->load->view('foot');
     }
     public function index1()
@@ -162,9 +160,8 @@ class Createq extends CI_Controller {
                     'Step_alm' => $amounttime
                  );
                 $data_datetime = array(
-                    'Time_usedate' =>  $strattime,
-                    'Time_lastuse' => $endtime
-                );
+                    'Time_usedate' => $strattime,
+                    'Time_lastuse' => $endtime                );
                 $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime);
           //  }else{
                 //echo "===============";

@@ -74,17 +74,13 @@
                         </thead>
 
                         <tbody>
-                        <?php $i=1; foreach ($student_res as $row){?>
+                        
                           <tr class="even pointer">
                             
-                            <td class=" "><?php echo $row->Std_Id; ?></td>
-                            <td class=" "><?php echo $row->Std_Fname; ?> </td>
-                            <td class=" "><?php echo $row->Std_Lname; ?></td>
-                            <td class=" "><?php echo $row->Std_Sch; ?></td>
-                           
+                            <td class=" ">
                            
                           </tr>
-                          <?php }?>
+                        
                         </tbody>
                       </table>
                     </div>

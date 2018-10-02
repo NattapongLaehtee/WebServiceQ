@@ -35,7 +35,7 @@
                     
 
                    	<div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Tool_barcode 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัสอุปกรณ์ 
                         </label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                          <input type="text" name="Tool_barcode" value="<?php echo $device_row->Tool_barcode; ?>" required="required" class="form-control col-md-2 col-xs-12">
