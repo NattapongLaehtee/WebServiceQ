@@ -7,7 +7,15 @@
     <link href="<?php echo base_url();?>Q_css/vendors/normalize-css/normalize.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
- 
+ <script>
+ $(document).ready(function(){
+ $(".submit").click(function(){
+      alert('คุณต้องการบันทึกข้อมูลใช่หรือไม่');
+      //$("#submit").submit();
+        
+    });
+ });
+ </script>
         <!-- page content -->
 <div class="right_col" role="main">
 	<font color="black">
@@ -49,7 +57,7 @@
                       				</div>
                                     <div class="form-group">
                         				<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          					<button type="submit" class="btn btn-success">บันทึก</button>
+                          					<button type="submit" class="btn btn-success" name="submit">บันทึก</button>
                           					<button class="btn btn-primary" type="reset">ยกเลิก</button>
                           				</div>
                       				</div>

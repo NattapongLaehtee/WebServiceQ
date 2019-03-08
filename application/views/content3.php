@@ -5,7 +5,7 @@
 	<font color="black"><div class="">
 			<div class="page-title">
           		<div class="title_left">
-                	<h3>การเลื่อนคิว</h3>
+                	<h3>การแก้ไขข้อมูลคิว</h3>
               	</div>
             </div>
 			<div class="col-md-12 col-sm-12 col-xs-12">
@@ -33,7 +33,7 @@
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
                             <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
-                            <td class=" "><a href="<?php echo site_url("Createq/moveq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">เลื่อนคิว</button></a></td>
+                            <td class=" "><a href="<?php echo site_url("Createq/editq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แก้ไขข้อมูลคิว</button></a></td>
                               
                           				</tr>
                            			<?php }?>

@@ -11,7 +11,7 @@ class Devices_control extends CI_Controller {
       
     public function editdevice($id=0)   {
         if($id!=0){
-            echo "=====".$id."====";
+            
             
             $this->load->model('Device_model');
             $res = $this->Device_model->outdevice_by_id($id);

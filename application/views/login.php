@@ -33,7 +33,7 @@
         <div class="animate form login_form">
           <section class="login_content">
            
-             <h3>ระบบเว็บเซอร์วิสการจัดการงานคิว</h3>
+             <h3>ระบบเว็บเซอร์วิสการจัดการแถวคอย</h3>
           	<br>
               <div>
                 <input type="text" class="form-control" placeholder="Username" name="username" />

@@ -25,7 +25,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a class="site_title"><font align="center">ระบบการจัดการงานคิว</font></a>
+              <a class="site_title"><font align="center">ระบบการจัดการแถวคอย</font></a>
             </div>
 <?php 
 
@@ -139,10 +139,10 @@
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i>บันทึกการสร้างคิว <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i>การบันทึกการสร้างคิว <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="<?php echo site_url("Createq/content")?>">การบันทึกการสร้างคิว</a></li>
-                      
+                      <li><a href="<?php echo site_url("Createq/content")?>">การสร้างคิว</a></li>
+                      <li><a href="<?php echo site_url("Createq/content3")?>">การแก้ไขข้อมูลคิว</a></li>
                       
                     </ul>
                   </li>

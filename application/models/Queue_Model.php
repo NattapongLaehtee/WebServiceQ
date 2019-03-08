@@ -7,7 +7,8 @@ class Queue_Model extends CI_Model {
 		public function insertqueue($data_queue,$data_step,$data_datetime)
         {
         	//echo "string";
-            //var_dump($data_queue);
+           // var_dump($data_datetime);
+           // die();
             //$this->db->set($data_queue);
             $this->db->insert('Queue',$data_queue );
             //$Cq_id = $this->db->insert();

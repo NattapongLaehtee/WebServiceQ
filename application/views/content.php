@@ -2,6 +2,7 @@
 
 <script>
 $(document).ready(function(){
+	
     $("#slottime1").show();
     $("#slottime2").hide();
     $("#slot1").click(function(){
@@ -13,15 +14,32 @@ $(document).ready(function(){
         $("#slottime2").show();
     });
     $(".buttonFinish").click(function(){
-      alert(6666);
+      alert('คุณต้องการบันทึกข้อมูลใช่หรือไม่');
       $("#form_1").submit();
         
     });
+    $(".buttonNext").click(function(){
+        //alert('คุณต้องการกดปุ่มถัดไปใช่หรือไม่');
+        //$("#form_1");
+    	set_step5();
+        
+        
+          
+      });
+    $(".buttonPrevious").click(function(){
+        alert('คุณต้องการกดปุ่มย้อนกลับใช่หรือไม่');
+        $("#form_1");
+          
+      });
     $("#add").click(function(){
       $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
       
     });
-    
+
+    function set_step5(){
+        $('#nameq_st_5').html($('#qname').val());
+    }
+   
     //$("#import1").hide();
     //$("#import2").hide();
     //$("#import3").hide();
@@ -80,17 +98,16 @@ $(document).ready(function(){
    
   
 
-  
+    <div class="right_col" role="main">
 <font color="black">
-  <div class="right_col" role="main">
+
     <div class="page-title">
       <div class="title_left">
         <h3><font color="black">บันทึกการสร้างคิว</font></h3>
      </div>
-			<div class="title_right">
-            </div>
+			
 		</div>
-		<div class="clearfix"></div>
+		
 			<div class="row">
 				<div class="col-md-12 col-sm-12 col-xs-12">
                 	<div class="x_panel">
@@ -155,7 +172,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" name="qname" id="qnameID" class="form-control col-md-7 col-xs-12" >
+                        <input type="text" name="qname" id="qname" class="form-control col-md-7 col-xs-12" >
                       </div>
                     </div>
                     <div class="form-group">
@@ -281,13 +298,13 @@ $(document).ready(function(){
                      <div class="form-group slot_01" >
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="strattime" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
+                        <input type="text" name="starttime1" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
                       </div>
                       <div>
                         <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
                       </div>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" name="endtime1" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
@@ -338,15 +355,14 @@ $(document).ready(function(){
                       <!-- End Step 4 -->
                   <!-- Start Step 5 -->
                   <div id="step-5">
-                  <label><font color="black"><h4>ระบบกองทุนกู้ยืมเพื่อการศึกษา(รายใหม่)</h4></font></label><br>
-                   		<label><font color="black">วันที่บันทึกสถานะจองคิว &nbsp;&nbsp;&nbsp; 03/10/2018&nbsp;ถึง&nbsp;05/10/2018</font></label></br>
-                   		 <label><font color="black">วันที่จองคิว&nbsp;&nbsp;&nbsp;15/10/2018&nbsp;ถึง&nbsp;16/10/2018</font></label><br>
-                   		 <label><font color="black"><h5>วันที่ 15/10/2018&nbsp;&nbsp;&nbsp;จำนวนช่องเวลา 2 ช่วง ตือ</h5></font></label><br>
-                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 1&nbsp;เวลาที่เริ่ม&nbsp;08:00&nbsp;ถึง&nbsp;12:00</font></label><br>
-                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 2&nbsp;เวลาที่เริ่ม&nbsp;13:00&nbsp;ถึง&nbsp;17:00</font></label><br>
-                   		 <label><font color="black"><h5>วันที่ 16/10/2018&nbsp;&nbsp;&nbsp;จำนวนช่องเวลา 2 ช่วง ตือ</h5></font></label><br>
-                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 1&nbsp;เวลาที่เริ่ม&nbsp;09:00&nbsp;ถึง&nbsp;11:00</font></label><br>
-                   		 <label><font color="black">&nbsp;&nbsp;&nbsp;&nbsp;ช่วงที่ 2&nbsp;เวลาที่เริ่ม&nbsp;14:00&nbsp;ถึง&nbsp;16:00</font></label>
+                  	<div class="form-group">
+                  		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> ชื่อคิว  </label>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                      		<div id="nameq_st_5"></div> 
+                      </div>
+                  	</div>
+                  
+
                   </div>
                   <!-- End Step 5 -->
                 </form>
@@ -359,10 +375,10 @@ $(document).ready(function(){
           </div>
         </div>
       </div>
-    </div>
+    
   
 </font>
-
+</div>
 
        
         <!-- /page content -->
@@ -408,9 +424,9 @@ $(document).ready(function(){
       format: 'DD/MM/YYYY'
     });
     $('#starttime').datetimepicker({
-        format: 'hh:mm '
+        format: 'HH:mm'
     });
     $('#endtime').datetimepicker({
-        format: 'hh:mm '
+        format: 'HH:mm'
     });
 </script>

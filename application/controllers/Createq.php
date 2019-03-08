@@ -18,6 +18,17 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
+    public function content3()
+    {
+        $this->load->model('Queue_model');
+        $res = $this->Queue_model->outqueue();
+        
+        $dataq['queue_res'] = $res;
+        $this->load->view('head');
+        $this->load->view('content3', $dataq);
+        $this->load->view('foot');
+        
+    }
     public function student()
     {
         
@@ -66,10 +77,10 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    public function editq()
+    public function moveq()
     {
         $this->load->view('head');
-        $this->load->view('editq');
+        $this->load->view('moveq');
         $this->load->view('foot');
         
     }
@@ -133,10 +144,12 @@ class Createq extends CI_Controller {
             $endreserv = $this->input->post('endreserv');
             $startuse = $this->input->post('startuse');
             $enduse = $this->input->post('enduse');
-            $strattime = $this->input->post('strattime');
-            $endtime = $this->input->post('endtime');
+            $strattime = $_POST['starttime'];
+            $endtime = $_POST['endtime'];
             $amounttime = $this->input->post('amounttime');
             $stepname = $this->input->post('stepname');
+            echo ( $strattime . " คนละอันกัน" .$endtime);
+            
             // If you have post data...
       //echo "1==".$qname;
    //   echo "2==".$startreserv;
@@ -144,7 +157,8 @@ class Createq extends CI_Controller {
       //echo "4==".$startuse;
      // echo "5==".$enduse;      
     //  if ($qname!="" && $startreserv!="" && $endreserv!="" && $startuse!="" &&  $enduse!="" && $stepname!="" &&  $amounttime!="" && $strattime!="" &&   $endtime!="" ) {
-                $this->load->model("Queue_Model");
+               
+            $this->load->model("Queue_Model");
                 $this->load->model("Util_Model");
                 $data_queue = array(
                     'Cq_name' => $qname,
@@ -160,8 +174,11 @@ class Createq extends CI_Controller {
                     'Step_alm' => $amounttime
                  );
                 $data_datetime = array(
-                    'Time_usedate' => $strattime,
-                    'Time_lastuse' => $endtime                );
+                    'Time_usedate' =>$this->Util_Model->convertTimeToDB($strattime),
+                    'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime)          
+                    
+                );
+                
                 $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime);
           //  }else{
                 //echo "===============";
