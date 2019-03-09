@@ -3,7 +3,7 @@
 
     <div class="page-title">
       <div class="title_left">
-        <h3><font color="black">บันทึกการสร้างคิว</font></h3>
+        <h3><font color="black">การแก้ไขข้อมูลคิว</font></h3>
      </div>
 			
 		</div>
@@ -62,7 +62,7 @@
                   </li>
                 </ul>
                <form class="form-horizontal form-label-left" id="form_1" 
-               action="<?php echo(site_url("Createq/insert_queue")); ?>" method="post">
+               action="<?php echo(site_url("Createq/update_queue")); ?>" method="post">
                   
                   <!-- Start Step 1 -->
 

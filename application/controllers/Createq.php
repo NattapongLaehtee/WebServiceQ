@@ -189,7 +189,44 @@ class Createq extends CI_Controller {
        // $data_box = array(
             //'Box_Name' => $
       //  ); 
-    }  
+    }
+    public function editq($id=0)   {
+        if($id!=0){
+            
+            
+        //    $this->load->model('Device_model');
+          //  $res = $this->Device_model->outdevice_by_id($id);
+            //var_dump($res);die();
+           // $data['device_row'] = $res;
+            $this->load->view('head');
+            $this->load->view('editq',$data);
+            $this->load->view('foot');
+        }else{
+            //error
+        }
+        
+    }
+    public function update_queue(){
+      //  $Tool_id = $this->input->post('tool_id');
+       // $Tool_name = $this->input->post('Tool_name');
+        //$Tool_detail = $this->input->post('Tool_detail_');
+     //   $Tool_barcode = $this->input->post('Tool_barcode');
+        
+        if ($Tool_id!="" && $Tool_name!="" &&  $Tool_detail!="" && $Tool_barcode !="" ) {
+            
+            $this->load->model("Device_model");
+            $data_updevice = array(
+                'Tool_name' => $Tool_name,
+                'Tool_detail' =>  $Tool_detail,
+                'Tool_barcode' =>  $Tool_barcode
+            );
+            $this->Device_model->updatedevice($data_updevice,$Tool_id);
+            redirect("Devices_control/out_device");
+        }else{
+           // echo "======E Lee 222=========";
+        }
+        
+    }
   
     
 }
