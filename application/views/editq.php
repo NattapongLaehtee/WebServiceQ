@@ -1,3 +1,99 @@
+<!-- bootstrap-daterangepicker -->
+    <link href="<?php echo base_url();?>Q_css/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- bootstrap-datetimepicker -->
+    <link href="<?php echo base_url();?>Q_css/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="<?php echo base_url();?>Q_css/vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+ <!-- Bootstrap Colorpicker -->
+    <link href="<?php echo base_url();?>Q_css/vendors/mjolnic-bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+  <link href="<?php echo base_url();?>Q_css/vendors/cropper/dist/cropper.min.css" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+    $("#slottime1").show();
+    $("#slottime2").hide();
+    $("#slot1").click(function(){
+        $("#slottime1").show();
+        $("#slottime2").hide();
+    });
+    $("#slot2").click(function(){
+        $("#slottime1").hide();
+        $("#slottime2").show();
+    });
+    $(".buttonFinish").click(function(){
+      alert('คุณต้องการบันทึกข้อมูลใช่หรือไม่');
+      $("#form_1").submit();
+        
+    });
+    $(".buttonNext").click(function(){
+        //alert('คุณต้องการกดปุ่มถัดไปใช่หรือไม่');
+        //$("#form_1");
+    	set_step5();
+        
+        
+          
+      });
+    $(".buttonPrevious").click(function(){
+        alert('คุณต้องการกดปุ่มย้อนกลับใช่หรือไม่');
+        $("#form_1");
+          
+      });
+    $("#add").click(function(){
+      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
+      
+    });
+
+    function set_step5(){
+        $('#nameq_st_5').html($('#qname').val());
+    }
+   
+    //$("#import1").hide();
+    //$("#import2").hide();
+    //$("#import3").hide();
+   // $("#import1").click(function(){
+      //  $("#importfile").show();
+       
+   // });
+   // $("#simport2").click(function(){
+       
+    //    $("#importfile").show();
+   // });
+   // $("#simport3").click(function(){
+     //   $("#importfile").hide();
+        
+   // });
+    
+    //function calculateuseq() {
+       // var du1 = $('#startuse').datepicker('getDate');
+      //  var du2 = $('.#enduse').datepicker('getDate');
+       // var oneDay = 24*60*60*1000;
+       // var diff = 0;
+       // if (du1 && du2) {
+      
+        //  diff = Math.round(Math.abs((du2.getTime() - du1.getTime())/(oneDay)));
+      //  }
+     ////   $('.calculated').val(diff);
+     //   $('.minim').val(d1)
+  //  }
+   // function calculatereservq() {
+     //   var dr1 = $('#stratreserv').datepicker('getDate');
+      //  var dr2 = $('#endreserv').datepicker('getDate');
+      //  var oneDay = 24*60*60*1000;
+      //  var diff = 0;
+       // if (dr1 && dr2) {
+      
+        //  diff = Math.round(Math.abs((dr2.getTime() - dr1.getTime())/(oneDay)));
+      //  }
+      //  $('.calculated').val(diff);
+      //  $('.minim').val(d1)
+    //} 
+});
+</script>
+
 <div class="right_col" role="main">
 <font color="black">
 
@@ -63,8 +159,9 @@
                 </ul>
                <form class="form-horizontal form-label-left" id="form_1" 
                action="<?php echo(site_url("Createq/update_queue")); ?>" method="post">
+               <input type="hidden" name="queue_id" value="<?php echo $queue_row->Cq_id;?>" >
                   
-                  <!-- Start Step 1 -->
+                  <!-- Start Step 1 --> 
 
                   <div id="step-1">
 
@@ -72,7 +169,7 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" name="qname" id="qname" class="form-control col-md-7 col-xs-12" >
+                        <input type="text" name="qname" id="qname" class="form-control col-md-7 col-xs-12" value="<?php echo $queue_row->Cq_name; ?>">
                       </div>
                     </div>
                     <div class="form-group">
@@ -80,7 +177,9 @@
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
-                          <input type='text' class="form-control" name='startreserv'/>
+                          <input type='text' class="form-control" name='startreserv'  
+                          value="<?php echo $queue_row->Cq_reserdate; ?>" /> 
+                       
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -90,7 +189,7 @@
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
-                          <input type='text' class="form-control" name='endreserv' />
+                          <input type='text' class="form-control" name='endreserv' value="<?php echo $queue_row->Cq_lastreser ; ?>" />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -103,7 +202,7 @@
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='startuse'>
-                          <input type='text' class="form-control" name='startuse' />
+                          <input type='text' class="form-control" name='startuse' value="<?php echo $queue_row->Cq_usedate; ?>"/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -113,7 +212,7 @@
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='enduse'>
-                          <input type='text' class="form-control" name ='enduse'/>
+                          <input type='text' class="form-control" name ='enduse' value="<?php echo $queue_row->Cq_lastuse ; ?>"/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -130,13 +229,13 @@
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $queue_row->Step_detail;?>">
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
                       </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
+                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"value="<?php echo $queue_row->Step_alm;?>">
                       </div>              
                     </div>
                   
@@ -279,3 +378,59 @@
   
 </font>
 </div>
+<?php 
+           function convertDBtoDate($date){
+            $arr= explode('-',$date);
+            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+            return $re_date;
+        }
+     
+      ?>          
+      <!-- bootstrap-daterangepicker -->
+    <script src="<?php echo base_url();?>Q_css/vendors/moment/min/moment.min.js"></script>
+    <script src="<?php echo base_url();?>Q_css/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap-datetimepicker -->    
+    <script src="<?php echo base_url();?>Q_css/vendors/bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+    <!-- Ion.RangeSlider -->
+    <script src="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+   
+    <!-- jquery.inputmask -->
+    <script src="<?php echo base_url();?>Q_css/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- Bootstrap Colorpicker -->
+    <script src="<?php echo base_url();?>Q_css/vendors/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+    
+   
+    
+    
+    <!-- jQuery Knob -->
+    <script src="<?php echo base_url();?>Q_css/vendors/jquery-knob/dist/jquery.knob.min.js"></script>
+    <!-- Cropper -->
+    <script src="<?php echo base_url();?>Q_css/vendors/cropper/dist/cropper.min.js"></script>
+
+   
+   
+    <!-- Initialize datetimepicker -->
+<script>
+   
+    $('#stratreserv').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
+    
+    $('#endreserv').datetimepicker({
+        format: 'DD/MM/YYYY'
+    });
+    
+    $('#startuse').datetimepicker({
+      format: 'DD/MM/YYYY'
+    });
+    $('#enduse').datetimepicker({
+      format: 'DD/MM/YYYY'
+    });
+    $('#starttime').datetimepicker({
+        format: 'HH:mm'
+    });
+    $('#endtime').datetimepicker({
+        format: 'HH:mm'
+    });
+</script>   
+    

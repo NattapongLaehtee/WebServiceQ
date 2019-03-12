@@ -142,7 +142,7 @@
                   <li><a><i class="fa fa-home"></i>การบันทึกการสร้างคิว <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/content")?>">การสร้างคิว</a></li>
-                      <li><a href="<?php echo site_url("Createq/content3")?>">การแก้ไขข้อมูลคิว</a></li>
+                      <li><a href="<?php echo site_url("Createq/content3")?>">แสดงผลข้อมูลคิว</a></li>
                       
                     </ul>
                   </li>

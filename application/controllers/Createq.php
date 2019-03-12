@@ -148,7 +148,7 @@ class Createq extends CI_Controller {
             $endtime = $_POST['endtime'];
             $amounttime = $this->input->post('amounttime');
             $stepname = $this->input->post('stepname');
-            echo ( $strattime . " คนละอันกัน" .$endtime);
+           // echo ( $strattime . " คนละอันกัน" .$endtime);
             
             // If you have post data...
       //echo "1==".$qname;
@@ -190,20 +190,17 @@ class Createq extends CI_Controller {
             //'Box_Name' => $
       //  ); 
     }
-    public function editq($id=0)   {
-        if($id!=0){
+    public function editq($id)   {
+      
             
-            
-        //    $this->load->model('Device_model');
-          //  $res = $this->Device_model->outdevice_by_id($id);
-            //var_dump($res);die();
-           // $data['device_row'] = $res;
+        $this->load->model('Queue_Model');
+        $res = $this->Queue_Model->outqueue_by_id($id);
+        
+            $dataeditq['queue_row'] = $res;
             $this->load->view('head');
-            $this->load->view('editq',$data);
+            $this->load->view('editq',$dataeditq);
             $this->load->view('foot');
-        }else{
-            //error
-        }
+       
         
     }
     public function update_queue(){
@@ -227,6 +224,12 @@ class Createq extends CI_Controller {
         }
         
     }
-  
+    /*public function delete_queue($id=0){
+        if($id!=0){
+            $this->load->model('Queue_model');
+            $this->Queue_model->deletequeue($id);
+            redirect('Createq/content3');
+        }
+    }*/
     
 }

@@ -9,8 +9,8 @@ class Devices_control extends CI_Controller {
     }
     
       
-    public function editdevice($id=0)   {
-        if($id!=0){
+    public function editdevice($id)   {
+        
             
             
             $this->load->model('Device_model');
@@ -20,10 +20,7 @@ class Devices_control extends CI_Controller {
             $this->load->view('head');
             $this->load->view('editdevice',$data);
             $this->load->view('foot');
-        }else{
-            //error
-        }
-        
+      
     }
     public function device()    {
         
