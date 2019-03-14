@@ -192,14 +192,23 @@ class Createq extends CI_Controller {
     }
     public function editq($id)   {
       
-            
+           
         $this->load->model('Queue_Model');
-        $res = $this->Queue_Model->outqueue_by_id($id);
+        $this->load->model('Util_model');
+        $res = $this->Queue_Model->outqueue_by_id($id); 
         
-            $dataeditq['queue_row'] = $res;
+         $data = array (
+             'queue_row' =>  $res,
+             'abc'=>"F"
+         );
+        
+        
+            
             $this->load->view('head');
-            $this->load->view('editq',$dataeditq);
+            $this->load->view('editq', $data);
             $this->load->view('foot');
+            
+            
        
         
     }

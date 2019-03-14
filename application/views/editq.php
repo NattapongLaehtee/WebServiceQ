@@ -162,7 +162,6 @@ $(document).ready(function(){
                <input type="hidden" name="queue_id" value="<?php echo $queue_row->Cq_id;?>" >
                   
                   <!-- Start Step 1 --> 
-
                   <div id="step-1">
 
                     <div class="form-group">
@@ -177,10 +176,9 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
-                          <input type='text' class="form-control" name='startreserv'  
-                          value="<?php echo $queue_row->Cq_reserdate; ?>" /> 
                        
-                          <span class="input-group-addon">
+                          <input type='text' class="form-control" name='startreserv'value="<?php echo $this->Util_model->convertDateToView("$queue_row->Cq_reserdate"); ?>" /> 
+                                     <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
                         </div>
@@ -189,7 +187,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
-                          <input type='text' class="form-control" name='endreserv' value="<?php echo $queue_row->Cq_lastreser ; ?>" />
+                          <input type='text' class="form-control" name='endreserv' value="<?php echo $this->Util_model->convertDateToView("$queue_row->Cq_lastreser") ; ?>" />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -202,7 +200,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='startuse'>
-                          <input type='text' class="form-control" name='startuse' value="<?php echo $queue_row->Cq_usedate; ?>"/>
+                          <input type='text' class="form-control" name='startuse' value="<?php echo $this->Util_model->convertDateToView("$queue_row->Cq_usedate"); ?>" />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -212,7 +210,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='enduse'>
-                          <input type='text' class="form-control" name ='enduse' value="<?php echo $queue_row->Cq_lastuse ; ?>"/>
+                          <input type='text' class="form-control" name ='enduse' value="<?php echo $this->Util_model->convertDateToView(" $queue_row->Cq_lastuse") ; ?>"/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -378,14 +376,13 @@ $(document).ready(function(){
   
 </font>
 </div>
-<?php 
-           function convertDBtoDate($date){
-            $arr= explode('-',$date);
-            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+<?php
+             function convertDateToView($str_date){
+            $arr= explode('-',$str_date);
+            $re_date = $arr[0].'/'.$arr[1].'/'.$arr[2];
             return $re_date;
         }
-     
-      ?>          
+?>         
       <!-- bootstrap-daterangepicker -->
     <script src="<?php echo base_url();?>Q_css/vendors/moment/min/moment.min.js"></script>
     <script src="<?php echo base_url();?>Q_css/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
