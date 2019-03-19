@@ -259,7 +259,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                        <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
-                            <input type='text' class="form-control" name='starttime' />
+                            <input type='text' class="form-control" name='starttime'  value="<?php echo $this->Util_model->convertTimeToView("$queue_row->Time_usedate"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -270,7 +270,7 @@ $(document).ready(function(){
                       </div>
                       <div class='col-sm-2'>
                       <div class='input-group date' id='endtime'>
-                            <input type='text' class="form-control" name='endtime'/>
+                            <input type='text' class="form-control" name='endtime' value="<?php echo $this->Util_model->convertTimeToView("$queue_row->Time_lastuse"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -280,9 +280,9 @@ $(document).ready(function(){
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $queue_row->amount_std; ?>">
                       </div>
-                      <button class="fa fa-plus-square fa-1x" id="add"></button>
+                      <button class="fa fa-plus fa-1x" id="add"></button>
                     </div>
                     </div>
 
@@ -309,7 +309,7 @@ $(document).ready(function(){
                       <div class="col-md1 col-sm-1 col-xs-1">
                         <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
-                      <button class="fa fa-plus-square fa-1x" id="add"></button>
+                      <button class="fa fa-plus fa-1x" id="add"></button>
                     </div>
 
                    

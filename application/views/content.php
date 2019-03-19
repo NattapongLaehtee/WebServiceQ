@@ -32,12 +32,23 @@ $(document).ready(function(){
           
       });
     $("#add").click(function(){
-      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
+      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="starttime[]" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime[]" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
       
     });
+    $("#add1").click(function(){
+        $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-2 col-xs-3"></label><label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div></div></div>');
+      });
+    
 
     function set_step5(){
         $('#nameq_st_5').html($('#qname').val());
+        //$('#datereserv_st_5').html($('#stratreserv').val());
+       // $("#datereserv_st_5").innerHTML  ($('#stratreserv').val()); 
+                
+        	
+   
+
+             
     }
    
     //$("#import1").hide();
@@ -172,7 +183,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" name="qname" id="qname" class="form-control col-md-7 col-xs-12" >
+                        <input type="text" maxlength="50"name="qname" id="qname" class="form-control col-md-7 col-xs-12"  placeholder="กรุณากรอกชื่อคิว" >
                       </div>
                     </div>
                     <div class="form-group">
@@ -180,7 +191,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
-                          <input type='text' class="form-control" name='startreserv'/>
+                          <input type='text' placeholder="กรุณาเลือกวันที่" class="form-control" name='startreserv'/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -190,7 +201,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
-                          <input type='text' class="form-control" name='endreserv' />
+                          <input type='text'placeholder="กรุณาเลือกวันที่"  class="form-control" name='endreserv' />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -228,18 +239,18 @@ $(document).ready(function(){
                   <div id="step-2">
 				<div class="form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12">
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
-                      </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
+                      </div> <button id="add1"><div  class="fa fa-plus fa-1px" ></div></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
+                          <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
                       </div>              
                     </div>
-                  
+                    <div id="step"></div>
 
                  
                   </div>
@@ -262,7 +273,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                        <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
-                            <input type='text' class="form-control" name='starttime' />
+                            <input type='text' class="form-control" placeholder="00:00" name='starttime[]' />
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -273,7 +284,7 @@ $(document).ready(function(){
                       </div>
                       <div class='col-sm-2'>
                       <div class='input-group date' id='endtime'>
-                            <input type='text' class="form-control" name='endtime'/>
+                            <input type='text' class="form-control"  placeholder="00:00" name='endtime[]'/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -283,9 +294,9 @@ $(document).ready(function(){
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" maxlength="3" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
-                      <button class="fa fa-plus-square fa-1x" id="add"></button>
+                      <button id="add"><div  class="fa fa-plus fa-1px" ></div></button>
                     </div>
                     </div>
 
@@ -298,19 +309,19 @@ $(document).ready(function(){
                      <div class="form-group slot_01" >
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="starttime1" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
+                        <input type="text" name="starttime1[]" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
                       </div>
                       <div>
                         <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
                       </div>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="endtime1" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" name="endtime1[]" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" name="amountstdf2[]" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                       <button class="fa fa-plus-square fa-1x" id="add"></button>
                     </div>
@@ -358,10 +369,28 @@ $(document).ready(function(){
                   	<div class="form-group">
                   		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> ชื่อคิว  </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                      		<div id="nameq_st_5"></div> 
+                      		<div id="nameq_st_5"></div>
+                      		</div> 
+                      		</div>
+                      		<div class="form-group">
+                  		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">   </label>
+                      <div class="col-md-3 col-sm-3 col-xs-12">
+                      		<div id="nameq_st_5"></div>
+                      		</div> 
+                      		</div>
+                      		 <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่บันทึกสถานะจองคิว  
+                      </label>
+                      <div class='3'>
+                      <div id="datereserv_st_5"></div>
+                       
                       </div>
-                  	</div>
-                  
+                      <label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
+                      </label>
+                      <div class='col-sm-2'>
+                       
+                      </div>
+                    </div>
 
                   </div>
                   <!-- End Step 5 -->
