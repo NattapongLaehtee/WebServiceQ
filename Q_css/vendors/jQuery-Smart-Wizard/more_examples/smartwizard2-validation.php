@@ -161,7 +161,7 @@
 
 ?>
  
-<form action="#" method="POST">
+<form action="#" method="post">
   <input type='hidden' name="issubmit" value="1">
 <!-- Tabs -->
   		<div id="wizard" class="swMain">

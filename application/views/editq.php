@@ -43,9 +43,16 @@ $(document).ready(function(){
           
       });
     $("#add").click(function(){
-      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="strattime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
-      
-    });
+        $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="starttime[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
+
+
+       	  
+
+       
+       });
+       $("#add1").click(function(){
+           $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-2 col-xs-3"></label><label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div></div></div>');
+         });
 
     function set_step5(){
         $('#nameq_st_5').html($('#qname').val());
@@ -93,6 +100,13 @@ $(document).ready(function(){
     //} 
 });
 </script>
+<?php //var_dump($dataq);
+//var_dump($datastep);
+//var_dump($datatime);
+$rowq = $dataq-> row();
+
+?>
+
 
 <div class="right_col" role="main">
 <font color="black">
@@ -159,7 +173,8 @@ $(document).ready(function(){
                 </ul>
                <form class="form-horizontal form-label-left" id="form_1" 
                action="<?php echo(site_url("Createq/update_queue")); ?>" method="post">
-               <input type="hidden" name="queue_id" value="<?php echo $queue_row->Cq_id;?>" >
+                      
+               <input type="hidden" name="queue_id" value="<?php echo $rowq->Cq_id;?>" >
                   
                   <!-- Start Step 1 --> 
                   <div id="step-1">
@@ -168,7 +183,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" name="qname" id="qname" class="form-control col-md-7 col-xs-12" value="<?php echo $queue_row->Cq_name; ?>">
+                        <input type="text" name="qname" id="qname" class="form-control col-md-7 col-xs-12" value="<?php echo $rowq->Cq_name; ?>">
                       </div>
                     </div>
                     <div class="form-group">
@@ -177,7 +192,7 @@ $(document).ready(function(){
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
                        
-                          <input type='text' class="form-control" name='startreserv'value="<?php echo $this->Util_model->convertDateToView("$queue_row->Cq_reserdate"); ?>" /> 
+                          <input type='text' class="form-control" name='startreserv'value="<?php echo $this->Util_model->convertDateToView("$rowq->Cq_reserdate"); ?>" /> 
                                      <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -187,7 +202,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
-                          <input type='text' class="form-control" name='endreserv' value="<?php echo $this->Util_model->convertDateToView("$queue_row->Cq_lastreser") ; ?>" />
+                          <input type='text' class="form-control" name='endreserv' value="<?php echo $this->Util_model->convertDateToView("$rowq->Cq_lastreser") ; ?>" />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -200,7 +215,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='startuse'>
-                          <input type='text' class="form-control" name='startuse' value="<?php echo $this->Util_model->convertDateToView("$queue_row->Cq_usedate"); ?>" />
+                          <input type='text' class="form-control" name='startuse' value="<?php echo $this->Util_model->convertDateToView("$rowq->Cq_usedate"); ?>" />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -210,7 +225,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='enduse'>
-                          <input type='text' class="form-control" name ='enduse' value="<?php echo $this->Util_model->convertDateToView(" $queue_row->Cq_lastuse") ; ?>"/>
+                          <input type='text' class="form-control" name ='enduse' value="<?php echo $this->Util_model->convertDateToView("$rowq->Cq_lastuse") ; ?>"/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -222,44 +237,49 @@ $(document).ready(function(){
                   </div>
                   <!-- End Step 1 -->
                   <!-- Start Step 2 -->
-                  <div id="step-2">
+                 <div id="step-2">
 				<div class="form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่  1 </font></label>
+         			<?php $i=1; ?>
+                     <?php foreach ($datastep as $row){?>
+                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black"><?php echo "ขั้นตอนที่ ".$i; ?>
+    
+                       
+                       </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
-                          <input type="text" id="stepname" name="stepname"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $queue_row->Step_detail;?>">
+                          <input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Step_detail; ?>">
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
-                      </div><button class="fa fa-plus-square fa-1x" id="add1"></button>
+                      </div>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" name="amountstep" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"value="<?php echo $queue_row->Step_alm;?>">
-                      </div>              
+                          <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12" value="<?php echo $row->Step_alm; ?>">
+                      </div> 
+                         <?php $i++;?> 
+                      <?php 
+                      echo ("<br/><br/>");?>
+                      <?php }?> 
+                      
+                         <label class="control-label col-md-2 col-sm-2 col-xs-3"></label>
                     </div>
-                  
+                   
+                    
 
                  
                   </div>
                   <!-- End Step 2 -->
                   <!-- Start Step 3 -->
                   <div id="step-3">
- <div class="form-group">
-                    <div class="radio ">
-                      <label><input type="radio" name = "timeslot" id="slot1" checked><font color="black" >กำหนดช่วงเวลาเดียวกัน</font>
-                      </label>
-                    </div>
-                    <div class="radio ">
-                      <label><input type="radio" name = "timeslot" id="slot2"><font color="black">กำหนดช่วงเวลาแต่ละวัน</font>
-                      </label>
-                    </div>
-                  </div>
+ 					<div class="form-group">
+                  
                   <div id="slottime1"> 
                     
                     <div class="form-group slot_01" >
+                    <?php foreach ($datatime as $row){?>
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                        <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
-                            <input type='text' class="form-control" name='starttime'  value="<?php echo $this->Util_model->convertTimeToView("$queue_row->Time_usedate"); ?>"/>
+                            <input type='text' class="form-control" name='starttime'  value="<?php echo $this->Util_model->convertTimeToView("$row->Time_usedate"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -270,7 +290,7 @@ $(document).ready(function(){
                       </div>
                       <div class='col-sm-2'>
                       <div class='input-group date' id='endtime'>
-                            <input type='text' class="form-control" name='endtime' value="<?php echo $this->Util_model->convertTimeToView("$queue_row->Time_lastuse"); ?>"/>
+                            <input type='text' class="form-control" name='endtime' value="<?php echo $this->Util_model->convertTimeToView("$row->Time_lastuse"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -280,50 +300,22 @@ $(document).ready(function(){
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $queue_row->amount_std; ?>">
+                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->amount_std; ?>">
                       </div>
+                       <?php 
+                      echo ("<br/><br/><br/>");?>
+                      <?php }?>
                       <button class="fa fa-plus fa-1x" id="add"></button>
+                      
                     </div>
                     </div>
-
-                    <div id="slottime1_001"></div>
-                    
-                    
-                  <div id="slottime2"> 
-                   <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">วันที่ 20/09/2561</font></label>
-                  
-                     <div class="form-group slot_01" >
-                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="starttime1" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
-                      </div>
-                      <div>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
-                      </div>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="endtime1" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
-                      <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
-                      </div>
-                      <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
-                      <button class="fa fa-plus fa-1x" id="add"></button>
                     </div>
-
-                   
-                  </div>
-                  <div id="slottime1_001"></div>
-					
-                    
-                            
 
                   </div>
                       <!-- End Step 3 -->
                       
                   <!-- Start Step 4 -->
-                  <div id="step-4">
+               <div id="step-4">
 
 					<div class="form-group">
                     <div class="radio ">

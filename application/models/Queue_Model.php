@@ -9,30 +9,61 @@ class Queue_Model extends CI_Model {
         	//echo "string";
            // var_dump($data_datetime);
            // die();
-            //$this->db->set($data_queue);
-           // $this->db->insert('queue',$data_queue);
-            //$Cq_id = $this->db->insert();
+          // $this->db->set($data_queue);
+          $this->db->insert('queue',$data_queue);
+           $Cq_id = $this->db->insert_id();
             //var_dump($data_step);
-            $rec = 0;
-            foreach ($data_step as $Step_detail['Step_detail']){
-               // var_dump($Step_detail);
-                echo $Step_detail['Step_detail'][$rec];
-                $rec++;
-            }
-            /*
-            $this->db->insert('step',$data_step);
+           // echo ("<br/>xxxxxxx<br/>");
+             foreach ($data_step as $row){
+               
+               //  var_dump($step);
+                 $stepinsert = array();
+                 
+                 $stepinsert['Cq_id']=$Cq_id;
+                 $stepinsert['step_detail']= $row['step_detail'];
+                 $stepinsert['step_alm']= $row['step_alm'];
+                 // $this->db->set($data_step);
+                $this->db->insert('step',$stepinsert);
+                // var_dump($stepinsert);
+                 }
+              foreach ( $data_datetime as $row){
+                 // var_dump($row);
+                  
+                  $datetimeins = array();
+                  $datetimeins['Cq_id']=$Cq_id;
+                  $datetimeins['Time_usedate']= $row['Time_usedate'];
+                  $datetimeins['Time_lastuse']= $row['Time_lastuse'];
+                  $datetimeins['amount_std']=$row['amount_std'];
+                  $this->db->insert('qdatetime', $datetimeins);
+                  
+                }
+                  //   $data_datetime['Cq_id']= $this->db->insert_id();
+                     //$this->db->set($data_datetime);
+                    // $this->db->insert('qdatetime', $data_datetime);
+           
             
-            $data_datetime['Cq_id']= $this->db->insert_id();
-           // $this->db->set( $data_datetime);
-            $this->db->insert('qdatetime', $data_datetime);
-            
-            redirect('Createq/content3');*/
+        
+            redirect('Createq/content3');
         }
         
         public function outqueue(){
             $queryqueue = $this->db->query('select * from queue');
             return $queryqueue->result();
             
+        }
+        
+        public function selectqueue($id){
+            $queryselectqueue =  $this->db->query('select * from queue where Cq_id ='. $id);
+            return $queryselectqueue;
+        }
+        public function selectdatetime($id){
+            
+            $queryselectqdatetime = $this->db->query('select * from  qdatetime where Cq_id ='. $id);
+            return $queryselectqdatetime->result();
+        }
+        public function selectstep($id){
+            $queryselectstep =    $this->db->query(' select * from step  where Cq_id = '.$id);
+            return $queryselectstep->result();
         }
         public function outqueue_by_id($id){
             $this->db->select('queue.Cq_id, queue.Cq_name, queue.Cq_usedate, queue.Cq_lastuse , queue.Cq_reserdate , 
@@ -48,8 +79,6 @@ class Queue_Model extends CI_Model {
         }
         public function updateq($data_queue,$data_step,$data_datetime){
            
-            
-            
             $this->db->update('queue');
             $this->db->set('queue.Cq_id', 'queue.Cq_name'->$qname, 'queue.Cq_usedate' -> $startuse, 
                             'queue.Cq_lastuse'-> $enduse , 'queue.Cq_reserdate' -> $startreserv ,

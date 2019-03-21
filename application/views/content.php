@@ -32,8 +32,12 @@ $(document).ready(function(){
           
       });
     $("#add").click(function(){
-      $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="starttime[]" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime[]" required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
-      
+     $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="starttime[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
+
+
+    	  
+
+    
     });
     $("#add1").click(function(){
         $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-2 col-xs-3"></label><label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div></div></div>');
@@ -245,7 +249,7 @@ $(document).ready(function(){
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
-                      </div> <button id="add1"><div  class="fa fa-plus fa-1px" ></div></button>
+                      </div><button id="add1"><div  class="fa fa-plus fa-1px" ></div></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
                           <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
                       </div>              

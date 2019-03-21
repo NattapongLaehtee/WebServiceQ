@@ -29,12 +29,7 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
         
     }
-    public function student()
-    {
-        $this->load->view('head');
-        $this->load->view('student/student_list' );
-        $this->load->view('foot');
-    }
+  
     public function index1()
     {
         $this->load->model('Graph_model');
@@ -86,16 +81,7 @@ class Createq extends CI_Controller {
         $this->load->view('outstaff');
         $this->load->view('foot');
     }
-    public function outstudent()
-    {
-        $this->load->model('Report_model');
-        $res = $this->Report_model->outqueue();
-        
-        $dataq['queue_res'] = $res;
-        $this->load->view('head');
-        $this->load->view('outstudent', $dataq);
-        $this->load->view('foot');
-    }
+
     public function setdevice1()
     {
         $this->load->view('head');
@@ -127,10 +113,10 @@ class Createq extends CI_Controller {
           // Start Table Qdatetime
             $strattime = $_POST['starttime'];
             $endtime = $_POST['endtime'];
-            $amount_std = $this->input->post('amount_std');
+            $amountstd = $this->input->post('amountstdf1');
             // End Table Qdatetime
           // Start Table Step
-            $amounttime = $this->input->post('amounttime');
+            $amounttime = $this->input->post('amountstep');
             $stepname = $this->input->post('stepname');
             var_dump($amounttime,$stepname );
           // End Table Step
@@ -156,18 +142,38 @@ class Createq extends CI_Controller {
                   'Cq_lastuse' => $this->Util_Model->convertDateToDB($enduse),
                   'Officerid '=>$this -> session -> userdata('userofficeid')
             );
+          
+            $data_step = array();
             
-            $data_step = array(
-                  'Step_detail' => $stepname,
-                  'Step_alm' => $amounttime
-            );
+            $rec = 0;
+            echo ("<br/><br/>");
+            //var_dump($amounttime);
+            foreach ($stepname as $stp_name){
+                $data_step[$rec] = array(
+                    'step_detail' => $stp_name ,
+                    'step_alm'  => $amounttime[$rec]
+                );
+                $rec++;
+            }
             
-            $data_datetime = array(
+            var_dump($data_step);
+         
+           
+            $data_datetime = array();
+            $datadate = 0;
+            echo ("<br/><br/>");
+            //var_dump($amounttime);
+            foreach ($strattime as $strattime){
+                $data_datetime[$datadate] = array(
                   'Time_usedate' =>$this->Util_Model->convertTimeToDB($strattime),
-                  'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime),          
-                  'amount_std' => $amount_std
+                    'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[$datadate]),          
+                  'amount_std' => $amountstd[$datadate]
             );
+                $datadate++;
+            }
                 
+                var_dump($data_datetime);
+            
                 $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime);
           //  }else{
                 //echo "===============";
@@ -180,14 +186,22 @@ class Createq extends CI_Controller {
       //  ); 
     }
     public function editq($id)   {
-      
+        $data =array();
+        
            
         $this->load->model('Queue_Model');
         $this->load->model('Util_model');
-        $res = $this->Queue_Model->outqueue_by_id($id); 
-        $data['queue_row'] = $res;
-         
+        $res = $this->Queue_Model->selectqueue($id); 
+        $data['dataq'] = $res;
+        $res = $this->Queue_Model->selectstep($id); 
+        $data['datastep'] = $res;
+        $res = $this->Queue_Model->selectdatetime($id); 
+        $data['datatime'] = $res;
+  
         
+       
+         
+        //var_dump($res);
             
             $this->load->view('head');
             $this->load->view('editq', $data);
