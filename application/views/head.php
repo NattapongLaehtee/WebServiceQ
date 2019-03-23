@@ -149,6 +149,7 @@
                   <li><a><i class="fa fa-edit"></i> การจัดการงานคิว <span class="fa fa-chevron-down "></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/content2")?>">การเลื่อนคิว</a></li>
+                      <li><a href="<?php echo site_url("Createq/openq")?>">สถานะการใช้งานคิว</a></li>
                       
                     </ul>
                   </li>

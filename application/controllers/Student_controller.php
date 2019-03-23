@@ -21,5 +21,6 @@ class Student_controller extends CI_Controller {
         $this->load->view('outstudent', $dataq);
         $this->load->view('foot');
     }
+ 
 
 }

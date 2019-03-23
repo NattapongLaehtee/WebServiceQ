@@ -12,7 +12,7 @@ class Queue_Model extends CI_Model {
           // $this->db->set($data_queue);
           $this->db->insert('queue',$data_queue);
            $Cq_id = $this->db->insert_id();
-            //var_dump($data_step);
+            //($data_step);
            // echo ("<br/>xxxxxxx<br/>");
              foreach ($data_step as $row){
                
@@ -47,7 +47,8 @@ class Queue_Model extends CI_Model {
         }
         
         public function outqueue(){
-            $queryqueue = $this->db->query('select * from queue');
+            $queryqueue = $this->db->query('select * from queue q JOIN officer of on q.officerid = of.officerid 
+        where q.officerid = '.$this -> session -> userdata ( 'userofficeid' ));
             return $queryqueue->result();
             
         }
@@ -79,42 +80,50 @@ class Queue_Model extends CI_Model {
         }
         public function updateq($data_queue,$data_step,$data_datetime){
            
-            $this->db->update('queue');
-            $this->db->set('queue.Cq_id', 'queue.Cq_name'->$qname, 'queue.Cq_usedate' -> $startuse, 
-                            'queue.Cq_lastuse'-> $enduse , 'queue.Cq_reserdate' -> $startreserv ,
-                            'queue.Cq_lastreser' -> $endreserv , 'queue.Officerid'); 
-            $this->db->update('queue');
-            $this->db->set('qdatetime.Time_usedate' -> $strattime, 'qdatetime.Time_lastuse' -> $endtime,
-                            'qdatetime.amount_std' -> $amount_std );
-            $this->db->update('queue');
-            $this->db->set('step.Step_detail' -> $stepname, 'step.Step_alm'-> $amounttime);
+            // $this->db->set($data_queue);
+            $this->db->replace('queue',$data_queue);
+            $Cq_id = $this->db->insert_id();
+           var_dump($data_queue);
+            // echo ("<br/>xxxxxxx<br/>");
+            foreach ($data_step as $row){
+                
+                // var_dump($step);
+                $stepreplace = array();
+                
+                $stepreplace['Cq_id']= $Cq_id;
+              //  $stepreplace['step_id']= $row['step_id'];
+                $stepreplace['step_detail']= $row['step_detail'];
+                $stepreplace['step_alm']= $row['step_alm'];
+                // $this->db->set($data_step);
+                $this->db->replace('step',$stepreplace);
+                var_dump($stepreplace);
+            }
+            foreach ( $data_datetime as $row){
+                 //var_dump($row);
+                
+                $datetimerep = array();
+                $datetimerep['Cq_id']= $Cq_id;
+               // $datetimerep['Datetime_id']= $row['Datetime_id'];
+                $datetimerep['Time_usedate']= $row['Time_usedate'];
+                $datetimerep['Time_lastuse']= $row['Time_lastuse'];
+                $datetimerep['amount_std']=$row['amount_std'];
+                $this->db->replace('qdatetime',  $datetimerep);
+                
+            }
+            var_dump( $datetimerep);
+            //   $data_datetime['Cq_id']= $this->db->insert_id();
+            //$this->db->set($data_datetime);
+            // $this->db->insert('qdatetime', $data_datetime);
             
-             $this->db->join ('queue ON queue.Cq_id = qdatetime.Cq_id');
-            $this->db->join ('step ON queue.Cq_id = step.Cq_id');
-            $query = $this->db->get();
             
-            
-            
-            
-            
-            $this->db->update('queue',$data_queue);
-            //$Cq_id = $this->db->insert();
-            
-            $data_step['Cq_id']= $this->db->update_id();
-            // $this->db->set($data_step);
-            $this->db->update('step',$data_step);
-            
-            $data_datetime['Cq_id']= $this->db->update_id();
-            // $this->db->set( $data_datetime);
-            $this->db->update('qdatetime', $data_datetime);
             
             redirect('Createq/content3');
         }
-       /* public function deletequeue($id)
+        public function deletequeue($id)
         {
             $this->db->delete('queue', array('Cq_id' => $id));
             
-        }*/
+        }
         public function get_q_all()
         {
             $query = $this->db->get('queue');

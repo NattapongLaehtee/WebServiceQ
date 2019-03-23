@@ -34,7 +34,7 @@
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
                         				    <td class=" "><?php echo $row->Cq_usedate . " ถึง " . $row->Cq_lastuse; ?> </td>
                             <td class=" "><?php echo $row->Cq_reserdate .  " ถึง " . $row->Cq_lastreser; ?></td>
-                          						<td> <a href="<?php echo site_url("Report/studentshow")?>"> <button type="submit" class="btn btn-success">พิมพ์</button></a></td>
+                          						<td> <a href="<?php echo site_url("Report/queuestudentshow/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แสดงผล</button></a></td>
                           					</tr>
                           					
                           					

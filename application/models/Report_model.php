@@ -11,11 +11,18 @@ class Report_model extends CI_Model{
      
     }
     public function outqueue(){
-        $queryqueue = $this->db->query('select * from queue');
+        $queryqueue = $this->db->query('select * from queue q JOIN officer of on q.officerid = of.officerid
+        where q.officerid = '.$this -> session -> userdata ( 'userofficeid' ));
         return $queryqueue->result();
         
+        
     }
-    
+    public function outqueuestud($id){
+        $queryselectqueue =  $this->db->query('select * from queue where Cq_id ='. $id);
+        return $queryselectqueue;
+           
+    }
+
     
     
 }

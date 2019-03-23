@@ -273,13 +273,14 @@ $rowq = $dataq-> row();
  					<div class="form-group">
                   
                   <div id="slottime1"> 
-                    
+                   
                     <div class="form-group slot_01" >
+                   
                     <?php foreach ($datatime as $row){?>
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                        <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
-                            <input type='text' class="form-control" name='starttime'  value="<?php echo $this->Util_model->convertTimeToView("$row->Time_usedate"); ?>"/>
+                            <input type='text' class="form-control" name='starttime[]'  value="<?php echo $this->Util_model->convertTimeToView("$row->Time_usedate"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -290,7 +291,7 @@ $rowq = $dataq-> row();
                       </div>
                       <div class='col-sm-2'>
                       <div class='input-group date' id='endtime'>
-                            <input type='text' class="form-control" name='endtime' value="<?php echo $this->Util_model->convertTimeToView("$row->Time_lastuse"); ?>"/>
+                            <input type='text' class="form-control" name='endtime[]' value="<?php echo $this->Util_model->convertTimeToView("$row->Time_lastuse"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -300,12 +301,12 @@ $rowq = $dataq-> row();
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amount_std" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->amount_std; ?>">
+                        <input type="text" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->amount_std; ?>">
                       </div>
                        <?php 
                       echo ("<br/><br/><br/>");?>
                       <?php }?>
-                      <button class="fa fa-plus fa-1x" id="add"></button>
+                      
                       
                     </div>
                     </div>

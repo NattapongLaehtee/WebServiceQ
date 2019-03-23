@@ -19,6 +19,7 @@ class Login_model extends CI_Model {
  				$this->db->where('officerid', $row->officerid);
  				$query2 = $this->db->get('officer'); 
  				$row2 = $query2->row();
+ 				$this -> session -> set_userdata('userofficeid',$row2->Officerid);
 				$this -> session -> set_userdata('userfname',$row2->Officername);
  				$this -> session -> set_userdata('userlname',$row2->Officersurname);
  				$this -> session -> set_userdata('useremail',$row2->Officermail);
