@@ -63,4 +63,10 @@ class Report extends CI_Controller {
 	    
 	}
 	
+	public function callpdf(){
+	    $this->load->library('Pdf');
+	    
+	
+        $this->load->view('report/file');
+	}
 }

@@ -32,8 +32,8 @@
 										       <tr class="even pointer">
                             
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
-                        				    <td class=" "><?php echo $row->Cq_usedate . " ถึง " . $row->Cq_lastuse; ?> </td>
-                            <td class=" "><?php echo $row->Cq_reserdate .  " ถึง " . $row->Cq_lastreser; ?></td>
+                        				    <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
+                        				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
                           						<td> <a href="<?php echo site_url("Report/queuestudentshow/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แสดงผล</button></a></td>
                           					</tr>
                           					
@@ -57,7 +57,13 @@
 	</div>
 	<!-- /page content -->
 
-          
+<?php 
+           function convertDBtoDate($date){
+            $arr= explode('-',$date);
+            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+            return $re_date;
+        }
+     
      
                 
         

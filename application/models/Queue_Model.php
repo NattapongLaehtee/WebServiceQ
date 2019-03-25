@@ -47,8 +47,15 @@ class Queue_Model extends CI_Model {
         }
         
         public function outqueue(){
-            $queryqueue = $this->db->query('select * from queue q JOIN officer of on q.officerid = of.officerid 
-        where q.officerid = '.$this -> session -> userdata ( 'userofficeid' ));
+            $queryqueue = $this->db->query('select * from queue q  JOIN officer of on q.officerid = of.officerid 
+        where statusq = 0 and q.officerid = '.$this -> session -> userdata ( 'userofficeid' ));
+            return $queryqueue->result();
+            
+        }
+        
+        public function outstatusq(){
+            $queryqueue = $this->db->query('select * from queue q  JOIN officer of on q.officerid = of.officerid
+        where statusq = 1 and q.officerid = '.$this -> session -> userdata ( 'userofficeid' ));
             return $queryqueue->result();
             
         }
@@ -119,11 +126,26 @@ class Queue_Model extends CI_Model {
             
             redirect('Createq/content3');
         }
-        public function deletequeue($id)
+        public function cancelq($id)
         {
-            $this->db->delete('queue', array('Cq_id' => $id));
+            $querycancelq =  $this->db->query('update queue SET statusq = 1 where Cq_id ='. $id);
+           
+           
+           
+          
             
+            redirect('Createq/openq');
         }
+        public function openstatusq($id)
+        {
+            $queryopenstatusq =  $this->db->query('update queue SET statusq = 0 where Cq_id ='. $id);
+           
+            
+            
+            
+            redirect('Createq/content3');
+        }
+        
         public function get_q_all()
         {
             $query = $this->db->get('queue');

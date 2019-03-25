@@ -36,7 +36,7 @@
                            					 <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
                                                         <td class=" "><a href="<?php echo site_url("Createq/editq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แก้ไขข้อมูลคิว</button></a></td>
-                              <td class=" "><a href="<?php echo site_url("Createq/delete_queue/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">ยกเลิกคิว</button></a></td>
+                              <td class=" "><a href="<?php echo site_url("Createq/cancelq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">ยกเลิกคิว</button></a></td>
                           				</tr>
                            			<?php }?>
                        						

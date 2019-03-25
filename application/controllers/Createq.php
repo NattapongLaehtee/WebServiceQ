@@ -85,7 +85,7 @@ class Createq extends CI_Controller {
     
     {
         $this->load->model('Queue_model');
-        $res = $this->Queue_model->outqueue();
+        $res = $this->Queue_model->outstatusq ();
         
         $dataq['queue_res'] = $res;
         $this->load->view('head');
@@ -305,7 +305,19 @@ class Createq extends CI_Controller {
         
         $this->Queue_Model->updateq($data_queue,$data_step,$data_datetime);
     }
-    public function delete_queue($id){
+    public function cancelq($id){
+        $this->load->model("Queue_Model");
+     
+        
+      
+        
+        
+           $this->Queue_Model->cancelq($id);
+    }
+    public function openstatusq($id){
+        $this->load->model("Queue_Model");
+        
+        $this->Queue_Model->openstatusq($id);
         
     }
     
