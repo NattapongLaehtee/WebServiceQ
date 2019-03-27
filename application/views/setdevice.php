@@ -34,13 +34,8 @@
                             				
                             				<?php foreach ($datasetdevice as $rowq) {?>
                            					 <tr class=" "><?php echo "<td> ".$rowq->Cq_name;"</td>" ?></tr>
-                           				
-                           					 
-                           				
-                        				    <tr class=" "><?php echo "<td> ".$rowq->Step_box; "</td>" ?> </tr>
-                        			
-                           
-                            <td class=" "><a href="<?php echo site_url("Createq/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
+                           				  <tr class=" "><?php echo "<td> ".$rowq->Step_box; "</td>" ?> </tr>
+                        			 <td class=" "><a href="<?php echo site_url("Createq/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
                           				</tr>
                           			
 											 <?php } ?>
