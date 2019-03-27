@@ -28,16 +28,11 @@
               <a class="site_title"><font align="center">ระบบการจัดการแถวคอย</font></a>
             </div>
 <?php 
-
     if($this -> session -> userdata ( 'userautority' )=="2") {?>
-
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              
-              <div class="profile_info" >
+ 		<div class="clearfix"></div>
+		<!-- menu profile quick info -->
+    	<div class="profile clearfix">
+        	<div class="profile_info" >
                  <h2><?php echo ($this -> session -> userdata ( 'userfname' )." ".$this -> session -> userdata ( 'userlname' )) ; ?></h2>
                  <span>ผู้ดูแลระบบ</span>
               </div>
