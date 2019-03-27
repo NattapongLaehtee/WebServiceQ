@@ -37,8 +37,7 @@
                            				  <tr class=" "><?php echo "<td> ".$rowq->Step_box; "</td>" ?> </tr>
                         			 <td class=" "><a href="<?php echo site_url("Createq/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
                           				</tr>
-                          			
-											 <?php } ?>
+                          		<?php } ?>
 										
                        						<tr role="row" class="odd">
                           						<td class="sorting_1">กองทุนกู้ยืมเพื่อการศึกษา (รายเก่า)</td>
