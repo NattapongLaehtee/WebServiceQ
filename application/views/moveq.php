@@ -104,11 +104,11 @@
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row" align="center">
-                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 100px;">วันที่</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">ช่วงที่</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 200px;">เวลา</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 200px;">จำนวนนักศึกษา</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 100px;">เลือกคิว</th>
+                        						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 20px;">วันที่</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 10px;">ช่วงที่</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">เวลา</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">จำนวนนักศึกษา</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 60px;">เปลี่ยนแปลงคิว</th>
                         						
                         					</tr>
                       					</thead>
@@ -118,8 +118,56 @@
                           						<td>1</td>
                           						<td>08:00-09:00  น.</td>
                           						<td>150</td>
-                          						<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          						<td>
+                          						
+                          						
+                          						
+                       <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">วันที่</font></label><div class='col-sm-5'>
+                  								<div class='input-group date' id='editmoveq'>
+                            						 <input type='text' class="form-control" />
+                            						<span class="input-group-addon">
+                               							<span class="glyphicon glyphicon-calendar"></span>
+                            						</span>
+                        						</div>
+                        					</div>
+                          						
+                          					<br><br><br>
+                          						
+                       <label class="control-label col-md-3 col-sm-1 col-xs-1"><font color="black"> เวลาที่เริ่มต้น </font></label>
+                       <div class='col-sm-4'>
+                      <div class='input-group date' id='starttime'>
+                            <input type='text' class="form-control" placeholder="00:00" name='starttime[]' />
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        </div>
+                      <div>
+                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
+                      </div>
+                      <div class='col-sm-4'>
+                      <div class='input-group date' id='endtime'>
+                            <input type='text' class="form-control"  placeholder="00:00" name='endtime[]'/>
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                        </div>
+                        
+                          						
+                          				
+                          				
+                          				
+                          								
+                          						
+                          						
+                          						
+                          						</td>
+                          						
+                        					
+                        					
+                        						
+  
 </div></td>
                           						
                         					</tr>
@@ -128,8 +176,8 @@
                           						<td>2</td>
                           						<td>09:00-10:00  น.</td>
                           						<td>70</td>
-                          						<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          						
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -137,8 +185,8 @@
                           						<td>3</td>
                           						<td>10:00-11:00  น.</td>
                           						<td>150</td>
-                          						<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          						
+
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -146,8 +194,8 @@
                           						<td>4</td>
                           						<td>11:00-12:00  น.</td>
                           						<td>150</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -155,8 +203,8 @@
                           						<td>5</td>
                           						<td>13:00-14:00  น.</td>
                           						<td>100</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -164,8 +212,8 @@
                           						<td>6</td>
                           						<td>14:00-15:00 น.</td>
                           						<td>90</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -173,8 +221,8 @@
                           						<td>7</td>
                           						<td>15:00-16:00  น.</td>
                           						<td>80</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="odd">
@@ -182,33 +230,34 @@
                           						<td>1</td>
                           						<td>08:00-12:00  น.</td>
                           						<td>300</td>
-                          						<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          						
+  
  </div></td></tr>
  							<tr role="row" class="even">
                           						<td class="sorting_1"></td>
                           						<td>2</td>
                           						<td>13:00-17:00  น.</td>
                           						<td>300</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
-                        					           					<tr role="row" class="odd">
+                        					<tr role="row" class="odd">
                           						<td class="sorting_1">04/03/2561</td>
                           						<td>1</td>
                           						<td>09:00-10:00 น.</td>
                           						<td>150</td>
-                          						<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
- </div></td></tr>
- <tr role="row" class="even">
+                          					
+
+ </div></td>
+ 											</tr>
+											<tr role="row" class="even">
                           						<td class="sorting_1"></td>
                           						<td>2</td>
                           						<td>10:00-11:00  น.</td>
                           						<td>100</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -216,8 +265,8 @@
                           						<td>3</td>
                           						<td>11:00-12:00  น.</td>
                           						<td>80</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -225,8 +274,8 @@
                           						<td>4</td>
                           						<td>13:00-14:00 น.</td>
                           						<td>90</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+  
 </div></td>
                         					</tr>
                         					<tr role="row" class="even">
@@ -234,8 +283,8 @@
                           						<td>5</td>
                           						<td>14:00-15:00 น.</td>
                           						<td>150</td>
-                          					<td><div class="checkbox">
-  <label><input type="checkbox" value=""></label>
+                          					
+
 </div></td>
                         					</tr>
  
@@ -273,7 +322,7 @@
                           						 เวลา 10:00-11:00  น.</td>
                           						
                           						<td><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">วันที่</font></label><div class='col-sm-8'>
-                  								<div class='input-group date' id='myDatepicker5'>
+                  								<div class='input-group date' id='editmoveq'>
                             						 <input type='text' class="form-control" />
                             						<span class="input-group-addon">
                                							<span class="glyphicon glyphicon-calendar"></span>
@@ -283,25 +332,30 @@
                           						
                           						<br><div class="form-group">
                        						<label class="control-label col-md-4 col-sm-4 col-xs-4"><font color="black">เวลาที่เริ่มต้น :</font></label>
-                        					<div class="col-md-1 col-sm-1 col-xs-1">
-                          						<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
-                          					</div>
+                        					 <div class='input-group date' id='starttime'>
+                            <input type='text' class="form-control" placeholder="00:00" name='starttime[]' />
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
                           					
                        						</div>
                        						<div class="form-group">
                        						<label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง</font></label>
+                        					
                         					<div class="col-md-1 col-sm-1 col-xs-1">
-                          						<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
+                        					 <div class='input-group date' id='endtime'>
+                            <input type='text' class="form-control"  placeholder="00:00" name='endtime[]'/>
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                          						
                           					</div>
                           					</div>
                        						<br>
                         					
-                        					<br><div  class="form-group">
-                        						<label class="control-label col-md-5 col-sm-5 col-xs-5"><font color="black">จำนวนนักศึกษา</font></label>
-                        					
-                        					<div class="col-md1 col-sm-1 col-xs-1">
-                                				<input type="text" name="qname" required="required" class="form-control col-md-7 col-xs-12">
-                        					</div></div>
+                        					<br>
                       					</td>
                           						
                         					</tr>
@@ -378,34 +432,16 @@
     
     <!-- Initialize datetimepicker -->
 <script>
-    $('#myDatepicker').datetimepicker();
-    
-    $('#myDatepicker2').datetimepicker({
-        format: 'DD/MM/YYYY'
-    });
-    
-    $('#myDatepicker3').datetimepicker({
-        format: 'DD/MM/YYYY'
-    });
-    
-    $('#myDatepicker4').datetimepicker({
+
+    $('#editmoveq').datetimepicker({
     	format: 'DD/MM/YYYY'
     });
 
-    $('#myDatepicker5').datetimepicker({
-    	format: 'DD/MM/YYYY'
+    $('#starttime').datetimepicker({
+        format: 'HH:mm'
     });
-    
-    $('#datetimepicker7').datetimepicker({
-        useCurrent: false
-    });
-    
-    $("#datetimepicker6").on("dp.change", function(e) {
-        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-    });
-    
-    $("#datetimepicker7").on("dp.change", function(e) {
-        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
+    $('#endtime').datetimepicker({
+        format: 'HH:mm'
     });
 </script>
 

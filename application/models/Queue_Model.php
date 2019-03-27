@@ -10,6 +10,7 @@ class Queue_Model extends CI_Model {
            // var_dump($data_datetime);
            // die();
           // $this->db->set($data_queue);
+          
           $this->db->insert('queue',$data_queue);
            $Cq_id = $this->db->insert_id();
             //($data_step);
@@ -18,14 +19,16 @@ class Queue_Model extends CI_Model {
                
                //  var_dump($step);
                  $stepinsert = array();
-                 
+            
                  $stepinsert['Cq_id']=$Cq_id;
                  $stepinsert['step_detail']= $row['step_detail'];
+                 $stepinsert['step_box']= $row['step_box'];
                  $stepinsert['step_alm']= $row['step_alm'];
                  // $this->db->set($data_step);
                 $this->db->insert('step',$stepinsert);
                 // var_dump($stepinsert);
                  }
+            
               foreach ( $data_datetime as $row){
                  // var_dump($row);
                   
@@ -42,7 +45,7 @@ class Queue_Model extends CI_Model {
                     // $this->db->insert('qdatetime', $data_datetime);
            
             
-        
+  
             redirect('Createq/content3');
         }
         
@@ -90,38 +93,41 @@ class Queue_Model extends CI_Model {
             // $this->db->set($data_queue);
             $this->db->replace('queue',$data_queue);
             $Cq_id = $this->db->insert_id();
-           var_dump($data_queue);
-            // echo ("<br/>xxxxxxx<br/>");
+           //var_dump($data_queue);
+           //  echo ("<br/>--------------<br/>");
             foreach ($data_step as $row){
                 
                 // var_dump($step);
                 $stepreplace = array();
                 
                 $stepreplace['Cq_id']= $Cq_id;
-              //  $stepreplace['step_id']= $row['step_id'];
+                $stepreplace['step_id']= $row['step_id'];
                 $stepreplace['step_detail']= $row['step_detail'];
+                $stepreplace['step_box']= $row['step_box'];
                 $stepreplace['step_alm']= $row['step_alm'];
                 // $this->db->set($data_step);
                 $this->db->replace('step',$stepreplace);
-                var_dump($stepreplace);
+               // var_dump($stepreplace);
+             //   echo ("<br/>--------------<br/>");
             }
             foreach ( $data_datetime as $row){
                  //var_dump($row);
                 
                 $datetimerep = array();
                 $datetimerep['Cq_id']= $Cq_id;
-               // $datetimerep['Datetime_id']= $row['Datetime_id'];
+                $datetimerep['Datetime_id']= $row['Datetime_id'];
                 $datetimerep['Time_usedate']= $row['Time_usedate'];
                 $datetimerep['Time_lastuse']= $row['Time_lastuse'];
                 $datetimerep['amount_std']=$row['amount_std'];
                 $this->db->replace('qdatetime',  $datetimerep);
                 
             }
-            var_dump( $datetimerep);
+           // var_dump( $datetimerep);
+            //echo ("<br/>--------------<br/>");
             //   $data_datetime['Cq_id']= $this->db->insert_id();
             //$this->db->set($data_datetime);
             // $this->db->insert('qdatetime', $data_datetime);
-            
+           // die();
             
             
             redirect('Createq/content3');

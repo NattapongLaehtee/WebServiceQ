@@ -40,7 +40,7 @@ $(document).ready(function(){
     
     });
     $("#add1").click(function(){
-        $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-2 col-xs-3"></label><label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div></div></div>');
+        $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-1 col-xs-1"></label><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ  </font></label><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div> ');
       });
     
 
@@ -242,13 +242,17 @@ $(document).ready(function(){
                   <!-- Start Step 2 -->
                   <div id="step-2">
 				<div class="form-group">
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
-                      <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label>
+                      <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
+                      <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ขั้นตอนที่   </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12">
                         </div>
+                         <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ  </font></label>
+                      <div class="col-md-1 col-sm-1 col-xs-1">
+                          <input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
                       <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
+                        <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
                       </div><button id="add1"><div  class="fa fa-plus fa-1px" ></div></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
                           <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">

@@ -1,11 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<<script type="text/javascript">
 
+$(document).ready(function() {
+    $("#openq").click(function(){
+    	alert("คุณต้องการที่จะเปิดการใช้งานคิว ใช่หรือไม่");
+    }); 
+});
 
- <!-- page content -->
+ 
+</script>
+<!-- page content -->
 	<div class="right_col" role="main">
 	<font color="black"><div class="">
 			<div class="page-title">
           		<div class="title_left">
-                	<h3>การใช้งานคิว</h3>
+                	<h3>สถานะการใช้งานคิว</h3>
               	</div>
             </div>
 			<div class="col-md-12 col-sm-12 col-xs-12">
@@ -36,7 +45,7 @@
                            					 <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
                                                   
-                              <td class=" "><a href="<?php echo site_url("Createq/openstatusq/".$row->Cq_id);?>"><button type="submit" name="open" onclick="myFunction()" class="btn btn-success">เปิดการใช้งานคิว</button></a></td>
+                              <td class=" "><a href="<?php echo site_url("Createq/openstatusq/".$row->Cq_id);?>"><button type="submit" id="openq"  class="btn btn-success">เปิดการใช้งานคิว</button></a></td>
                           				</tr>
                            			<?php }?>
                        						

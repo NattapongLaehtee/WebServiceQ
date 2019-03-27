@@ -13,7 +13,7 @@ class Device_model extends CI_Model {
           
     }
     public function outdevice(){
-        $querydevice = $this->db->query('select * from Tool');
+        $querydevice = $this->db->query('select * from Tool where Tool_status = 0');
         return $querydevice->result();
         
     }
@@ -34,14 +34,46 @@ class Device_model extends CI_Model {
         //echo "string";
         
         $this->db->where('Tool_id', $id);
-        $this->db->update('Tool', $data_updevice);
+        $this->db->update('Tool', $data_updevice); 
         
     }
-    function deletedevice($id)
+    public function canceldevice($id)
     {
-        $this->db->delete('tool', array('Tool_id' => $id));
+        $querycanceldevice =  $this->db->query('update Tool SET Tool_status  = 1 where Tool_id ='. $id);
+        
+        redirect('Devices_control/out_device');
         
     }
+    
+    public  function selectstatdevice() 
+    {
+        
+        $querydevice = $this->db->query('select * from Tool where Tool_status = 1' );
+        
+        return $querydevice->result();
+    }
+    public function opendevice($id)
+    {
+        $querycanceldevice =  $this->db->query('update Tool SET Tool_status  = 0 where Tool_id ='. $id);
+        
+        redirect('Devices_control/out_device');
+        
+    }
+   /* public function outqsetdevice(){
+        $queryqsetdevice=  $this->db->query('select * from queue where Cq_id ');
+        return $queryqsetdevice->result();
+    }
+   
+    public function outsetdevice(){
+        $querysetdevice =    $this->db->query('select s.Step_id, SUM(s.Step_box), q.Cq_id from queue q  JOIN step s on q.Cq_id = s.Cq_id   where s.Cq_id  group by s.Cq_id');
+        return   $querysetdevice->result();
+    }*/
+    public function outqsetdevice(){
+       $querysetdevice =    $this->db->query(' select q.Cq_name ,s.Step_id, SUM(s.Step_box), q.Cq_id from queue q JOIN step s on q.Cq_id = s.Cq_id where s.Cq_id group by s.Cq_id '); 
+       return  $querysetdevice->result();
+    }
+    
+    
    
     
 }

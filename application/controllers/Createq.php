@@ -111,7 +111,7 @@ class Createq extends CI_Controller {
     }
     public function insert_queue()
     {
-          var_dump($_POST);
+        //  var_dump($_POST);
          // $this->load->view('content/post');
          
            // Start Table Queue            
@@ -127,6 +127,7 @@ class Createq extends CI_Controller {
             $amountstd = $this->input->post('amountstdf1');
             // End Table Qdatetime
           // Start Table Step
+            $stepbox = $this->input->post('stepbox');
             $amounttime = $this->input->post('amountstep');
             $stepname = $this->input->post('stepname');
             var_dump($amounttime,$stepname );
@@ -162,6 +163,7 @@ class Createq extends CI_Controller {
             foreach ($stepname as $stp_name){
                 $data_step[$rec] = array(
                     'step_detail' => $stp_name ,
+                    'step_box'=> $stepbox[$rec],
                     'step_alm'  => $amounttime[$rec]
                 );
                 $rec++;
@@ -233,11 +235,14 @@ class Createq extends CI_Controller {
         $enduse = $this->input->post('enduse');
         // End Table Queue
         // Start Table Qdatetime
+        $datetimeid = $this->input->post('datetimeid');
         $starttime = $_POST['starttime'];
         $endtime = $_POST['endtime'];
         $amountstd = $this->input->post('amountstdf1');
         // End Table Qdatetime
         // Start Table Step
+        $stepid = $this->input->post('stepid');
+        $stepbox = $this->input->post('stepbox');
         $amounttime = $this->input->post('amountstep');
         $stepname = $this->input->post('stepname');
         //var_dump($amounttime,$stepname );
@@ -265,24 +270,26 @@ class Createq extends CI_Controller {
             'Cq_lastuse' => $this->Util_Model->convertDateToDB($enduse),
             'Officerid '=>$this -> session -> userdata('userofficeid')
         );
-       // var_dump( $data_queue);
+      // var_dump( $data_queue);
         
         $data_step = array();
         
         $rec = 0;
-        //echo ("<br/><br/>");
+       // echo ("<br/><br/>");
         //var_dump($amounttime);
         foreach ($stepname as $stp_name){
             $data_step[$rec] = array(
-                
+         
                 'step_detail' => $stp_name ,
+                'step_id' => $stepid[$rec],
+                'step_box' => $stepbox[$rec],
                //'Cq_id'=> $queue_id[$rec],
                 'step_alm'  => $amounttime[$rec]
             );
             $rec++;
         }
         
-        //var_dump($data_step);
+      // var_dump($data_step);
         //echo ("<br/><br/>");
         
         $data_datetime = array();
@@ -291,29 +298,28 @@ class Createq extends CI_Controller {
         //var_dump($amounttime);
         foreach ($starttime as $starttime){
             $data_datetime[$datadate] = array(
+                
                 'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
                 'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[$datadate]),
+                'Datetime_id' => $datetimeid[$datadate],
                 //'Cq_id'=> $queue_id[$datadate],
                 'amount_std' => $amountstd[$datadate]
             );
             $datadate++;
         }
         
-       // var_dump($data_datetime);
-        //echo ("<br/><br/>");
-            
+        //var_dump($data_datetime);
+       // echo ("<br/><br/>");
+         
         
         $this->Queue_Model->updateq($data_queue,$data_step,$data_datetime);
     }
     public function cancelq($id){
         $this->load->model("Queue_Model");
-     
-        
-      
-        
-        
-           $this->Queue_Model->cancelq($id);
+   
+       $this->Queue_Model->cancelq($id);
     }
+    
     public function openstatusq($id){
         $this->load->model("Queue_Model");
         

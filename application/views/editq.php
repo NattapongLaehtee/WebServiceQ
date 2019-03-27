@@ -50,9 +50,7 @@ $(document).ready(function(){
 
        
        });
-       $("#add1").click(function(){
-           $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-2 col-xs-3"></label><label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div></div></div>');
-         });
+
 
     function set_step5(){
         $('#nameq_st_5').html($('#qname').val());
@@ -241,13 +239,20 @@ $rowq = $dataq-> row();
 				<div class="form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
          			<?php $i=1; ?>
+         			
                      <?php foreach ($datastep as $row){?>
+                    
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black"><?php echo "ขั้นตอนที่ ".$i; ?>
     
-                       
+                     
+                       <input type="hidden" id="stepid" name="stepid[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Step_id; ?>">
                        </font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Step_detail; ?>">
+                        </div>
+                          <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ  </font></label>
+                      <div class="col-md-1 col-sm-1 col-xs-1">
+                          <input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Step_box; ?>">
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
@@ -278,6 +283,9 @@ $rowq = $dataq-> row();
                    
                     <?php foreach ($datatime as $row){?>
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
+                      
+                       <input type="hidden" id="datetimeid" name="datetimeid[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Datetime_id; ?>">
+                      
                        <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
                             <input type='text' class="form-control" name='starttime[]'  value="<?php echo $this->Util_model->convertTimeToView("$row->Time_usedate"); ?>"/>

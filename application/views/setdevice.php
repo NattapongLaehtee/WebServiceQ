@@ -25,15 +25,26 @@
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 90px;"></th>
                         					</tr>
                       					</thead>
-										<tbody><tr role="row" class="even">
-                          						<td class="sorting_1">กองทุนกู้ยืมเพื่อการศึกษา (รายใหม่)</td>
-                          						<td>5</td>
-                          						<td></td>
-                          						<td></td>
-                          						<td></td>
-                          						<td></td>
-                          						<td><a href="<?php echo site_url("Createq/setdevice1")?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
-                        					</tr>
+                      					
+										<tbody>
+									
+                       						
+                       						 
+                          				<tr class="even pointer">
+                            				
+                            				<?php foreach ($datasetdevice as $rowq) {?>
+                           					 <tr class=" "><?php echo "<td> ".$rowq->Cq_name;"</td>" ?></tr>
+                           				
+                           					 
+                           				
+                        				    <tr class=" "><?php echo "<td> ".$rowq->Step_box; "</td>" ?> </tr>
+                        			
+                           
+                            <td class=" "><a href="<?php echo site_url("Createq/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
+                          				</tr>
+                          			
+											 <?php } ?>
+										
                        						<tr role="row" class="odd">
                           						<td class="sorting_1">กองทุนกู้ยืมเพื่อการศึกษา (รายเก่า)</td>
                           						<td>6 </td>

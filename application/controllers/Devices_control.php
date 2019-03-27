@@ -32,8 +32,16 @@ class Devices_control extends CI_Controller {
     }
     public function setdevice()
     {
+        $data =array();
+        $this->load->model('Device_model');
+        $res = $this->Device_model->outqsetdevice();
+        $data['datasetdevice'] = $res;
+   
+   //     $res = $this->Device_model->outqsetdevice();
+      //  $data['dataqset'] = $res;
+        
         $this->load->view('head');
-        $this->load->view('setdevice');
+        $this->load->view('setdevice', $data);
         $this->load->view('foot');
         
     }
@@ -97,13 +105,28 @@ class Devices_control extends CI_Controller {
         }
         
     }
+    public function statusdevice(){
+        $this->load->model('Device_model');
+        $res = $this->Device_model->selectstatdevice();
+        
+        $data ['device_row'] = $res;
+        $this->load->view('head');
+        $this->load->view('statusdevice', $data );
+        $this->load->view('foot');
+   
+    }
     
-    public function delete_device($id=0){
-        if($id!=0){
+    public function cancel_device($id){
+      
             $this->load->model('Device_model');
-            $this->Device_model->deletedevice($id);
-            redirect('Devices_control/out_device');
-        }
+            $this->Device_model->canceldevice($id);
+           
+          
+    }
+    public function opendevice($id){
+        $this->load->model('Device_model');
+        $this->Device_model->opendevice($id);
+        
     }
     
 }

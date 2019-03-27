@@ -52,7 +52,7 @@
                         				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสอุปกรณ์<span style="color:red" >*</span>
                         				</label>
                         				<div class="col-md-3 col-sm-3 col-xs-">
-                          					<input type="text" id="barcodedevice" name="barcodedevice" required="required" class="form-control col-md-7 col-xs-12">
+                          					<input type="text" id="barcodedevice" name="barcodedevice" maxlength="5"  required="required" class="form-control col-md-7 col-xs-12">
                        					</div>
                       				</div>
                                     <div class="form-group">

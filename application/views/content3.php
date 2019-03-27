@@ -1,4 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#closeq").click(function(){
+    	alert("คุณต้องการที่จะยกเลิกคิว  ใช่หรือไม่");
+    }); 
+});
 
+$(document).ready(function() {
+    $("#editq").click(function(){
+    	alert("คุณต้องการแก้ไขข้อมูลคิว ใช่หรือไม่");
+    }); 
+});
+
+</script>
+
+ 
 
  <!-- page content -->
 	<div class="right_col" role="main">
@@ -35,8 +51,8 @@
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
                            					 <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
-                                                        <td class=" "><a href="<?php echo site_url("Createq/editq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แก้ไขข้อมูลคิว</button></a></td>
-                              <td class=" "><a href="<?php echo site_url("Createq/cancelq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">ยกเลิกคิว</button></a></td>
+                                                        <td class=" "><a href="<?php echo site_url("Createq/editq/".$row->Cq_id);?>"><button type="submit" id="editq" class="btn btn-success">แก้ไขข้อมูลคิว</button></a></td>
+                              <td class=" "><a href="<?php echo site_url("Createq/cancelq/".$row->Cq_id);?>"><button type="submit" id="closeq" class="btn btn-success">ยกเลิกคิว</button></a></td>
                           				</tr>
                            			<?php }?>
                        						
