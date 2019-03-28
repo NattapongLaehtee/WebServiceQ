@@ -59,7 +59,7 @@ class Device_model extends CI_Model {
         redirect('Devices_control/out_device');
         
     }
-   /* public function outqsetdevice(){
+    /* public function outqsetdevice(){
         $queryqsetdevice=  $this->db->query('select * from queue where Cq_id ');
         return $queryqsetdevice->result();
     }

@@ -124,6 +124,7 @@ class Createq extends CI_Controller {
           // Start Table Qdatetime
             $starttime = $_POST['starttime'];
             $endtime = $_POST['endtime'];
+            $dateuse = $this->input->post('dateuse');
             $amountstd = $this->input->post('amountstdf1');
             // End Table Qdatetime
           // Start Table Step
@@ -144,6 +145,7 @@ class Createq extends CI_Controller {
      //     echo "5==".$enduse;      
     //  if ($qname!="" && $startreserv!="" && $endreserv!="" && $startuse!="" &&  $enduse!="" && $stepname!="" &&  $amounttime!="" && $strattime!="" &&   $endtime!="" ) {
               //die(); 
+
             $this->load->model("Queue_Model");
             $this->load->model("Util_Model");
             $data_queue = array(
@@ -169,25 +171,34 @@ class Createq extends CI_Controller {
                 $rec++;
             }
             
-            var_dump($data_step);
+           // var_dump($data_step);
          
            
             $data_datetime = array();
+            $datatime = 0;
             $datadate = 0;
             echo ("<br/><br/>");
             //var_dump($amounttime);
+            foreach ($dateuse as $dateuse){
+                $data_date[datadate] = array(
+                    'Date_usedate '=>  $dateuse
+              );       
             foreach ($starttime as $starttime){
-                $data_datetime[$datadate] = array(
+                $data_datetime[ $datatime] = array(
+                   
                   'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
-                    'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[$datadate]),          
-                  'amount_std' => $amountstd[$datadate]
+                    'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[ $datatime]),          
+                    'amount_std' => $amountstd[$datatime]
             );
-                $datadate++;
+                $datatime++;
             }
+           
+                $datadate++;
+              }    
+              
+              var_dump($data_datetime);
                 
-                var_dump($data_datetime);
-                
-                $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime);
+              $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime,  $data_date);
           //  }else{
                 //echo "===============";
           //  }

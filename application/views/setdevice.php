@@ -21,7 +21,7 @@
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">อุปกรณ์ที่ใช้</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">วันที่เริ่มใช้อุปกรณ์</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 200px;">วันที่สิ้นสุดการใช้อุปกรณ์</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 115px;">จำนวนอุปกรณ์</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">จำนวนอุปกรณ์</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 90px;"></th>
                         					</tr>
                       					</thead>
@@ -33,12 +33,17 @@
                           				<tr class="even pointer">
                             				
                             				<?php foreach ($datasetdevice as $rowq) {?>
-                           					 <tr class=" "><?php echo "<td> ".$rowq->Cq_name;"</td>" ?></tr>
-                           				  <tr class=" "><?php echo "<td> ".$rowq->Step_box; "</td>" ?> </tr>
+                            		<?php  echo '<tr><td>' . $rowq->Cq_name . '</td>
+       											 	  <td>' . $rowq -> Step_box  . '</td>
+        											  <td></td>
+       					 							  <td></td>
+        											  <td></td>
+        								              <td></td> '; ?> 
+               									                           				  
                         			 <td class=" "><a href="<?php echo site_url("Createq/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
-                          				</tr>
+                          				
                           		<?php } ?>
-										
+										</tr>
                        						<tr role="row" class="odd">
                           						<td class="sorting_1">กองทุนกู้ยืมเพื่อการศึกษา (รายเก่า)</td>
                           						<td>6 </td>

@@ -136,7 +136,7 @@ $rowq = $dataq-> row();
                     <a href="#step-2">
                       <span class="step_no">2</span>
                       <span class="step_descr">
-                        <b><font color="black">ระบุขั้นตอนการทำงาน</font></b><br/>
+                        <b><font color="black">ระบุขั้นตอนการบริการ</font></b><br/>
                         
                       </span>
                     </a>

@@ -4,7 +4,7 @@ class Queue_Model extends CI_Model {
 		public function __construct() {
 			parent::__construct();
 		}
-		public function insertqueue($data_queue,$data_step,$data_datetime)
+		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date)
         {
         	//echo "string";
            // var_dump($data_datetime);
@@ -28,18 +28,22 @@ class Queue_Model extends CI_Model {
                 $this->db->insert('step',$stepinsert);
                 // var_dump($stepinsert);
                  }
-            
-              foreach ( $data_datetime as $row){
+                 foreach ( $data_date as $row){
+                     $dateins = array();
+                     $dateins['Cq_id']= $Cq_id;
+                     $dateins['Date_usedate '] = $row['Date_usedate '];
+                 foreach ( $data_datetime as $row){
                  // var_dump($row);
                   
                   $datetimeins = array();
-                  $datetimeins['Cq_id']=$Cq_id;
                   $datetimeins['Time_usedate']= $row['Time_usedate'];
                   $datetimeins['Time_lastuse']= $row['Time_lastuse'];
                   $datetimeins['amount_std']=$row['amount_std'];
                   $this->db->insert('qdatetime', $datetimeins);
                   
                 }
+                    $this->db->insert('qdatetime', $dateins);
+                 }
                   //   $data_datetime['Cq_id']= $this->db->insert_id();
                      //$this->db->set($data_datetime);
                     // $this->db->insert('qdatetime', $data_datetime);
