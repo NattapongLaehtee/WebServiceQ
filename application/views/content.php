@@ -1,5 +1,14 @@
 ﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<?php 
+ function DateDiff ($startuse,$enduse)
+{
+    return ((strtotime($enduse) - strtotime($startuse)) /  ( 60 * 60 * 24 ))+1;  // 1 day = 60*60*24
+}
+
+
+?>
+
 <script>
 $(document).ready(function(){
 	
@@ -47,7 +56,7 @@ $(document).ready(function(){
 	
     function set_step5(){
         $('#nameq_st_5').html($('#qname').val());
-        //$('#datereserv_st_5').html($('#stratreserv').val());
+      //  $('#datereserv_st_5').html($('#stratreserv').val(format: 'DD/MM/YYYY'));
        // $("#datereserv_st_5").innerHTML  ($('#stratreserv').val()); 
                 
         	
@@ -182,7 +191,7 @@ $(document).ready(function(){
                   
                   <!-- Start Step 1 -->
 
-                  <div id="step-1">
+                  <div id="step-1"  >
 
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
@@ -237,19 +246,7 @@ $(document).ready(function(){
                       </div>
                       
                     </div>
-                    <?php 
-                    if(isset($_POST["startuse"])OR isset($_POST["enduse"] ))  {
-                        $startuse = $_POST["startuse"];
-                        $enduse = $_POST["enduse"];
-                     function DateDiff($startuse,$enduse)
-                    {
-                        return ((strtotime($enduse) - strtotime($startuse)) /  ( 60 * 60 * 24 ))+1;  // 1 day = 60*60*24
-                    }
-                    
-                    $date = DateDiff($startuse,$enduse);
-                    
-                    } ?>
-
+              
        </div>
             
                   <!-- End Step 1 -->
@@ -279,6 +276,7 @@ $(document).ready(function(){
                   <!-- End Step 2 -->
                   <!-- Start Step 3 -->
                   <div id="step-3">
+                   
  					<div class="form-group">
                     <div class="radio ">
                       <label><input type="radio" name = "timeslot" id="slot1" checked><font color="black" >กำหนดช่วงเวลาเดียวกัน</font>
@@ -292,9 +290,8 @@ $(document).ready(function(){
                   <div id="slottime1"> 
                     
                     <div class="form-group slot_01" >
-                      <input type="hidden" name="dateuse">
-                   
-                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
+                  
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น </font></label>
                        <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
                             <input type='text' class="form-control" placeholder="00:00" name='starttime[]' />
@@ -328,16 +325,13 @@ $(document).ready(function(){
                     
                     
                   <div id="slottime2"> 
-                    <?php 
+                    
                   
-                  for ($i=0; $i < $date; $i++) { 
-                      $date1 = str_replace('-', '/', $startuse);
-                        $date2 = date('d-m-Y',strtotime($date1 ."+".$i." day"));
-                     
+                
                  
-                        echo '<label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black" name="dateuse">';echo "วันที่ ". $date2 ; echo '</font></label>';
+                     <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black" name="dateuse"></font></label>
                   
-                     echo '<div class="form-group slot_01" >
+                    <div class="form-group slot_01" >
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       <div class="col-md-2 col-sm-2 col-xs-2">
                         <input type="text" name="starttime1[]" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
@@ -355,10 +349,7 @@ $(document).ready(function(){
                         <input type="text" name="amountstdf2[]" required="required" class="form-control col-md-7 col-xs-12">
                       </div>
                       <button class="fa fa-plus-square fa-1x" id="add"></button>
-                    </div>';
-
-                    }?>
-                 
+                    </div>
                   </div>
                   <div id="slottime1_002"></div>
 					
@@ -467,6 +458,34 @@ $(document).ready(function(){
    
    
     <!-- Initialize datetimepicker -->
+      <?php 
+                 /*   if(isset($_POST["startuse"])OR isset($_POST["enduse"] ))  {
+                        $startuse = $_POST["startuse"];
+                        $enduse = $_POST["enduse"];
+                     
+                        function DateDiff ($startuse,$enduse)
+                        {
+                            return ((strtotime($enduse) - strtotime($startuse)) /  ( 60 * 60 * 24 ))+1;  // 1 day = 60*60*24
+                        }
+                        $date = DateDiff($startuse,$enduse);
+                        
+                        
+                        echo "Date Diff = ". $date;
+                        echo "<br/>";
+                        for ($i=0; $i < $date; $i++) {
+                            # code...
+                            
+                            $date1 = str_replace('-', '/', $startuse);
+                            $date2 = date('d-m-Y',strtotime($date1 ."+".$i." day"));
+                            
+                            }
+                        
+                    $<input type="hidden" name="dateuse" id="dateuse"  >dateuse = $date2;
+                    
+                    } */
+                    ?>
+                   
+                     
 <script>
    
     $('#stratreserv').datetimepicker({
@@ -489,4 +508,5 @@ $(document).ready(function(){
     $('#endtime').datetimepicker({
         format: 'HH:mm'
     });
+
 </script>

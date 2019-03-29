@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Createq extends CI_Controller {
     
+
+    
+    
     public function indexqm()
     {
         $this->load->view('head');
@@ -124,21 +127,62 @@ class Createq extends CI_Controller {
           // Start Table Qdatetime
             $starttime = $_POST['starttime'];
             $endtime = $_POST['endtime'];
-            $dateuse = $this->input->post('dateuse');
+             
             $amountstd = $this->input->post('amountstdf1');
             // End Table Qdatetime
           // Start Table Step
             $stepbox = $this->input->post('stepbox');
             $amounttime = $this->input->post('amountstep');
             $stepname = $this->input->post('stepname');
-            var_dump($amounttime,$stepname );
+           // var_dump($amounttime,$stepname );
           // End Table Step
-        
-         
-         // echo ( $strattime . " คนละอันกัน" .$endtime);
+            $this->load->model("Util_Model");
+            $startuse =   $this->Util_Model->convertDateToDB($startuse);
+            $enduse =  $this->Util_Model->convertDateToDB($enduse);
+            function DateDiff ( $startuse,$enduse)
+            {
+              
+              
+                return ((strtotime($enduse) - strtotime( $startuse)) /  ( 60 * 60 * 24 )) +1 ;  // 1 day = 60*60*24
+            }
+            $date = DateDiff( $startuse,$enduse);
             
+            
+          echo "Date Diff = ". $date;
+           echo "<br/>";
+            $datadate = array();
+            
+            for ($i=0; $i < $date; $i++) {
+                # code...
+                
+                $date1 = str_replace('-', '/',   $startuse);
+               $date2 = date('d-m-Y',strtotime($date1 ."+".$i." day"));
+               $datadate[] = $date2;
+                echo $date2. "<br/>";
+                
+            }
+          //  $date2 = array();
+          //  $dateuse = $date2;
+            //$date_use = $date;'
+         //   $dateuse = $this->input->post('dateuse');
+               
+           $date2 = $this->input->post('date2');
+           
+         /*   foreach ($date2 as $date2){
+                $datadate[$date] = array(
+                           'Date_usedate '=>  $this->Util_Model->convertDateToDB($date2),
+                       );
+           
+             
+            }*/
+      
+            print_r($datadate);
+            //$datadate;
+           
+                
+          
          // If you have post data...
-        //  echo "1==".$qname;
+        //  echo "1==" .$qname;
        //   echo "2==".$startreserv;
           //echo "3==".$endreserv;
           //echo "4==".$startuse;
@@ -147,7 +191,7 @@ class Createq extends CI_Controller {
               //die(); 
 
             $this->load->model("Queue_Model");
-            $this->load->model("Util_Model");
+           
             $data_queue = array(
                   'Cq_name' => $qname,
                   'Cq_reserdate' => $this->Util_Model->convertDateToDB($startreserv), 
@@ -172,39 +216,51 @@ class Createq extends CI_Controller {
             }
             
            // var_dump($data_step);
-         
+          //  $datadate = array(
+             //   'Date_usedate '=> $this->Util_Model->convertDateToDB($date2)
+           // );
+            $datadate1 = 0;
+            foreach ($date2 as $date2){
+                $datadate[ $datadate1] = array(
+                    'Date_usedate ' => $this->Util_Model->convertDateToDB($date2)
+                );
+                $datadate1++;
+            }
            
             $data_datetime = array();
+            $data_date = array();
             $datatime = 0;
             $datadate = 0;
             echo ("<br/><br/>");
             //var_dump($amounttime);
-            foreach ($dateuse as $dateuse){
-                $data_date[datadate] = array(
-                    'Date_usedate '=>  $dateuse
-              );       
+         
             foreach ($starttime as $starttime){
                 $data_datetime[ $datatime] = array(
-                   
+              
                   'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
+                    
                     'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[ $datatime]),          
                     'amount_std' => $amountstd[$datatime]
             );
                 $datatime++;
             }
-           
-                $datadate++;
-              }    
-              
-              var_dump($data_datetime);
+          
                 
-              $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime,  $data_date);
+              var_dump($data_queue);
+              echo "<br/>";
+              var_dump($data_step);
+              echo "<br/>";
+              var_dump( $data_date);
+              echo "<br/>";
+           
+                
+              $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime, $datadate);
           //  }else{
                 //echo "===============";
           //  }
        //        
        // );
-        
+  
        // $data_box = array(
             //'Box_Name' => $
       //  ); 

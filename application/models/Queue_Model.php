@@ -4,7 +4,7 @@ class Queue_Model extends CI_Model {
 		public function __construct() {
 			parent::__construct();
 		}
-		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date)
+		public function insertqueue($data_queue,$data_step,$data_datetime,$datadate)
         {
         	//echo "string";
            // var_dump($data_datetime);
@@ -28,27 +28,32 @@ class Queue_Model extends CI_Model {
                 $this->db->insert('step',$stepinsert);
                 // var_dump($stepinsert);
                  }
-                 foreach ( $data_date as $row){
+                 foreach ( $datadate as $row){
                      $dateins = array();
                      $dateins['Cq_id']= $Cq_id;
                      $dateins['Date_usedate '] = $row['Date_usedate '];
-                 foreach ( $data_datetime as $row){
-                 // var_dump($row);
-                  
-                  $datetimeins = array();
-                  $datetimeins['Time_usedate']= $row['Time_usedate'];
-                  $datetimeins['Time_lastuse']= $row['Time_lastuse'];
-                  $datetimeins['amount_std']=$row['amount_std'];
-                  $this->db->insert('qdatetime', $datetimeins);
-                  
-                }
-                    $this->db->insert('qdatetime', $dateins);
+                     
+                     foreach ( $data_datetime as $row){
+                     // var_dump($row);
+                      
+                     
+                         $dateins['Time_usedate']= $row['Time_usedate'];
+                         $dateins['Time_lastuse']= $row['Time_lastuse'];
+                         $dateins['amount_std']=$row['amount_std'];
+                         $this->db->insert('qdatetime', $dateins);
+                      
+                    }
+                   // $this->db->insert('qdatetime', $dateins);
                  }
                   //   $data_datetime['Cq_id']= $this->db->insert_id();
                      //$this->db->set($data_datetime);
                     // $this->db->insert('qdatetime', $data_datetime);
-           
-            
+                 var_dump($data_queue);
+                 echo ("<br/>xxxxxxx<br/>");
+                 var_dump($stepinsert);
+                 echo ("<br/>xxxxxxx<br/>");
+                 var_dump($dateins);
+            die();
   
             redirect('Createq/content3');
         }
