@@ -186,5 +186,20 @@ class Queue_Model extends CI_Model {
             $query = $this->db->get('queue');
             return $query ;
         }
+        public function selectmoveq($id){
+            $queryselectmoveq =  $this->db->query('select * from queue where Cq_id ='. $id);
+            return $queryselectmoveq;
+        }
+        
+        public function selectmovedate($id){
+            $queryselectmovedate =  $this->db->query('select * from qdatetime qd  JOIN queue q on qd.Cq_id = q.Cq_id
+        where qd.Cq_id ='. $id);
+            return $queryselectmovedate->result();
+        }
+        public function selectcountmovedate($id){
+            $queryselectcountmovedate =  $this->db->query('select qd.Datetime_id, COUNT(qd.Date_usedate) as countqdate, qd.Date_usedate , qd.Cq_id 
+            from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  group by qd.Date_usedate');
+            return $queryselectcountmovedate->result();
+        }
     
 }

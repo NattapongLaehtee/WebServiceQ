@@ -66,10 +66,18 @@ class Createq extends CI_Controller {
         $this->load->view('indexadmin');
         $this->load->view('foot');
     }
-    public function moveq()
+    public function moveq($id)
     {
+        $this->load->model('Util_model');
+        $this->load->model('Queue_model');
+        $res = $this->Queue_model->selectmoveq($id);
+        $data['move_queue'] = $res;
+        $res = $this->Queue_model->selectmovedate($id);
+        $data['move_date'] = $res;
+        $res = $this->Queue_model->selectcountmovedate($id);
+        $data['move_countdate'] = $res;
         $this->load->view('head');
-        $this->load->view('moveq');
+        $this->load->view('moveq', $data);
         $this->load->view('foot');
     }
     public function staff()
@@ -112,11 +120,8 @@ class Createq extends CI_Controller {
         $this->load->view('outstudent1',  $datastudent);
         $this->load->view('foot');
     }
-    public function insert_queue()
+    public function insert_queue() //สร้างคิว
     {
-        //  var_dump($_POST);
-         // $this->load->view('content/post');
-         
            // Start Table Queue            
             $qname = $this->input->post('qname');
             $startreserv = $this->input->post('startreserv');
@@ -147,14 +152,11 @@ class Createq extends CI_Controller {
                 return ((strtotime($enduse) - strtotime( $startuse)) /  ( 60 * 60 * 24 )) +1 ;  // 1 day = 60*60*24
             }
             $date = DateDiff( $startuse,$enduse);
-            
-            
-      //    echo "Date Diff = ". $date;
-       //    echo "<br/>";
+
              $datadate = array();
             
             for ($i=0; $i < $date; $i++) {
-                # code...
+           
                 
                 $date1 = str_replace('/', '/',  $startuse);
                $date2 = date('d/m/Y',strtotime($date1 ."+".$i." day"));
@@ -199,20 +201,6 @@ class Createq extends CI_Controller {
              
             }*/
 
-        //    var_dump( $data_date);
-            //$datadate;
-           
-                
-          
-         // If you have post data...
-        //  echo "1==" .$qname;
-       //   echo "2==".$startreserv;
-          //echo "3==".$endreserv;
-          //echo "4==".$startuse;
-     //     echo "5==".$enduse;      
-    //  if ($qname!="" && $startreserv!="" && $endreserv!="" && $startuse!="" &&  $enduse!="" && $stepname!="" &&  $amounttime!="" && $strattime!="" &&   $endtime!="" ) {
-              //die(); 
-         
            $this->load->model("Queue_Model");
             $data_queue = array(
                   'Cq_name' => $qname,
@@ -260,33 +248,14 @@ class Createq extends CI_Controller {
                 $datatime++;
             }
           
-                
-            /*  var_dump($data_queue);
-              echo "<br/>";
-              var_dump($data_step);
-              echo "<br/>";
-              var_dump($data_date);
-              echo "<br/>";
-              
-              var_dump( $data_datetime);
-              echo "<br/>";
-           */
+        
                 
               $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime, $data_date);
-          //  }else{
-                //echo "===============";
-          //  }
-       //        
-       // );
-  
-       // $data_box = array(
-            //'Box_Name' => $
-      //  ); 
+
     }
-    public function editq($id)   {
+    public function editq($id)   {  //แสดงข้อมูลหน้า form แก้ไขข้อมูลคิว
         $data =array();
-        
-           
+            
         $this->load->model('Queue_Model');
         $this->load->model('Util_model');
         $res = $this->Queue_Model->selectqueue($id); 
@@ -296,11 +265,6 @@ class Createq extends CI_Controller {
         $res = $this->Queue_Model->selectdatetime($id); 
         $data['datatime'] = $res;
   
-        
-       
-         
-        //var_dump($res);
-            
             $this->load->view('head');
             $this->load->view('editq', $data);
             $this->load->view('foot');
@@ -309,7 +273,7 @@ class Createq extends CI_Controller {
        
         
     }
-    public function update_queue(){
+    public function update_queue(){ //แก้ไขข้อมูลคิว
         
        
         $queue_id =$this->input->post('queue_id');
@@ -334,16 +298,7 @@ class Createq extends CI_Controller {
         // End Table Step
         
         
-        // echo ( $strattime . " คนละอันกัน" .$endtime);
-        
-        // If you have post data...
-        //  echo "1==".$qname;
-        //   echo "2==".$startreserv;
-        //echo "3==".$endreserv;
-        //echo "4==".$startuse;
-        //     echo "5==".$enduse;
-        //  if ($qname!="" && $startreserv!="" && $endreserv!="" && $startuse!="" &&  $enduse!="" && $stepname!="" &&  $amounttime!="" && $strattime!="" &&   $endtime!="" ) {
-        //die();
+       
         $this->load->model("Queue_Model");
         $this->load->model("Util_Model");
         $data_queue = array(
@@ -411,5 +366,27 @@ class Createq extends CI_Controller {
         $this->Queue_Model->openstatusq($id);
         
     }
-    
+    public function changequeue(){//บันทึกการเลื่อนคิว
+        
+        $queue_id =$this->input->post('queue_id');
+        $qname = $this->input->post('qname');
+
+        // End Table Queue
+        // Start Table Qdatetime
+        $datetimeid = $this->input->post('datetimeid');
+        $datemoveq = $this->input->post('datemoveq');
+        $starttime = $_POST['starttime'];
+        $endtime = $_POST['endtime'];
+        //$amountstd = $this->input->post('amountstdf');
+        // End Table Qdatetime
+       
+        $datadate = array(
+            'Date_usedate ' => $datetimeid,
+            'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
+            'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime),         
+           
+        );
+        var_dump($datadate);
+        
+    }
 }

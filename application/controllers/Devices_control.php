@@ -36,9 +36,7 @@ class Devices_control extends CI_Controller {
         $this->load->model('Device_model');
         $res = $this->Device_model->outqsetdevice();
         $data['datasetdevice'] = $res;
-   
-   //     $res = $this->Device_model->outqsetdevice();
-      //  $data['dataqset'] = $res;
+  
       
         $this->load->view('head');
         $this->load->view('setdevice', $data);

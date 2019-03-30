@@ -34,7 +34,7 @@
                             				
                             				<?php foreach ($datasetdevice as $rowq) {?>
                             		<?php  echo '<tr><td>' . $rowq->Cq_name . '</td>
-       											 	  <td>' . $rowq -> Step_box  . '</td>
+       											 	  <td>' . $rowq ->sumbox  . '</td>
         											  <td></td>
        					 							  <td></td>
         											  <td></td>
