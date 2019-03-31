@@ -22,7 +22,12 @@ class Report_model extends CI_Model{
         return $queryselectqueue;
            
     }
-
+    
+    public function outqdatestud($id){
+        $queryqdatestud = $this->db->query('select * from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id  
+                         where qd.Cq_id  ='. $id.' GROUP BY qd.Date_usedate ' );
+        return  $queryqdatestud->result();
+    } 
     
     
 }

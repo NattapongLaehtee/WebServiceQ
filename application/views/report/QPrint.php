@@ -30,11 +30,14 @@
 
                       <tbody>
                         <tr>
-                          <td>Tiger Nixon</td>
-                          <td><a href="<?php echo site_url("Report/callpdf");?>"><button type="submit" class="btn btn-success">พิมพ์</button></a></td>
+                        <?php foreach($qdatestudent as $row){?>
+                        
+                          <td><?php echo convertDBtoDate( $row->Date_usedate);?></td>
+                         
+                          <td><a href="<?php echo site_url("Report/callpdf/".$row->Date_usedate);?>"><button type="submit" class="btn btn-success">พิมพ์</button></a></td>
                           
                         </tr>
-                        
+                         <?php }?>
   
                       </tbody>
                     </table>
@@ -45,3 +48,16 @@
                   </div>
         
         <!-- /page content -->
+        
+        <?php 
+       
+      
+   
+      
+           function convertDBtoDate($date){
+            $arr= explode('-',$date);
+            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+            return  $re_date;
+        }
+     
+      ?>    

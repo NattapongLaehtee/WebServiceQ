@@ -7,6 +7,7 @@
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
     <link href="<?php echo base_url();?>Q_css/vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
  <!-- page content -->
+ <?php $rowq = $dataqdevice->row();?>
 	<font color="black">
 	<div class="right_col" role="main">
 		<div class="">
@@ -19,23 +20,24 @@
             	<div class="x_panel">
                		<div class="x_content">
                     	<br>
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
+                    action ="" method="post">
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><?php echo "ชื่อคิว "?>  
                         </label>
-                        <label class="control-label col-md-3 col-sm-2 col-xs-12" for="first-name">กองทุนกู้ยืมเพื่อการศึกษา (รายใหม่)
+                        <label class="control-label col-md-2  col-xs-12" for="first-name"> <?php echo  $rowq->Cq_name;?>  
                         </label>
                         
                         </div>
                         <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้คิว 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "วันที่ใช้คิว "?> 
                         </label>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">08/08/2561
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name"> <?php echo $this->Util_model->convertDateToView("$rowq->Cq_usedate"); ?>
                         </label>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">ถึง 
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name"><?php echo "ถึง "?> 
                         </label>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">12/08/2561
+                        <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name"><?php echo $this->Util_model->convertDateToView("$rowq->Cq_lastuse")  ;?> 
                         </label>
                         
                       </div>
@@ -112,35 +114,7 @@
     <!-- jquery.inputmask -->
     <script src="<?php echo base_url();?>Q_css/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 	<script>
-    $('#myDatepicker').datetimepicker();
-    
-    $('#myDatepicker2').datetimepicker({
-        format: 'DD/MM/YYYY'
-    });
-    
-    $('#myDatepicker3').datetimepicker({
-        format: 'DD/MM/YYYY'
-    });
-    
-    $('#myDatepicker4').datetimepicker({
-    	format: 'DD/MM/YYYY'
-    });
 
-    $('#myDatepicker5').datetimepicker({
-    	format: 'DD/MM/YYYY'
-    });
-    
-    $('#datetimepicker7').datetimepicker({
-        useCurrent: false
-    });
-    
-    $("#datetimepicker6").on("dp.change", function(e) {
-        $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-    });
-    
-    $("#datetimepicker7").on("dp.change", function(e) {
-        $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-    });
 </script>
 
 

@@ -25,10 +25,12 @@ class Report extends CI_Controller {
 	
 	public function queuestudentshow($id)
 	{
+	    $this->load->model('Util_model');
 	    $this->load->model('Report_model');
 	    $res = $this->Report_model->outqueuestud($id);
-	    
 	    $dataqstu['qstudent'] = $res;
+	    $res = $this->Report_model->outqdatestud($id);
+	    $dataqstu['qdatestudent'] = $res;
 	    $this->load->view('head');
 	    $this->load->view('report/QPrint',$dataqstu);
 	    $this->load->view('foot');

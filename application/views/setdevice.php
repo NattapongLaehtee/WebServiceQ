@@ -40,7 +40,7 @@
         											  <td></td>
         								              <td></td> '; ?> 
                									                           				  
-                        			 <td class=" "><a href="<?php echo site_url("Createq/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
+                        			 <td class=" "><a href="<?php echo site_url("Devices_control/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
                           				
                           		<?php } ?>
 										</tr>

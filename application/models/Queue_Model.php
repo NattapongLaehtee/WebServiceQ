@@ -112,6 +112,7 @@ class Queue_Model extends CI_Model {
         }
         public function updateq($data_queue,$data_step,$data_datetime){
            
+            die();
             // $this->db->set($data_queue);
             $this->db->replace('queue',$data_queue);
             $Cq_id = $this->db->insert_id();
@@ -198,8 +199,12 @@ class Queue_Model extends CI_Model {
         }
         public function selectcountmovedate($id){
             $queryselectcountmovedate =  $this->db->query('select qd.Datetime_id, COUNT(qd.Date_usedate) as countqdate, qd.Date_usedate , qd.Cq_id 
-            from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  group by qd.Date_usedate');
+            from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  ='. $id .' GROUP BY qd.Date_usedate ');
             return $queryselectcountmovedate->result();
         }
-    
+        public function changemoveq($datadate){
+            var_dump($datadate);
+            die();
+        }
+        
 }

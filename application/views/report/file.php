@@ -1,6 +1,6 @@
 <?php
 $pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-$pdf->SetTitle('My Title');
+$pdf->SetTitle('รายงานประจำวันที่');
 $pdf->SetHeaderMargin(30);
 $pdf->SetTopMargin(20);
 $pdf->setFooterMargin(20);

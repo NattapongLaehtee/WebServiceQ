@@ -43,7 +43,17 @@ class Devices_control extends CI_Controller {
         $this->load->view('foot');
         
     }
-
+    public function setdevice1($id)
+    {   
+        $this->load->model('Util_model');
+        $this->load->model('Device_model');
+        $res = $this->Device_model->outqdevice($id);
+        $data['dataqdevice'] = $res;
+        
+        $this->load->view('head');
+        $this->load->view('setdevice1', $data);
+        $this->load->view('foot');
+    }
     public function insert_device(){
         //var_dump($_POST);
         

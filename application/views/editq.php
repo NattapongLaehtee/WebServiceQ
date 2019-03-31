@@ -26,7 +26,7 @@ $(document).ready(function(){
     });
     $(".buttonFinish").click(function(){
       alert('คุณต้องการบันทึกข้อมูลใช่หรือไม่');
-      $("#form_1").submit();
+      $("#form_2").submit();
         
     });
     $(".buttonNext").click(function(){
@@ -39,7 +39,7 @@ $(document).ready(function(){
       });
     $(".buttonPrevious").click(function(){
         alert('คุณต้องการกดปุ่มย้อนกลับใช่หรือไม่');
-        $("#form_1");
+        $("#form_2");
           
       });
     $("#add").click(function(){
@@ -169,14 +169,14 @@ $rowq = $dataq-> row();
                     </a>
                   </li>
                 </ul>
-               <form class="form-horizontal form-label-left" id="form_1" 
+               <form class="form-horizontal form-label-left" id="form_2" 
                action="<?php echo(site_url("Createq/update_queue")); ?>" method="post">
                       
                <input type="hidden" name="queue_id" value="<?php echo $rowq->Cq_id;?>" >
                   
                   <!-- Start Step 1 --> 
                   <div id="step-1">
-
+					
                     <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>

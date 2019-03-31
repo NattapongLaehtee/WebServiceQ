@@ -4,7 +4,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Createq extends CI_Controller {
     
-
+    public function __construct() {
+        parent::__construct();
+        
+       
+    }
     
     
     public function indexqm()
@@ -79,6 +83,7 @@ class Createq extends CI_Controller {
         $this->load->view('head');
         $this->load->view('moveq', $data);
         $this->load->view('foot');
+        
     }
     public function staff()
     {
@@ -104,12 +109,7 @@ class Createq extends CI_Controller {
         $this->load->view('foot');
     }
 
-    public function setdevice1()
-    {
-        $this->load->view('head');
-        $this->load->view('setdevice1');
-        $this->load->view('foot');
-    }
+   
     public function outstudent1()
     {
         $this->load->model('Student_model');
@@ -365,28 +365,36 @@ class Createq extends CI_Controller {
         
         $this->Queue_Model->openstatusq($id);
         
-    }
+    } 
+  
     public function changequeue(){//บันทึกการเลื่อนคิว
         
-        $queue_id =$this->input->post('queue_id');
-        $qname = $this->input->post('qname');
+         exit($_port["moveq"]);
+        
+        $queueid =$this->input->post('queueid');
+
 
         // End Table Queue
         // Start Table Qdatetime
         $datetimeid = $this->input->post('datetimeid');
         $datemoveq = $this->input->post('datemoveq');
-        $starttime = $_POST['starttime'];
-        $endtime = $_POST['endtime'];
+        $starttime = $this->input->post('starttime');
+        $endtime = $this->input->post('endtime');
         //$amountstd = $this->input->post('amountstdf');
         // End Table Qdatetime
-       
+        $this->load->model('Util_model');
+        $this->load->model('Queue_Model');
+        
         $datadate = array(
-            'Date_usedate ' => $datetimeid,
-            'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
-            'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime),         
+            'Cq_id' => $queueid,
+            'Datetime_id ' => $datetimeid,
+            'Date_usedate ' =>$this->Util_model->convertDateToDB($datemoveq),
+            'Time_usedate' =>$this->Util_model->convertTimeToDB($starttime),
+            'Time_lastuse' =>$this->Util_model->convertTimeToDB($endtime)         
            
         );
-        var_dump($datadate);
+
         
+        $this->Queue_Model->changemoveq($datadate);
     }
 }

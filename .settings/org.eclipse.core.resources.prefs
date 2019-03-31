@@ -3,6 +3,7 @@
 >>>>>>>=branch 'master' of https\://github.com/NattapongLaehtee/WebServiceQ.git
 eclipse.preferences.version=1
 encoding//application/controllers/Createq.php=UTF-8
+encoding//application/models/Device_model.php=UTF-8
 encoding//application/models/Queue_Model.php=UTF-8
 encoding//application/views/Staff.php=UTF-8
 encoding//application/views/content.php=UTF-8
