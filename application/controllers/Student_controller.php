@@ -11,6 +11,9 @@ class Student_controller extends CI_Controller {
         $data['dataq'] = $res;
         $res = $this->Student_model->outqfacstudent();
         $data['datafac'] = $res;
+        $data['dataqs'] =  array();
+        $data['selectqueue'] = "";
+        $data['selectfac'] = "";
         $this->load->view('head');
         $this->load->view('student/student_list', $data );
         $this->load->view('foot');
@@ -27,12 +30,18 @@ class Student_controller extends CI_Controller {
         $this->load->view('foot');
     }
     
-    public function selectqstudent($id1,$id2){
+    public function selectqstudent(){
+   
         $this->load->model('Util_model'); 
         $this->load->model('Student_model'); 
-        $res = $this->Student_model->selectstudent($id1,$id2);
-     
+        $res = $this->Student_model->selectstudent($_POST['selectqueue'],$_POST['selectfac']);
+        $data['selectqueue'] = $_POST['selectqueue'];
+        $data['selectfac'] = $_POST['selectfac'];
         $data['dataqs'] = $res;
+        $res = $this->Student_model->outqstudent();
+        $data['dataq'] = $res;
+        $res = $this->Student_model->outqfacstudent();
+        $data['datafac'] = $res;
         $this->load->view('head');
         $this->load->view('student/student_list', $data );
         $this->load->view('foot');

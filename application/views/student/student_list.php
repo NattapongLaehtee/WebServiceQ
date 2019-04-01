@@ -16,8 +16,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   
-                             	
-
+         <form action="<?php echo site_url("Student_controller/selectqstudent"); ?>" method="post" >
                   <div class="x_content">
                	<label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">ชื่อคิว</font>
                             				</label>
@@ -25,7 +24,7 @@
                             					<select name="selectqueue" id="selectqueue" class="form-control-sm form-control"> 
 													<option value="" disabled selected hidden>กรุณาเลือกคิวที่ต้องการ</option>
 															 <?php foreach ($dataq as $rowq){?>
-                                                           <option value="<?php echo $rowq->Cq_id;?>"> <?php echo $rowq->Cq_name;  ?> </option>
+                                                           <option <?php echo ($selectqueue!=$rowq->Cq_id)?:" selected ","" ?>  value="<?php echo  $rowq->Cq_id; ?>"> <?php echo $rowq->Cq_name;  ?> </option>
                                                           <?php }?> 
 														 </select>
 														 </div>
@@ -34,10 +33,10 @@
   <label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">สำนักวิชา</font>
                             				</label>
                            					<div class="col-md-4 col-sm-2 col-xs-4">
-                              					<select name="selectqueue" id="selectqueue" class="form-control-sm form-control"> 
+                              					<select name="selectfac" id="selectfac" class="form-control-sm form-control"> 
 													<option value="" disabled selected hidden>กรุณาเลือกสำนักวิชาที่ต้องการ</option>
 															 <?php foreach ($datafac as $rowfac){?>
-                                                           <option value="<?php echo $rowfac->Facultyid;?>"> <?php echo $rowfac->Facultyname ;  ?> </option>
+                                                           <option <?php echo ($selectfac!=$rowfac->Facultyid)?:" selected ","" ?> value="<?php echo $rowfac->Facultyid; ?>" > <?php echo $rowfac->Facultyname ;  ?> </option>
                                                           <?php }?> 
 														 </select>
                              				</div> 
@@ -45,8 +44,9 @@
                              				<br></br>
                              				
                              				 
-							<a href="<?php echo site_url("Student_controller/selectqstudent/". $rowqstu->Cq_id."/".$rowfacul->Facultyid);?>"><button type="submit" class="btn btn-success">ค้นหา</button></a>
-									
+							<button type="submit" class="btn btn-success">ค้นหา</button>
+				</form>                    	
+					
          		<p >
                     <div class="table-responsive ">
                       <table class="table table-striped jambo_table bulk_action">
@@ -61,23 +61,24 @@
                           
                             
                             <th class="bulk-actions" colspan="7">
-                              <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                             
                             </th>
                           </tr>
                         </thead>
 
                         <tbody>
-                        
-                          <tr class="even pointer">
+                  
                             
   							<?php foreach ($dataqs as $row){?>
+  							<tr>
                             <td ><?php echo  $row->Studentid;?></td>
                             <td><?php echo $row->Prefixname. "  ". $row->Studentname. "  ".$row->Studentsurname ; ?></td>
                             <td><?php echo $row->Programname;?></td>
                             <td><?php echo $this->Util_model->convertDateToView("$row->Date_usedate"); ?></td>
+                            </tr>
                             <?php }?>
                           
-                          </tr>
+                         
                          
                         </tbody>
                       </table>
