@@ -34,7 +34,7 @@
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
-                          						<td> <a href="<?php echo site_url("Report/queuestudentshow/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แสดงผล</button></a></td>
+                          						<td> <a href="<?php echo site_url("Report/queuestudentshow/".$row->Cq_id);?>"><button type="submit" class="btn btn-success">แสดงผลข้อมูล</button></a></td>
                           					</tr>
                           					
                           					

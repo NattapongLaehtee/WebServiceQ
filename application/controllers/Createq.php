@@ -369,7 +369,7 @@ class Createq extends CI_Controller {
   
     public function changequeue(){//บันทึกการเลื่อนคิว
         
-         exit($_port["moveq"]);
+  
         
         $queueid =$this->input->post('queueid');
 

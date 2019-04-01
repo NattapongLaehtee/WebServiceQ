@@ -6,8 +6,13 @@ class Student_controller extends CI_Controller {
     
     public function student()
     {
+        $this->load->model('Student_model');
+        $res = $this->Student_model->outqstudent();
+        $data['dataq'] = $res;
+        $res = $this->Student_model->outqfacstudent();
+        $data['datafac'] = $res;
         $this->load->view('head');
-        $this->load->view('student/student_list' );
+        $this->load->view('student/student_list', $data );
         $this->load->view('foot');
     }
     
@@ -21,6 +26,18 @@ class Student_controller extends CI_Controller {
         $this->load->view('outstudent', $dataq);
         $this->load->view('foot');
     }
+    
+    public function selectqstudent($id1,$id2){
+        $this->load->model('Util_model'); 
+        $this->load->model('Student_model'); 
+        $res = $this->Student_model->selectstudent($id1,$id2);
+     
+        $data['dataqs'] = $res;
+        $this->load->view('head');
+        $this->load->view('student/student_list', $data );
+        $this->load->view('foot');
+    }
+   
  
 
 }

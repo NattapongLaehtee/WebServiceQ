@@ -59,13 +59,13 @@ class Device_model extends CI_Model {
         redirect('Devices_control/out_device');
         
     }
-     public function outqdevice($id){
+    public function outqdevice($id){
          $queryoutqdevice=  $this->db->query('select * from queue where Cq_id = '. $id);
          return    $queryoutqdevice;
     }
    
     public function outsetdevice($id){
-        $querysetdevice =    $this->db->query('select s.Step_id, SUM(s.Step_box), q.Cq_id from queue q  JOIN step s on q.Cq_id = s.Cq_id   where s.Cq_id  group by s.Cq_id');
+        $querysetdevice =    $this->db->query('select s.Step_id, s.Step_box , s.Cq_id from queue q  JOIN step s on q.Cq_id = s.Cq_id   where s.Cq_id ='.$id.' order by s.Step_id ');
         return   $querysetdevice->result();
     }
     public function outqsetdevice(){

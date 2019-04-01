@@ -41,25 +41,34 @@
                         </label>
                         
                       </div>
-                     
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">รหัสบาร์โค้ดอุปกณ์ 
-                        </label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                         <input type="text" id="first-name" required="required" class="form-control col-md-2 col-xs-12">
-                        
-                        </div>
-                 
-                        
-                      </div>
+                       <?php foreach ($datadevice as $rowdev){?>
                     
+                
+                     
+                         
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ช่องบริการที  ". $rowdev->Step_box ;?> 
+                       
+                        </label>
+                         
+                          <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสอุปกรณ์ </label>   
+                             <div class=" col-sm-2 ">
+                     <input type='text' class="form-control" name='enddevice' />
+         </div>
+                       
+                       
+           <?php echo ("<br/><br/>"); ?> 
+				
+                    
+                  
+                   
+                      <?php }?>
                          			
                           				<div class="form-group">
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้อุปกรณ์
                         					</label>
 											<div class='col-sm-2'>
-                  								<div class='input-group date' id='myDatepicker4'>
-                            						<input type='text' class="form-control" />
+                  								<div class='input-group date' id='startdevice'>
+                            						<input type='text' class="form-control" name='startdevice' />
                             						<span class="input-group-addon">
                                							<span class="glyphicon glyphicon-calendar"></span>
                             						</span>
@@ -68,8 +77,8 @@
                         					<label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
                         					</label>
 											<div class='col-sm-2'>
-                  								<div class='input-group date' id='myDatepicker5'>
-                            						<input type='text' class="form-control" />
+                  								<div class='input-group date' id='enddevice'>
+                            						<input type='text' class="form-control" name='enddevice' />
                             						<span class="input-group-addon">
                                							<span class="glyphicon glyphicon-calendar"></span>
                             						</span>
@@ -114,7 +123,15 @@
     <!-- jquery.inputmask -->
     <script src="<?php echo base_url();?>Q_css/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 	<script>
-
+	  $('#startdevice').datetimepicker({
+	        format: 'DD/MM/YYYY'
+	    });
+	    
+	    $('#enddevice').datetimepicker({
+	        format: 'DD/MM/YYYY'
+	    });
+	    
+	   
 </script>
 
 

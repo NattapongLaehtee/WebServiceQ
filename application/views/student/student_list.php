@@ -21,39 +21,32 @@
                   <div class="x_content">
                	<label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">ชื่อคิว</font>
                             				</label>
-                           					<div class="col-md-1 col-sm-1 col-xs-1">
-                              					<select name = â€˜manyâ€™>	
-                              					<option value = â€˜1â€™>กองทุน</option> 
-                              					<option value = â€˜1â€™>กอนทุนรายใหม่</option> 
-                              						 </select>
-                             				</div> 
-                             				
+                            				<div class="col-md-4 col-sm-2 col-xs-4">
+                            					<select name="selectqueue" id="selectqueue" class="form-control-sm form-control"> 
+													<option value="" disabled selected hidden>กรุณาเลือกคิวที่ต้องการ</option>
+															 <?php foreach ($dataq as $rowq){?>
+                                                           <option value="<?php echo $rowq->Cq_id;?>"> <?php echo $rowq->Cq_name;  ?> </option>
+                                                          <?php }?> 
+														 </select>
+														 </div>
 
                              				<br></br>
   <label class="control-label col-md-2 col-sm-2 col-xs-1" for="first-name"><font color="black">สำนักวิชา</font>
                             				</label>
-                           					<div class="col-md-1 col-sm-1 col-xs-1">
-                              					<select name = faculty>	
-                              					<option value = â€˜1â€™>สำนักวิชาการจัดการ</option> 
-                              						<option value = â€˜2â€™>สำนักวิชาพยาบาลศาสตร์</option> 
-                              						<option value = â€˜3â€™> สำนักวิชารัฐศาสตร์และนิติศาสตร์</option> 
-                              						<option value = â€˜4â€™>สำนักวิชาวิทยาศาสตร์</option>
-                              						<option value = â€˜5â€™>สำนักวิชาวิศวกรรมศาสตร์และทรัพยากร</option>
-                              						<option value = â€˜6â€™>สำนักวิชาศิลปศาสตร์</option>
-                              						<option value = â€˜7â€™>สำนักวิชาสถาปัตยกรรมศาสตร์และการออกแบบ</option>
-                              						<option value = â€˜8â€™>สำนักวิชาสหเวชศาสตร์</option>
-                              						<option value = â€˜9â€™> สำนักวิชาสาธารณสุขศาสตร์</option>
-                              						<option value = â€˜10â€™> สำนักวิชาสารสนเทศศาสตร์</option>
-                              						<option value = â€˜11â€™>สำนักวิชาเทคโนโลยีการเกษตร</option>
-                              						<option value = â€˜12â€™> สำนักวิชาเภสัชศาสตร์</option>
-                              						<option value = â€˜13â€™>สำนักวิชาแพทยศาสตร์</option> 
-                              						<option value = â€˜14â€™>วิทยาลัยทันตแพทยศาสตร์นานาชาติ</option> 
-                              						<option value = â€˜15â€™>วิทยาลัยสัตวแพทยศา​สตร์อัครราชกุมารี</option> 
-                              						<option value = â€˜16â€™>วิทยาลัยนานาชาติ</option> </select>
+                           					<div class="col-md-4 col-sm-2 col-xs-4">
+                              					<select name="selectqueue" id="selectqueue" class="form-control-sm form-control"> 
+													<option value="" disabled selected hidden>กรุณาเลือกสำนักวิชาที่ต้องการ</option>
+															 <?php foreach ($datafac as $rowfac){?>
+                                                           <option value="<?php echo $rowfac->Facultyid;?>"> <?php echo $rowfac->Facultyname ;  ?> </option>
+                                                          <?php }?> 
+														 </select>
                              				</div> 
   
                              				<br></br>
-<button type="submit" class="btn btn-success">ค้นหา</button>
+                             				
+                             				 
+							<a href="<?php echo site_url("Student_controller/selectqstudent/". $rowqstu->Cq_id."/".$rowfacul->Facultyid);?>"><button type="submit" class="btn btn-success">ค้นหา</button></a>
+									
          		<p >
                     <div class="table-responsive ">
                       <table class="table table-striped jambo_table bulk_action">
@@ -63,7 +56,7 @@
                             <th class="column-title">รหัสนักศึกษา </th>
                             <th class="column-title">ชื่อ - สกุล</th>
                             <th class="column-title">หลักสูตร </th>
-                            <th class="column-title">สำนักวิชา</th>
+                            <th class="column-title">วันที่จองคิว</th>
                            
                           
                             
@@ -77,10 +70,15 @@
                         
                           <tr class="even pointer">
                             
-                            <td class=" ">
-                           
+  							<?php foreach ($dataqs as $row){?>
+                            <td ><?php echo  $row->Studentid;?></td>
+                            <td><?php echo $row->Prefixname. "  ". $row->Studentname. "  ".$row->Studentsurname ; ?></td>
+                            <td><?php echo $row->Programname;?></td>
+                            <td><?php echo $this->Util_model->convertDateToView("$row->Date_usedate"); ?></td>
+                            <?php }?>
+                          
                           </tr>
-                        
+                         
                         </tbody>
                       </table>
                     </div>

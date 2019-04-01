@@ -173,6 +173,7 @@ $rowq = $dataq-> row();
                action="<?php echo(site_url("Createq/update_queue")); ?>" method="post">
                       
                <input type="hidden" name="queue_id" value="<?php echo $rowq->Cq_id;?>" >
+             
                   
                   <!-- Start Step 1 --> 
                   <div id="step-1">
@@ -241,7 +242,7 @@ $rowq = $dataq-> row();
          			<?php $i=1; ?>
          			
                      <?php foreach ($datastep as $row){?>
-                    
+                      
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black"><?php echo "ขั้นตอนที่ ".$i; ?>
     
                      
@@ -282,6 +283,8 @@ $rowq = $dataq-> row();
                     <div class="form-group slot_01" >
                    
                     <?php foreach ($datatime as $row){?>
+                     <input type="hidden" name="datetimeid" value="<?php echo $row->Datetime_id;?>
+                    
                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                       
                        <input type="hidden" id="datetimeid" name="datetimeid[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Datetime_id; ?>">
