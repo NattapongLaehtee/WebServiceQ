@@ -142,7 +142,7 @@ class Createq extends CI_Controller {
            // var_dump($amounttime,$stepname );
           // End Table Step
             $this->load->model("Util_Model");
-       
+           
             $startuse =   $this->Util_Model->convertDateToDB($startuse);
             $enduse =  $this->Util_Model->convertDateToDB($enduse);
             function DateDiff ( $startuse,$enduse)

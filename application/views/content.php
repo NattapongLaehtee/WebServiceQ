@@ -197,7 +197,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" maxlength="50"name="qname" id="qname" class="form-control col-md-7 col-xs-12"  placeholder="กรุณากรอกชื่อคิว" >
+                        <input type="text" maxlength="50"name="qname" id="qname" class="form-control col-md-7 col-xs-12"   >
                       </div>
                     </div>
                     <div class="form-group">
@@ -205,7 +205,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
-                          <input type='text' placeholder="กรุณาเลือกวันที่" class="form-control" name='startreserv'/>
+                          <input type='text'  class="form-control" name='startreserv'/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -215,7 +215,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
-                          <input type='text'placeholder="กรุณาเลือกวันที่"  class="form-control" name='endreserv' />
+                          <input type='text'  class="form-control" name='endreserv' />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -380,7 +380,7 @@ $(document).ready(function(){
                         <div class="importfile">
                            
                             <div class="col-md-4">
-                                <input type="file" name="file" id="file" class="input-large">
+                                 <input type="file" name="csv_file" id="csv_file" required accept=".csv" />
                             </div>
                         </div>
 
@@ -509,4 +509,45 @@ $(document).ready(function(){
         format: 'HH:mm'
     });
 
+</script>
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data()
+ {
+  $.ajax({
+   url:"<?php echo base_url(); ?>csv_import/load_data",
+   method:"POST",
+   success:function(data)
+   {
+    $('#imported_csv_data').html(data);
+   }
+  })
+ }
+
+ $('#import_csv').on('submit', function(event){
+  event.preventDefault();
+  $.ajax({
+   url:"<?php echo base_url(); ?>csv_import/import",
+   method:"POST",
+   data:new FormData(this),
+   contentType:false,
+   cache:false,
+   processData:false,
+   beforeSend:function(){
+    $('#import_csv_btn').html('Importing...');
+   },
+   success:function(data)
+   {
+    $('#import_csv')[0].reset();
+    $('#import_csv_btn').attr('disabled', false);
+    $('#import_csv_btn').html('Import Done');
+    load_data();
+   }
+  })
+ });
+ 
+});
 </script>
