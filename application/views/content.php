@@ -375,13 +375,13 @@ $(document).ready(function(){
                       </label>
                     </div>
                   </div>
-	
-					<!-- File Button -->
+				
                         <div class="importfile">
                            
                             <div class="col-md-4">
                                  <input type="file" name="csv_file" id="csv_file" required accept=".csv" />
                             </div>
+                            <div id="imported_csv_data"></div>
                         </div>
 
                   </div>
@@ -458,32 +458,7 @@ $(document).ready(function(){
    
    
     <!-- Initialize datetimepicker -->
-      <?php 
-                 /*   if(isset($_POST["startuse"])OR isset($_POST["enduse"] ))  {
-                        $startuse = $_POST["startuse"];
-                        $enduse = $_POST["enduse"];
-                     
-                        function DateDiff ($startuse,$enduse)
-                        {
-                            return ((strtotime($enduse) - strtotime($startuse)) /  ( 60 * 60 * 24 ))+1;  // 1 day = 60*60*24
-                        }
-                        $date = DateDiff($startuse,$enduse);
-                        
-                        
-                        echo "Date Diff = ". $date;
-                        echo "<br/>";
-                        for ($i=0; $i < $date; $i++) {
-                            # code...
-                            
-                            $date1 = str_replace('-', '/', $startuse);
-                            $date2 = date('d-m-Y',strtotime($date1 ."+".$i." day"));
-                            
-                            }
-                        
-                    $<input type="hidden" name="dateuse" id="dateuse"  >dateuse = $date2;
-                    
-                    } */
-                    ?>
+
                    
                      
 <script>
