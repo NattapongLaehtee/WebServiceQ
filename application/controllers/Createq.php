@@ -6,7 +6,7 @@ class Createq extends CI_Controller {
     
     public function __construct() {
         parent::__construct();
-        
+        $this->load->helper('file');
        
     }
     
@@ -128,6 +128,7 @@ class Createq extends CI_Controller {
             $endreserv = $this->input->post('endreserv');
             $startuse = $this->input->post('startuse');
             $enduse = $this->input->post('enduse');
+            $csv_file = $this->input->post('csv_file');
           // End Table Queue
           // Start Table Qdatetime
             $starttime = $_POST['starttime'];
@@ -142,7 +143,7 @@ class Createq extends CI_Controller {
            // var_dump($amounttime,$stepname );
           // End Table Step
             $this->load->model("Util_Model");
-       
+           
             $startuse =   $this->Util_Model->convertDateToDB($startuse);
             $enduse =  $this->Util_Model->convertDateToDB($enduse);
             function DateDiff ( $startuse,$enduse)
@@ -224,7 +225,20 @@ class Createq extends CI_Controller {
                 );
                 $rec++;
             }
-            
+            $recstd = 0;
+            $this->load->library('std_import_libraries');
+            $file_data = $this->std_import_libraries->get_array($_FILES["csv_file"]["tmp_name"]);
+            foreach($file_data as $row)
+            {
+                $data_std[$recstd] = array(
+                    
+                    'Studentid' => $row["id"][$recstd],
+                    'Studentname' => $row["First Name"][$recstd],
+                    'Studentsurname'  => $row["Last Name"][$recstd],
+                    
+                );
+                $recstd++;
+            }
            // var_dump($data_step);
           //  $datadate = array(
              //   'Date_usedate '=> $this->Util_Model->convertDateToDB($date2)
@@ -250,7 +264,7 @@ class Createq extends CI_Controller {
           
         
                 
-              $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime, $data_date);
+            $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime, $data_date, $data_std);
 
     }
     public function editq($id)   {  //แสดงข้อมูลหน้า form แก้ไขข้อมูลคิว

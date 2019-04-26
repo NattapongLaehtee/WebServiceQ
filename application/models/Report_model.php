@@ -28,6 +28,31 @@ class Report_model extends CI_Model{
                          where qd.Cq_id  ='. $id.' GROUP BY qd.Date_usedate ' );
         return  $queryqdatestud->result();
     } 
+
     
-    
+    public function selectstdq($id1, $id2){
+        $queryselectstudent = $this->db->query('SELECT * FROM bookingqueue b JOIN student s on b.Studentid = s.Studentid
+                                        JOIN qdatetime qd on b.Datetime_id = qd.Datetime_id
+                                        JOIN faculty f on s.Facultyid = f.Facultyid
+                                        JOIN program P on s.Programid = p.Programid
+                                        JOIN queue q on b.Cq_id = q.Cq_id
+                                        JOIN prefix pr on s.Prefixid = pr.Prefixid
+                                       
+                                         WHERE q.Cq_id = ' . $id1. 
+                                       ' AND qd.Date_usedate ="  '.$id2 .'  "
+                                       ORDER BY b.book_time
+                              ');
+        return   $queryselectstudent ->result();
+    }
+    public function qreport($id1){
+        $queryqreport = $this->db->query('select * FROM queue q  where q.Cq_id ='. $id1  );
+        return $queryqreport;
+    } 
+    public function qdreport($id2){
+        $queryqdreport = $this->db->query('select * FROM  qdatetime qd JOIN queue q on qd.Cq_id = q.Cq_id
+                                         where qd.Date_usedate =" ' . $id2 . ' " ' );
+        return $queryqdreport;
+    } 
+ 
+
 }

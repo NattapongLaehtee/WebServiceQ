@@ -1926,7 +1926,7 @@ class TCPDF_STATIC {
 		$alt = array_unique($alt);
 		foreach ($alt as $path) {
 			if (!self::file_exists($path)) {
-				continue;
+				return false;
 			}
 			$ret = @file_get_contents($path);
 			if ($ret !== false) {

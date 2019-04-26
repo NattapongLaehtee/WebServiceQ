@@ -65,7 +65,7 @@ class Device_model extends CI_Model {
     }
    
     public function outsetdevice($id){
-        $querysetdevice =    $this->db->query('select s.Step_id, s.Step_box , s.Cq_id from queue q  JOIN step s on q.Cq_id = s.Cq_id   where s.Cq_id ='.$id.' order by s.Step_id ');
+        $querysetdevice =    $this->db->query('select s.Step_id, s.Step_box , s.Cq_id from queue q  JOIN step s on q.Cq_id = s.Cq_id   where s.Cq_id ='.$id.' order by s.Cq_id ');
         return   $querysetdevice->result();
     }
     public function outqsetdevice(){

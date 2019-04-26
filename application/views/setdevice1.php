@@ -21,7 +21,7 @@
                		<div class="x_content">
                     	<br>
                     <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"
-                    action ="" method="post">
+                    action ="<?php echo site_url("Devices_control/setusingdevice");?>" method="post">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><?php echo "ชื่อคิว "?>  
@@ -41,28 +41,35 @@
                         </label>
                         
                       </div>
+				
                        <?php foreach ($datadevice as $rowdev){?>
-                    
-                
-                     
-                         
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ช่องบริการที  ". $rowdev->Step_box ;?> 
+                      	<?php $i=1;?>
+                       <?php $i =  $rowdev->Step_id;?>
+                      
+                  			 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ขั้นตอนบริการที  ".  $i;?> 
                        
                         </label>
-                         
-                          <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสอุปกรณ์ </label>   
-                             <div class=" col-sm-2 ">
+                          <?php echo ("<br/><br/>"); ?>
+                          
+                         <?php for ($i=1; $i< $rowdev->Step_box; $i++){?>
+                      
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ช่องบริการที  ".  $i;?> 
+                      
+                        </label>
+                          <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">Barcode อุปกรณ์ </label>   
+                             <div class=" col-sm-2  ">
                      <input type='text' class="form-control" name='enddevice' />
          </div>
-                       
+                   
                        
            <?php echo ("<br/><br/>"); ?> 
 				
-                    
+                    <?php }?>
                   
-                   
+                   <?php $i++;?>
                       <?php }?>
-                         			
+                      
+                         		
                           				<div class="form-group">
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้อุปกรณ์
                         					</label>

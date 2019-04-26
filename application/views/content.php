@@ -197,7 +197,7 @@ $(document).ready(function(){
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว<span style="color:red" >*</span>
                       </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
-                        <input type="text" maxlength="50"name="qname" id="qname" class="form-control col-md-7 col-xs-12"  placeholder="กรุณากรอกชื่อคิว" >
+                        <input type="text" maxlength="50"name="qname" id="qname" class="form-control col-md-7 col-xs-12"   >
                       </div>
                     </div>
                     <div class="form-group">
@@ -205,7 +205,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='stratreserv'>
-                          <input type='text' placeholder="กรุณาเลือกวันที่" class="form-control" name='startreserv'/>
+                          <input type='text'  class="form-control" name='startreserv'/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -215,7 +215,7 @@ $(document).ready(function(){
                       </label>
                       <div class='col-sm-2'>
                         <div class='input-group date' id='endreserv'>
-                          <input type='text'placeholder="กรุณาเลือกวันที่"  class="form-control" name='endreserv' />
+                          <input type='text'  class="form-control" name='endreserv' />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -375,13 +375,13 @@ $(document).ready(function(){
                       </label>
                     </div>
                   </div>
-	
-					<!-- File Button -->
+				
                         <div class="importfile">
                            
                             <div class="col-md-4">
-                                <input type="file" name="file" id="file" class="input-large">
+                                 <input type="file" name="csv_file" id="csv_file" required accept=".csv" />
                             </div>
+                            <div id="imported_csv_data"></div>
                         </div>
 
                   </div>
@@ -458,32 +458,7 @@ $(document).ready(function(){
    
    
     <!-- Initialize datetimepicker -->
-      <?php 
-                 /*   if(isset($_POST["startuse"])OR isset($_POST["enduse"] ))  {
-                        $startuse = $_POST["startuse"];
-                        $enduse = $_POST["enduse"];
-                     
-                        function DateDiff ($startuse,$enduse)
-                        {
-                            return ((strtotime($enduse) - strtotime($startuse)) /  ( 60 * 60 * 24 ))+1;  // 1 day = 60*60*24
-                        }
-                        $date = DateDiff($startuse,$enduse);
-                        
-                        
-                        echo "Date Diff = ". $date;
-                        echo "<br/>";
-                        for ($i=0; $i < $date; $i++) {
-                            # code...
-                            
-                            $date1 = str_replace('-', '/', $startuse);
-                            $date2 = date('d-m-Y',strtotime($date1 ."+".$i." day"));
-                            
-                            }
-                        
-                    $<input type="hidden" name="dateuse" id="dateuse"  >dateuse = $date2;
-                    
-                    } */
-                    ?>
+
                    
                      
 <script>
@@ -509,4 +484,45 @@ $(document).ready(function(){
         format: 'HH:mm'
     });
 
+</script>
+<script>
+$(document).ready(function(){
+
+ load_data();
+
+ function load_data()
+ {
+  $.ajax({
+   url:"<?php echo base_url(); ?>Create/load_data",
+   method:"POST",
+   success:function(data)
+   {
+    $('#imported_csv_data').html(data);
+   }
+  })
+ }
+
+ $('#import_csv').on('submit', function(event){
+  event.preventDefault();
+  $.ajax({
+   url:"<?php echo base_url(); ?>Createq/insert_queue",
+   method:"POST",
+   data:new FormData(this),
+   contentType:false,
+   cache:false,
+   processData:false,
+   beforeSend:function(){
+    $('#import_csv_btn').html('Importing...');
+   },
+   success:function(data)
+   {
+    $('.buttonFinish')[0].reset();
+    $('.buttonFinish').attr('disabled', false);
+    $('.buttonFinish').html('Import Done');
+    load_data();
+   }
+  })
+ });
+ 
+});
 </script>

@@ -35,8 +35,8 @@
                            					 <td class=" "><?php echo $row->Tool_name; ?></td>
                         				    <td class=" "><?php echo $row->Tool_detail; ?> </td>
                             <td class=" "><?php echo $row->Tool_barcode; ?></td>
-                            <td class=" "><a href="<?php echo site_url("Devices_control/editdevice/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">แก้ไข</button></a></td>
-                               <td class=" "><a href="<?php echo site_url("Devices_control/cancel_device/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">ยกเลิกการใช้งาน</button></a></td>
+                            <td class=" "><a href="<?php echo site_url("Devices_control/editdevice/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">แก้ไข  </button></a></td>
+                               <td class=" "><a href="<?php echo site_url("Devices_control/cancel_device/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">ยกเลิกการใช้งาน  </button></a></td>
                           				</tr>
                           			<?php }?>
                         				</tbody>

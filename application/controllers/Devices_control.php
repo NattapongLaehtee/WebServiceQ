@@ -56,6 +56,14 @@ class Devices_control extends CI_Controller {
         $this->load->view('setdevice1', $data);
         $this->load->view('foot');
     }
+    public function setusingdevice(){
+        $this->load->model('Util_model');
+        $this->load->model('Device_model');
+        
+        
+        $stepid = $this->input->post('Step_id');
+        
+    }
     public function insert_device(){
         //var_dump($_POST);
         

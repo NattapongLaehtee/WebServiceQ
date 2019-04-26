@@ -1,0 +1,39 @@
+#header{
+	background-color: #449D44;
+	color: #fff;
+	border-color: #449D44;
+}
+#header a{
+	color: #fff;
+}
+#header a:hover{
+	background-color: #414cf4;
+}
+
+#footer{
+	width: 100%;
+	background-color: #000;
+	height: 100px;
+	color: #fff;
+	padding: 30px;
+}
+#home-title{
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* for admin css start */
+
+#user-header{
+	background-color: #414cf4;
+	color: #fff;
+	border-color: #449D44;
+}
+#user-header a{
+	color: #fff;
+}
+#user-header a:hover{
+	background-color: #449D44;
+}
+/* for admin css close */
+

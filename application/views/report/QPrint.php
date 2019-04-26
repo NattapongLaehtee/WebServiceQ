@@ -32,9 +32,9 @@
                         <tr>
                         <?php foreach($qdatestudent as $row){?>
                         
-                          <td><?php echo convertDBtoDate( $row->Date_usedate);?></td>
+                          <td><?php echo convertDBtoDate($row->Date_usedate);?></td>
                          
-                          <td><a href="<?php echo site_url("Report/callpdf/".$row->Date_usedate);?>"><button type="submit" class="btn btn-success">พิมพ์</button></a></td>
+                          <td><a href="<?php echo site_url("Report/reportpdf/".$row->Cq_id."/".$row->Date_usedate);?>"><button type="submit" class="btn btn-success">พิมพ์</button></a></td>
                           
                         </tr>
                          <?php }?>

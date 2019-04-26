@@ -4,13 +4,13 @@ class Queue_Model extends CI_Model {
 		public function __construct() {
 			parent::__construct();
 		}
-		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date)
+		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date,$data_std)
         {
         	//echo "string";
            // var_dump($data_datetime);
            // die();
           // $this->db->set($data_queue);
-          /* echo ("<br/>xxxxxxx<br/>");
+          /*echo ("<br/>xxxxxxx<br/>");
             echo ("<br/>xxxxxxx<br/>");
             var_dump( $data_queue);
             echo ("<br/>xxxxxxx<br/>");
@@ -21,9 +21,13 @@ class Queue_Model extends CI_Model {
             var_dump($data_datetime);
             echo ("<br/>xxxxxxx<br/>");
             echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_date);
-            die();
-            */
+            var_dump($data_date); 
+            echo ("<br/>xxxxxxx<br/>");
+            echo ("<br/>xxxxxxx<br/>");
+            var_dump($data_std);*/
+            
+           $this->db->insert('student',$data_std);
+            
           $this->db->insert('queue',$data_queue);
            $Cq_id = $this->db->insert_id();
             //($data_step);
@@ -61,11 +65,11 @@ class Queue_Model extends CI_Model {
                   //   $data_datetime['Cq_id']= $this->db->insert_id();
                      //$this->db->set($data_datetime);
                     // $this->db->insert('qdatetime', $data_datetime);
-                 var_dump($data_queue);
+               /*  var_dump($data_queue);
                  echo ("<br/>xxxxxxx<br/>");
                  var_dump($stepinsert);
                  echo ("<br/>xxxxxxx<br/>");
-                 var_dump($dateins);
+                 var_dump($dateins);*/
         
   
             redirect('Createq/content3');
