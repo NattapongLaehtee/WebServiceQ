@@ -62,7 +62,24 @@ class Devices_control extends CI_Controller {
         
         
         $stepid = $this->input->post('Step_id');
+        $boxname = $this->input->post('');
+        $startdevice = $this->input->post('startdevice');
+        $enddevice = $this->input->post('enddevice');
         
+        $datausing = array(
+            'startuse' => $this->Util_Model->convertDateToDB($startdevice),
+            'enduse' => $this->Util_Model->convertDateToDB($enddevice)
+        );
+        
+       $dataservicebox = array(
+           'Box_name' => $boxname,
+           'Tool_id' => $Toolid,
+           'Step_id' => $stepid
+     
+           
+       );
+        
+        $this->Device_model->setdatedevice($datausing);
     }
     public function insert_device(){
         //var_dump($_POST);

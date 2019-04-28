@@ -41,17 +41,19 @@
                         </label>
                         
                       </div>
-				
+							<?php $s=1;?>
                        <?php foreach ($datadevice as $rowdev){?>
-                      	<?php $i=1;?>
-                       <?php $i =  $rowdev->Step_id;?>
-                      
-                  			 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ขั้นตอนบริการที  ".  $i;?> 
+                
+                   
+                    		<input type="hidden" name="stepid" id="stepid" value=<?php echo $rowdev->Step_id;?>> 
+                  			 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ขั้นตอนบริการที  ". $s; ?> 
                        
                         </label>
+                   
+                    
                           <?php echo ("<br/><br/>"); ?>
                           
-                         <?php for ($i=1; $i< $rowdev->Step_box; $i++){?>
+                         <?php for ($i=1; $i<= $rowdev->Step_box; $i++){?>
                       
                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ช่องบริการที  ".  $i;?> 
                       
@@ -63,10 +65,13 @@
                    
                        
            <?php echo ("<br/><br/>"); ?> 
-				
+			
                     <?php }?>
+                  	 <?php $i++;?>
+                  	 <?php $s++;?>
                   
-                   <?php $i++;?>
+                          
+                
                       <?php }?>
                       
                          		
