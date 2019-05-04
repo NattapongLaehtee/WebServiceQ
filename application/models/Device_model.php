@@ -59,9 +59,21 @@ class Device_model extends CI_Model {
         redirect('Devices_control/out_device');
         
     }
-    public function setdatedevice(){
-        
+    public function setdatedevice($datausing,$datastep, $dataservicebox){
+        var_dump($datausing);
+        echo "</br>";
+        echo "=========";
+        echo "</br>";
+        var_dump($datastep);
+        echo "</br>";
+        echo "=========";
+        echo "</br>";
+        var_dump($dataservicebox);
+        echo "</br>";
+        echo "=========";
+        die();
     }
+    
     public function outqdevice($id){
          $queryoutqdevice=  $this->db->query('select * from queue where Cq_id = '. $id);
          return    $queryoutqdevice;

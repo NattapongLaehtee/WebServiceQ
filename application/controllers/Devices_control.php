@@ -57,29 +57,79 @@ class Devices_control extends CI_Controller {
         $this->load->view('foot');
     }
     public function setusingdevice(){
-        $this->load->model('Util_model');
-        $this->load->model('Device_model');
-        
-        
-        $stepid = $this->input->post('Step_id');
-        $boxname = $this->input->post('');
+       
+        // Start Table Queue  
+        $queueid = $this->input->post('queueid');
+        // End Table Queue
+        // Start Table Step  
+        $stepid = $this->input->post('stepid');
+        // End Table Step 
+        // Start Table Servicebox
+        $boxname = $this->input->post('boxname');
+        // End Table Servicebox
+        // Start Table Usingdevice
+        $usingid = $this->input->post('usingid');
         $startdevice = $this->input->post('startdevice');
         $enddevice = $this->input->post('enddevice');
-        
+        // End Table Usingdevice
+        // Start Table Tool 
+        $toolid = $this->input->post('toolid');
+        $toolbarcode = $this->input->post('barcode');
+        // End Table Tool
+       /* var_dump($queueid);
+        echo "</br>"."========"."</br>";
+        var_dump($stepid);
+        echo "</br>"."========"."</br>";
+        var_dump($boxname);
+        echo "</br>"."========"."</br>";
+        var_dump($usingid);
+        echo "</br>"."========"."</br>";
+        var_dump($startdevice);
+        echo "</br>"."========"."</br>";
+        var_dump($enddevice);
+        echo "</br>"."========"."</br>";
+        var_dump($toolid);
+        echo "</br>"."========"."</br>";
+        var_dump($toolbarcode);
+        die();*/
+        $this->load->model('Util_model');
+        $this->load->model('Device_model');
         $datausing = array(
-            'startuse' => $this->Util_Model->convertDateToDB($startdevice),
-            'enduse' => $this->Util_Model->convertDateToDB($enddevice)
+         
+            'startuse' => $this->Util_model->convertDateToDB($startdevice),
+            'enduse' => $this->Util_model->convertDateToDB($enddevice),
+            'Cq_id' =>  $queueid
+        );
+        $datastep = array();
+        $recstep = 0;
+        foreach ($stepid as $step_id){
+        $datastep[$recstep]= array (
+            'Step_id' => $step_id
+        );
+        for  ($i=1; $i<= $boxname; $i++){
+        $dataservicebox= array(
+            'Box_name' => $boxname,
+            'Tool_id' => $toolid,
+            'Step_id' => $stepid,
+            'Using_id'=> $usingid
         );
         
-       $dataservicebox = array(
-           'Box_name' => $boxname,
-           'Tool_id' => $Toolid,
-           'Step_id' => $stepid
-     
+        }
+        $recstep++;        
+        }
+    
+
+    
+          $dataservicebox= array(
+               'Box_name' => $boxname,
+                   'Tool_id' => $toolid,
+              'Step_id' => $stepid,
+                           'Using_id'=> $usingid
+           );
+   
            
-       );
         
-        $this->Device_model->setdatedevice($datausing);
+          $this->Device_model->setdatedevice($datausing, $datastep, $dataservicebox);
     }
     public function insert_device(){
         //var_dump($_POST);

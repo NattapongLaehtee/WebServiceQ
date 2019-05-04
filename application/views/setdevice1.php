@@ -24,6 +24,7 @@
                     action ="<?php echo site_url("Devices_control/setusingdevice");?>" method="post">
 
                       <div class="form-group">
+                      <input type="hidden" name="queueid" id="queueid" value="<?php echo $rowq->Cq_id; ?>">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><?php echo "ชื่อคิว "?>  
                         </label>
                         <label class="control-label col-md-2  col-xs-12" for="first-name"> <?php echo  $rowq->Cq_name;?>  
@@ -55,12 +56,13 @@
                           
                          <?php for ($i=1; $i<= $rowdev->Step_box; $i++){?>
                       
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ช่องบริการที  ".  $i;?> 
+                      <input type="hidden"  name="boxname" id="boxname" value="<?php echo "ช่องบริการที  ".  $i;?>">
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12" ><?php echo "ช่องบริการที  ".  $i;?>
                       
                         </label>
                           <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">Barcode อุปกรณ์ </label>   
                              <div class=" col-sm-2  ">
-                     <input type='text' class="form-control" name='enddevice' />
+                     <input type='text' class="form-control" name='barcode' id='barcode' />
          </div>
                    
                        
@@ -74,7 +76,7 @@
                 
                       <?php }?>
                       
-                         		
+                         		<input type="hidden" name="usingid" id="usingid">
                           				<div class="form-group">
                             				<label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่ใช้อุปกรณ์
                         					</label>
