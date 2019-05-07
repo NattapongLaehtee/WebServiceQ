@@ -379,7 +379,7 @@ $(document).ready(function(){
                         <div class="importfile">
                            
                             <div class="col-md-4">
-                                 <input type="file" name="csv_file" id="csv_file" required accept=".csv" />
+                                 <input type="file" name="csv_file"  id="csv_file" required="" accept=".csv" />
                             </div>
                             <div id="imported_csv_data"></div>
                         </div>
@@ -493,7 +493,7 @@ $(document).ready(function(){
  function load_data()
  {
   $.ajax({
-   url:"<?php echo base_url(); ?>Create/load_data",
+   url:"<?php echo base_url(); ?>Createq/load_data",
    method:"POST",
    success:function(data)
    {

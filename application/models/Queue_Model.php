@@ -10,7 +10,7 @@ class Queue_Model extends CI_Model {
            // var_dump($data_datetime);
            // die();
           // $this->db->set($data_queue);
-          /*echo ("<br/>xxxxxxx<br/>");
+          echo ("<br/>xxxxxxx<br/>");
             echo ("<br/>xxxxxxx<br/>");
             var_dump( $data_queue);
             echo ("<br/>xxxxxxx<br/>");
@@ -24,7 +24,8 @@ class Queue_Model extends CI_Model {
             var_dump($data_date); 
             echo ("<br/>xxxxxxx<br/>");
             echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_std);*/
+            var_dump($data_std);
+            die();
             
            $this->db->insert('student',$data_std);
             

@@ -149,26 +149,26 @@ $(document).ready(function(){
                             
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                               <div class="x_content">
-                                  <div  class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                  <div  >
                             <div class="row">
                                       <div class="col-sm-12">
-                                        <table class="table table-striped table-bordered dataTable no-footer" >
-                                            <thead>
-                                              <tr role="row" align="center">
+                                        <table  class="table table-striped table-bordered dataTable no-footer">
+                                            <thead  >
+                                              <tr role="row" align="center"  >
                                                             <th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 20px;" ali>วันที่</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 10px;">ช่วงที่</th>
-                                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">เวลา</th>
+                                                          
+                                                            <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 50px;">ช่วงเวลา</th>
                                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 30px;">จำนวนนักศึกษา</th>
                                                             <th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 60px;">เปลี่ยนแปลงคิว</th>
                                               </tr>
                                             </thead>
-                                            <?php $i=1; ?>
+                                        				
                                                           <?php foreach ($move_date as $rowqd){?>
                                               <tbody>
                                                           <tr role="row" class="odd">
                                                              <input type="hidden" name="datetimeid" id ="datetimeid" value="<?php echo $rowqd->Datetime_id;?>" > 
                                                               <td class="sorting_1"><?php echo  $this->Util_model->convertDateToView("$rowqd->Date_usedate") ; ?></td>
-                                                              <td><?php echo $i;?></td>
+                                                     	
                                                               <td><?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_usedate ") ; ?><?php echo " - ";?><?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_lastuse") ; ?><?php echo " น.";?></td>
                                                               <td><?php echo  $rowqd->amount_std ; ?></td>
                                                               <td>
@@ -203,8 +203,10 @@ $(document).ready(function(){
                                                                   </div>
                                                                 </div>
                                                               </td>
+                                                               
                                                             </tr>
-                                  <?php $i++; ?>
+                                                       
+                                                      	
                                             </tbody>
                                             <?php }?> 
                                         </table>

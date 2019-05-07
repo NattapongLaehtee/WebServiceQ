@@ -285,11 +285,12 @@ $rowq = $dataq-> row();
                     <?php foreach ($datatime as $row){?>
                      <input type="hidden" name="datetimeid" value="<?php echo $row->Datetime_id;?>
                     
-                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
+                     
                       
                        <input type="hidden" id="datetimeid" name="datetimeid[]"required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $row->Datetime_id; ?>">
+                       <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
+                       <div class='col-sm-2'> 
                       
-                       <div class='col-sm-2'>
                       <div class='input-group date' id='starttime'>
                             <input type='text' class="form-control" name='starttime[]'  value="<?php echo $this->Util_model->convertTimeToView("$row->Time_usedate"); ?>"/>
                             <span class="input-group-addon">

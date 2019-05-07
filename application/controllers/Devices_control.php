@@ -101,20 +101,22 @@ class Devices_control extends CI_Controller {
             'Cq_id' =>  $queueid
         );
         $datastep = array();
+        $dataservicebox= array();
         $recstep = 0;
         foreach ($stepid as $step_id){
         $datastep[$recstep]= array (
             'Step_id' => $step_id
         );
-        for  ($i=1; $i<= $boxname; $i++){
+        for  ($i=1; $i<= $boxname[$recstep]; $i++){
         $dataservicebox= array(
-            'Box_name' => $boxname,
-            'Tool_id' => $toolid,
-            'Step_id' => $stepid,
-            'Using_id'=> $usingid
+            'Box_name' => $boxname[$recstep],
+            'Tool_id' => $toolid[$recstep],
+            'Step_id' => $stepid[$recstep],
+            'Using_id'=> $usingid[$recstep]
+     
         );
-        
         }
+        $i++;
         $recstep++;        
         }
     

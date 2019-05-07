@@ -128,7 +128,7 @@ class Createq extends CI_Controller {
             $endreserv = $this->input->post('endreserv');
             $startuse = $this->input->post('startuse');
             $enduse = $this->input->post('enduse');
-            $csv_file = $this->input->post('csv_file');
+          
           // End Table Queue
           // Start Table Qdatetime
             $starttime = $_POST['starttime'];
@@ -136,6 +136,10 @@ class Createq extends CI_Controller {
              
             $amountstd = $this->input->post('amountstdf1');
             // End Table Qdatetime
+            // Strat Table student
+            $csv_file = $this->input->post('csv_file');
+        
+            // End table Student
           // Start Table Step
             $stepbox = $this->input->post('stepbox');
             $amounttime = $this->input->post('amountstep');
@@ -225,16 +229,17 @@ class Createq extends CI_Controller {
                 );
                 $rec++;
             }
+            $data_std = array();
             $recstd = 0;
             $this->load->library('std_import_libraries');
-            $file_data = $this->std_import_libraries->get_array($_FILES["csv_file"]["tmp_name"]);
+            $file_data = $this->std_import_libraries->get_array($_FILES[$csv_file]["tmp_name"]);
             foreach($file_data as $row)
             {
                 $data_std[$recstd] = array(
                     
                     'Studentid' => $row["id"][$recstd],
                     'Studentname' => $row["First Name"][$recstd],
-                    'Studentsurname'  => $row["Last Name"][$recstd],
+                    'Studentsurname'  => $row[ "Last Name"][$recstd],
                     
                 );
                 $recstd++;

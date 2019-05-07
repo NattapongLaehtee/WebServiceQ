@@ -72,6 +72,7 @@ class Device_model extends CI_Model {
         echo "</br>";
         echo "=========";
         die();
+        
     }
     
     public function outqdevice($id){
