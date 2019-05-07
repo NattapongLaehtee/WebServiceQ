@@ -21,6 +21,7 @@ class std_import_libraries {
     private $initial_line = 0;
     private $delimiter = ",";
     private $detect_line_endings = FALSE;
+    
     /**
      * Function that parses a CSV file and returns results
      * as an array.
@@ -35,9 +36,6 @@ class std_import_libraries {
      */
     public function get_array($filepath=FALSE, $column_headers=FALSE, $detect_line_endings=FALSE, $initial_line=FALSE, $delimiter=FALSE)
     {
-        // Raise memory limit (for big files)
-        ini_set('memory_limit', '100M');
-        
         // File path
         if(! $filepath)
         {
@@ -48,11 +46,13 @@ class std_import_libraries {
             // If filepath provided, set it
             $this->_set_filepath($filepath);
         }
+        
         // If file doesn't exists, return false
         if(! file_exists($filepath))
         {
             return FALSE;
         }
+        
         // auto detect row endings
         if(! $detect_line_endings)
         {
@@ -63,11 +63,13 @@ class std_import_libraries {
             // If detect_line_endings provided, set it
             $this->_set_detect_line_endings($detect_line_endings);
         }
+        
         // If true, auto detect row endings
         if($detect_line_endings)
         {
             ini_set("auto_detect_line_endings", TRUE);
         }
+        
         // Parse from this line on
         if(! $initial_line)
         {
@@ -77,6 +79,7 @@ class std_import_libraries {
         {
             $this->_set_initial_line($initial_line);
         }
+        
         // Delimiter
         if(! $delimiter)
         {
@@ -87,6 +90,7 @@ class std_import_libraries {
             // If delimiter provided, set it
             $this->_set_delimiter($delimiter);
         }
+        
         // Column headers
         if(! $column_headers)
         {
@@ -97,56 +101,57 @@ class std_import_libraries {
             // If column headers provided, set them
             $this->_set_column_headers($column_headers);
         }
+        
         // Open the CSV for reading
         $this->_get_handle();
         
         $row = 0;
+        
         while (($data = fgetcsv($this->handle, 0, $this->delimiter)) !== FALSE)
         {
-            if ($data[0] != NULL)
+            if($row < $this->initial_line)
             {
-                if($row < $this->initial_line)
-                {
-                    $row++;
-                    continue;
-                }
-                // If first row, parse for column_headers
-                if($row == $this->initial_line)
-                {
-                    // If column_headers already provided, use them
-                    if($this->column_headers)
-                    {
-                        foreach ($this->column_headers as $key => $value)
-                        {
-                            $column_headers[$key] = trim($value);
-                        }
-                    }
-                    else // Parse first row for column_headers to use
-                    {
-                        foreach ($data as $key => $value)
-                        {
-                            $column_headers[$key] = trim($value);
-                        }
-                    }
-                }
-                else
-                {
-                    $new_row = $row - $this->initial_line - 1; // needed so that the returned array starts at 0 instead of 1
-                    foreach($column_headers as $key => $value) // assumes there are as many columns as their are title columns
-                    {
-                        $result[$new_row][$value] = utf8_encode(trim($data[$key]));
-                    }
-                }
-                
-                unset($data);
-                
                 $row++;
+                continue;
             }
+            
+            // If first row, parse for column_headers
+            if($row == $this->initial_line)
+            {
+                // If column_headers already provided, use them
+                if($this->column_headers)
+                {
+                    foreach ($this->column_headers as $key => $value)
+                    {
+                        $column_headers[$key] = trim($value);
+                    }
+                }
+                else // Parse first row for column_headers to use
+                {
+                    foreach ($data as $key => $value)
+                    {
+                        $column_headers[$key] = trim($value);
+                    }
+                }
+            }
+            else
+            {
+                $new_row = $row - $this->initial_line - 1; // needed so that the returned array starts at 0 instead of 1
+                foreach($column_headers as $key => $value) // assumes there are as many columns as their are title columns
+                {
+                    $result[$new_row][$value] = utf8_encode(trim($data[$key]));
+                }
+            }
+            
+            $row++;
         }
         
         $this->_close_csv();
+        
         return $result;
     }
+    
+    
     
     /**
      * Sets the "detect_line_endings" flag
@@ -159,6 +164,7 @@ class std_import_libraries {
     {
         $this->detect_line_endings = $detect_line_endings;
     }
+    
     /**
      * Sets the "detect_line_endings" flag
      *
@@ -171,6 +177,7 @@ class std_import_libraries {
         $this->_set_detect_line_endings($detect_line_endings);
         return $this;
     }
+    
     /**
      * Gets the "detect_line_endings" flag
      *
@@ -181,6 +188,7 @@ class std_import_libraries {
     {
         return $this->detect_line_endings;
     }
+    
     /**
      * Sets the initial line from which start to parse the file
      *
@@ -192,6 +200,7 @@ class std_import_libraries {
     {
         return $this->initial_line = $initial_line;
     }
+    
     /**
      * Sets the initial line from which start to parse the file
      *
@@ -204,6 +213,7 @@ class std_import_libraries {
         $this->_set_initial_line($initial_line);
         return $this;
     }
+    
     /**
      * Gets the initial line from which start to parse the file
      *
@@ -214,6 +224,7 @@ class std_import_libraries {
     {
         return $this->initial_line;
     }
+    
     /**
      * Sets the values delimiter
      *
@@ -225,6 +236,7 @@ class std_import_libraries {
     {
         $this->delimiter = $delimiter;
     }
+    
     /**
      * Sets the values delimiter
      *
@@ -237,6 +249,7 @@ class std_import_libraries {
         $this->_set_delimiter($delimiter);
         return $this;
     }
+    
     /**
      * Gets the values delimiter
      *
@@ -247,6 +260,7 @@ class std_import_libraries {
     {
         return $this->delimiter;
     }
+    
     /**
      * Sets the filepath of a given CSV file
      *
@@ -258,6 +272,7 @@ class std_import_libraries {
     {
         $this->filepath = $filepath;
     }
+    
     /**
      * Sets the filepath of a given CSV file
      *
@@ -270,6 +285,7 @@ class std_import_libraries {
         $this->_set_filepath($filepath);
         return $this;
     }
+    
     /**
      * Gets the filepath of a given CSV file
      *
@@ -280,6 +296,7 @@ class std_import_libraries {
     {
         return $this->filepath;
     }
+    
     /**
      * Sets the alternate column headers that will be used when creating the array
      *
@@ -294,6 +311,7 @@ class std_import_libraries {
             $this->column_headers = $column_headers;
         }
     }
+    
     /**
      * Sets the alternate column headers that will be used when creating the array
      *
@@ -306,6 +324,7 @@ class std_import_libraries {
         $this->_set_column_headers($column_headers);
         return $this;
     }
+    
     /**
      * Gets the alternate column headers that will be used when creating the array
      *
@@ -316,6 +335,7 @@ class std_import_libraries {
     {
         return $this->column_headers;
     }
+    
     /**
      * Opens the CSV file for parsing
      *
@@ -326,6 +346,7 @@ class std_import_libraries {
     {
         $this->handle = fopen($this->filepath, "r");
     }
+    
     /**
      * Closes the CSV file when complete
      *

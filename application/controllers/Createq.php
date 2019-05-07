@@ -138,7 +138,7 @@ class Createq extends CI_Controller {
             // End Table Qdatetime
             // Strat Table student
             $csv_file = $this->input->post('csv_file');
-        
+          
             // End table Student
           // Start Table Step
             $stepbox = $this->input->post('stepbox');
@@ -229,20 +229,23 @@ class Createq extends CI_Controller {
                 );
                 $rec++;
             }
+            
+            
             $data_std = array();
-            $recstd = 0;
+       
             $this->load->library('std_import_libraries');
-            $file_data = $this->std_import_libraries->get_array($_FILES[$csv_file]["tmp_name"]);
+             $file_data = $this->std_import_libraries->get_array($_FILES[$csv_file]["tmp_name"]);
+           
             foreach($file_data as $row)
             {
-                $data_std[$recstd] = array(
+                $data_std[] = array(
                     
-                    'Studentid' => $row["id"][$recstd],
-                    'Studentname' => $row["First Name"][$recstd],
-                    'Studentsurname'  => $row[ "Last Name"][$recstd],
+                    'Studentid' => $row["id"],
+                    'Studentname' => $row["First Name"],
+                    'Studentsurname'  => $row[ "Last Name"]
                     
                 );
-                $recstd++;
+               
             }
            // var_dump($data_step);
           //  $datadate = array(

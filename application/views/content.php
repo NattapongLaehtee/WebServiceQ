@@ -516,9 +516,9 @@ $(document).ready(function(){
    },
    success:function(data)
    {
-    $('.buttonFinish')[0].reset();
-    $('.buttonFinish').attr('disabled', false);
-    $('.buttonFinish').html('Import Done');
+    $('#import_csv')[0].reset();
+    $('#import_csv_btn').attr('disabled', false);
+    $('#import_csv_btn').html('Import Done');
     load_data();
    }
   })
