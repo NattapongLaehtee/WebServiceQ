@@ -17,17 +17,16 @@ class Device_model extends CI_Model {
         return $querydevice->result();
         
     }
-    
+    public function outtool(){
+        $querytool = $this->db->query('select * from Tool ');
+        return  $querytool->result();
+    }
     public function outdevice_by_id($id){
         //$querydevice = $this->db->query("select * from Tool where Tool_id ='".$id."' ");
         $query = $this->db->get_where('Tool', array('Tool_id' => $id));
         $row = $query->row();
         return $row;
-        
-        
-        
-        
-    }
+       }
    
     public function updatedevice($data_updevice,$id)
     {

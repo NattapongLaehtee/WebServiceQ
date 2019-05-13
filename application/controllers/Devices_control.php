@@ -43,7 +43,7 @@ class Devices_control extends CI_Controller {
         $this->load->view('foot');
         
     }
-    public function setdevice1($id)
+    public function setdevice1($id) //แสดงผลการกำหนดอุปกรณ์
     {   
         $this->load->model('Util_model');
         $this->load->model('Device_model');
@@ -51,13 +51,15 @@ class Devices_control extends CI_Controller {
         $data['dataqdevice'] = $res;
         $res = $this->Device_model->outsetdevice($id);
         $data['datadevice'] = $res;
+        $res = $this->Device_model->outtool();
+        $data['datatool'] = $res;
         
         $this->load->view('head');
         $this->load->view('setdevice1', $data);
         $this->load->view('foot');
     }
-    public function setusingdevice(){
-       
+    public function setusingdevice(){ //บันทึกการกหนดอุปกร์
+        
         // Start Table Queue  
         $queueid = $this->input->post('queueid');
         // End Table Queue

@@ -60,10 +60,16 @@
                          <label class="control-label col-md-3 col-sm-3 col-xs-12" ><?php echo "ช่องบริการที  ".  $i;?>
                       
                         </label>
-                          <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">Barcode อุปกรณ์ </label>   
-                             <div class=" col-sm-2  ">
-                     <input type='text' class="form-control" name='barcode' id='barcode' />
-         </div>
+                          <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสบาร์โค้ดอุปกรณ์ </label>   
+                           
+         					<div class="col-md-3 col-sm-2 col-xs-3">
+                            <select name="selectqueue" id="selectqueue" class="form-control-sm form-control"> 
+							<option value="" disabled selected hidden>กรุณาเลือกรหัสอุปกรณ์</option>
+								<?php foreach ($datatool as $rowtool){?>
+                                     <option   id ="<?php echo  $rowtool->Tool_id; ?>" value="<?php echo  $rowtool->Tool_barcode;  ?>"> </option>
+                                 <?php  }?>
+						</select>
+					 </div>
                    
                        
            <?php echo ("<br/><br/>"); ?> 

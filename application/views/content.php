@@ -64,7 +64,20 @@ $(document).ready(function(){
 
              
     }
+
+    function inputDigits(sensor){
    
+    	var regExp = /[0-9]$/;
+    
+    	if(!regExp.test(sensor.value)){
+    	
+    	alert("กรอกตัวเลขเท่านั้นนะจ๊ะ จุ๊บๆ");
+    	
+    	sensor.value = sensor.value.substring(0, sensor.value.length -1);
+    	
+    	}
+ 
+    	}
     //$("#import1").hide();
     //$("#import2").hide();
     //$("#import3").hide();
@@ -260,13 +273,13 @@ $(document).ready(function(){
                         </div>
                          <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ  </font></label>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12">
+                          <input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12" onKeyUp="javascript:inputDigits(this);">
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
                       </div><button id="add1"><div  class="fa fa-plus fa-1px" ></div></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12">
+                          <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12" onKeyUp="javascript:inputDigits(this);">
                       </div>              
                     </div>
                     <div id="step"></div>
@@ -315,7 +328,7 @@ $(document).ready(function(){
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" maxlength="3" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" maxlength="3" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12" onkeypress="return keynum(event)">
                       </div>
                       <button id="add"><div  class="fa fa-plus fa-1px" ></div></button>
                     </div>
@@ -346,7 +359,7 @@ $(document).ready(function(){
                         <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
                       </div>
                       <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amountstdf2[]" required="required" class="form-control col-md-7 col-xs-12">
+                        <input type="text" name="amountstdf2[]" required="required" class="form-control col-md-7 col-xs-12" onkeypress="return keynum(event)">
                       </div>
                       <button class="fa fa-plus-square fa-1x" id="add2"></button>
                     </div>
