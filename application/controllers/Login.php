@@ -38,8 +38,11 @@ class Login extends CI_Controller {
                 redirect("Createq/indexad"); 
             }
         }else{
-            //$this->form_validation->set_message('checklogin', '<div class="alert alert-danger text-center">Invalid username or password!</div>');
-            redirect("Login/loginfrom");
+            echo "<script>
+                    alert('คุณกรอกชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
+                        window.location.href='loginfrom';
+                        </script>";
+           // redirect("Login/loginfrom");
         }
 
         

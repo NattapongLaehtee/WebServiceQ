@@ -119,8 +119,9 @@ class Queue_Model extends CI_Model {
            
             die();
             // $this->db->set($data_queue);
-            $this->db->replace('queue',$data_queue);
-            $Cq_id = $this->db->insert_id();
+            $this->db->where('Cq_id', $Cq_id);
+            $this->db->update('queue',$data_queue);
+            $Cq_id = $this->db->update_id();
            //var_dump($data_queue);
            //  echo ("<br/>--------------<br/>");
             foreach ($data_step as $row){
@@ -134,7 +135,7 @@ class Queue_Model extends CI_Model {
                 $stepreplace['step_box']= $row['step_box'];
                 $stepreplace['step_alm']= $row['step_alm'];
                 // $this->db->set($data_step);
-                $this->db->replace('step',$stepreplace);
+                $this->db->update('step',$stepreplace);
                // var_dump($stepreplace);
              //   echo ("<br/>--------------<br/>");
             }
@@ -147,7 +148,8 @@ class Queue_Model extends CI_Model {
                 $datetimerep['Time_usedate']= $row['Time_usedate'];
                 $datetimerep['Time_lastuse']= $row['Time_lastuse'];
                 $datetimerep['amount_std']=$row['amount_std'];
-                $this->db->replace('qdatetime',  $datetimerep);
+                $this->db->where('Cq_id', $Cq_id);
+                $this->db->update('qdatetime',  $datetimerep);
                 
             }
            // var_dump( $datetimerep);

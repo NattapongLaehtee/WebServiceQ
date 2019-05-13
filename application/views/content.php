@@ -502,7 +502,7 @@ $(document).ready(function(){
   })
  }
 
- $('#import_csv').on('submit', function(event){
+ $('#import_csv_data').on('submit', function(event){
   event.preventDefault();
   $.ajax({
    url:"<?php echo base_url(); ?>Createq/insert_queue",
@@ -516,7 +516,7 @@ $(document).ready(function(){
    },
    success:function(data)
    {
-    $('#import_csv')[0].reset();
+    $('#import_csv_data')[0].reset();
     $('#import_csv_btn').attr('disabled', false);
     $('#import_csv_btn').html('Import Done');
     load_data();

@@ -1,7 +1,7 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-    $("#closeq").click(function(){
+   $("#closeq").click(function(){
     	alert("คุณต้องการที่จะยกเลิกคิว  ใช่หรือไม่");
     }); 
 });
@@ -11,6 +11,7 @@ $(document).ready(function() {
     	alert("คุณต้องการแก้ไขข้อมูลคิว ใช่หรือไม่");
     }); 
 });
+
 
 </script>
 
