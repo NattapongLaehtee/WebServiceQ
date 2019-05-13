@@ -10,6 +10,7 @@
 ?>
 
 <script>
+
 $(document).ready(function(){
 	
     $("#slottime1").show();
@@ -56,7 +57,7 @@ $(document).ready(function(){
 	
     function set_step5(){
         $('#nameq_st_5').html($('#qname').val());
-      //  $('#datereserv_st_5').html($('#stratreserv').val(format: 'DD/MM/YYYY'));
+       //$('#datereserv_st_5').html($('#stratreserv').val(format: 'DD/MM/YYYY'));
        // $("#datereserv_st_5").innerHTML  ($('#stratreserv').val()); 
                 
         	
@@ -65,19 +66,6 @@ $(document).ready(function(){
              
     }
 
-    function inputDigits(sensor){
-   
-    	var regExp = /[0-9]$/;
-    
-    	if(!regExp.test(sensor.value)){
-    	
-    	alert("กรอกตัวเลขเท่านั้นนะจ๊ะ จุ๊บๆ");
-    	
-    	sensor.value = sensor.value.substring(0, sensor.value.length -1);
-    	
-    	}
- 
-    	}
     //$("#import1").hide();
     //$("#import2").hide();
     //$("#import3").hide();
@@ -200,7 +188,7 @@ $(document).ready(function(){
                   </li>
                 </ul>
                <form class="form-horizontal form-label-left" id="form_1" 
-               action="<?php echo(site_url("Createq/insert_queue")); ?>" method="post">
+               action="<?php echo(site_url("Createq/insert_queue")); ?>" method="post" enctype="multipart/form-data">
                   
                   <!-- Start Step 1 -->
 
@@ -271,15 +259,15 @@ $(document).ready(function(){
                       <div class="col-md-2 col-sm-2 col-xs-2">
                           <input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12">
                         </div>
-                         <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ  </font></label>
+                         <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ </font></label>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12" onKeyUp="javascript:inputDigits(this);">
+                          <input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12" >
                         </div>
                       <div>
                         <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label>
                       </div><button id="add1"><div  class="fa fa-plus fa-1px" ></div></button>
                       <div class="col-md-1 col-sm-1 col-xs-1">
-                          <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12" onKeyUp="javascript:inputDigits(this);">
+                          <input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12" >
                       </div>              
                     </div>
                     <div id="step"></div>
@@ -295,10 +283,7 @@ $(document).ready(function(){
                       <label><input type="radio" name = "timeslot" id="slot1" checked><font color="black" >กำหนดช่วงเวลาเดียวกัน</font>
                       </label>
                     </div>
-                    <div class="radio ">
-                      <label><input type="radio" name = "timeslot" id="slot2"><font color="black">กำหนดช่วงเวลาแต่ละวัน</font>
-                      </label>
-                    </div>
+                   
                   </div>
                   <div id="slottime1"> 
                     
@@ -337,34 +322,7 @@ $(document).ready(function(){
                     <div id="slottime1_001"></div>
                     
                     
-                  <div id="slottime2"> 
-                    
-                  
-                
                  
-                     <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black" name="dateuse"></font></label>
-                  
-                    <div class="form-group slot_01" >
-                      <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="starttime1[]" id="strattime"required="required" class="form-control col-md-2 col-xs-2">
-                      </div>
-                      <div>
-                        <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
-                      </div>
-                      <div class="col-md-2 col-sm-2 col-xs-2">
-                        <input type="text" name="endtime1[]" required="required" class="form-control col-md-7 col-xs-12">
-                      </div>
-                      <div>
-                        <label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label>
-                      </div>
-                      <div class="col-md1 col-sm-1 col-xs-1">
-                        <input type="text" name="amountstdf2[]" required="required" class="form-control col-md-7 col-xs-12" onkeypress="return keynum(event)">
-                      </div>
-                      <button class="fa fa-plus-square fa-1x" id="add2"></button>
-                    </div>
-                  </div>
-                  <div id="slottime1_002"></div>
 					
                      
 

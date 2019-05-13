@@ -1,6 +1,10 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	//alert(555);
+	<?php if($this->session->flashdata('massageid')=='S001'){
+	    echo "alert('".$this->session->flashdata('massage')."');";
+	}?>
    $("#closeq").click(function(){
     	alert("คุณต้องการที่จะยกเลิกคิว  ใช่หรือไม่");
     }); 

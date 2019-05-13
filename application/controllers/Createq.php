@@ -27,10 +27,12 @@ class Createq extends CI_Controller {
     }
     public function content3()
     {
+        
         $this->load->model('Queue_model');
         $res = $this->Queue_model->outqueue();
         
         $dataq['queue_res'] = $res;
+        //$this->session->set_flashdata('massage', 'บันทึกข้อมูลเรียบร้อย' );
         $this->load->view('head');
         $this->load->view('content3', $dataq);
         $this->load->view('foot');
@@ -231,7 +233,7 @@ class Createq extends CI_Controller {
             }
             
             
-            $data_std = array();
+        /*  $data_std = array();
        
             $this->load->library('std_import_libraries');
              $file_data = $this->std_import_libraries->get_array($_FILES[$csv_file]["tmp_name"]);
@@ -246,7 +248,7 @@ class Createq extends CI_Controller {
                     
                 );
                
-            }
+            }*/
            // var_dump($data_step);
           //  $datadate = array(
              //   'Date_usedate '=> $this->Util_Model->convertDateToDB($date2)
@@ -272,7 +274,11 @@ class Createq extends CI_Controller {
           
         
                 
-            $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime, $data_date, $data_std);
+            $this->Queue_Model->insertqueue($data_queue,$data_step,$data_datetime, $data_date /*, $data_std*/);
+          
+            $this->session->set_flashdata('massageid', 'S001' );
+            $this->session->set_flashdata('massage', 'บันทึกข้อมูลคิวเรียบร้อย' );
+            redirect('Createq/content3');
 
     }
     public function editq($id)   {  //แสดงข้อมูลหน้า form แก้ไขข้อมูลคิว
@@ -341,9 +347,9 @@ class Createq extends CI_Controller {
         //var_dump($amounttime);
         foreach ($stepname as $stp_name){
             $data_step[$rec] = array(
-         
-                'step_detail' => $stp_name ,
                 'step_id' => $stepid[$rec],
+                'step_detail' => $stp_name ,
+              
                 'step_box' => $stepbox[$rec],
                //'Cq_id'=> $queue_id[$rec],
                 'step_alm'  => $amounttime[$rec]
@@ -360,10 +366,10 @@ class Createq extends CI_Controller {
         //var_dump($amounttime);
         foreach ($starttime as $starttime){
             $data_datetime[$datadate] = array(
-                
+                'Datetime_id' => $datetimeid[$datadate],
                 'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
                 'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[$datadate]),
-                'Datetime_id' => $datetimeid[$datadate],
+                
                 //'Cq_id'=> $queue_id[$datadate],
                 'amount_std' => $amountstd[$datadate]
             );
@@ -391,7 +397,8 @@ class Createq extends CI_Controller {
   
     public function changequeue(){//บันทึกการเลื่อนคิว
         
-  
+        var_dump($_POST);
+        die();
         
         $queueid =$this->input->post('queueid');
 
@@ -407,16 +414,26 @@ class Createq extends CI_Controller {
         $this->load->model('Util_model');
         $this->load->model('Queue_Model');
         
-        $datadate = array(
-            'Cq_id' => $queueid,
-            'Datetime_id ' => $datetimeid,
-            'Date_usedate ' =>$this->Util_model->convertDateToDB($datemoveq),
-            'Time_usedate' =>$this->Util_model->convertTimeToDB($starttime),
-            'Time_lastuse' =>$this->Util_model->convertTimeToDB($endtime)         
-           
-        );
+        $datadatetime = array();
+        $datadate = 0;
+        // echo ("<br/><br/>");
+        //var_dump($amounttime);
+        foreach ($starttime as $starttime){
+            $datadatetime[$datadate] = array(
+                'Cq_id' => $queueid[$datadate],
+                'Datetime_id' => $datetimeid[$datadate],
+                'Date_usedate' => $datemoveq[$datadate],
+                'Time_usedate' =>$this->Util_model->convertTimeToDB($starttime),
+                'Time_lastuse' =>$this->Util_model->convertTimeToDB($endtime[$datadate]),
+                
+                //'Cq_id'=> $queue_id[$datadate],
+              
+            );
+            $datadate++;
+        }
+         
 
         
-        $this->Queue_Model->changemoveq($datadate);
+        $this->Queue_Model->changemoveq( $datadatetime);
     }
 }

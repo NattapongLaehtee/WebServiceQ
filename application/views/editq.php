@@ -213,7 +213,7 @@ $rowq = $dataq-> row();
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">วันที่จองคิว<span style="color:red" >*</span>
                       </label>
                       <div class='col-sm-2'>
-                        <div class='input-group date' id='startuse'>
+                        <div class='input-group date startuse' id='startuse'>
                           <input type='text' class="form-control" name='startuse' value="<?php echo $this->Util_model->convertDateToView("$rowq->Cq_usedate"); ?>" />
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
@@ -223,7 +223,7 @@ $rowq = $dataq-> row();
                       <label class="control-label col-md-1 col-sm-1 col-xs-12" for="last-name">ถึง
                       </label>
                       <div class='col-sm-2'>
-                        <div class='input-group date' id='enduse'>
+                        <div class='input-group date enduse' id='enduse'>
                           <input type='text' class="form-control" name ='enduse' value="<?php echo $this->Util_model->convertDateToView("$rowq->Cq_lastuse") ; ?>"/>
                           <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
@@ -291,7 +291,7 @@ $rowq = $dataq-> row();
                        <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black"> เวลาที่เริ่มต้น :</font></label>
                        <div class='col-sm-2'> 
                       
-                      <div class='input-group date' id='starttime'>
+                      <div class='input-group date starttime' id='starttime'>
                             <input type='text' class="form-control" name='starttime[]'  value="<?php echo $this->Util_model->convertTimeToView("$row->Time_usedate"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
@@ -302,7 +302,7 @@ $rowq = $dataq-> row();
                         <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
                       </div>
                       <div class='col-sm-2'>
-                      <div class='input-group date' id='endtime'>
+                      <div class='input-group date endtime' id='endtime'>
                             <input type='text' class="form-control" name='endtime[]' value="<?php echo $this->Util_model->convertTimeToView("$row->Time_lastuse"); ?>"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
@@ -422,16 +422,16 @@ $rowq = $dataq-> row();
         format: 'DD/MM/YYYY'
     });
     
-    $('#startuse').datetimepicker({
+    $('.startuse').datetimepicker({
       format: 'DD/MM/YYYY'
     });
-    $('#enduse').datetimepicker({
+    $('.enduse').datetimepicker({
       format: 'DD/MM/YYYY'
     });
-    $('#starttime').datetimepicker({
+    $('.starttime').datetimepicker({
         format: 'HH:mm'
     });
-    $('#endtime').datetimepicker({
+    $('.endtime').datetimepicker({
         format: 'HH:mm'
     });
 </script>   

@@ -166,7 +166,7 @@ $(document).ready(function(){
                                                           <?php foreach ($move_date as $rowqd){?>
                                               <tbody>
                                                           <tr role="row" class="odd">
-                                                             <input type="hidden" name="datetimeid" id ="datetimeid" value="<?php echo $rowqd->Datetime_id;?>" > 
+                                                             <input type="hidden" name="datetimeid[]" id ="datetimeid" value="<?php echo $rowqd->Datetime_id;?>" > 
                                                               <td class="sorting_1"><?php echo  $this->Util_model->convertDateToView("$rowqd->Date_usedate") ; ?></td>
                                                      	
                                                               <td><?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_usedate ") ; ?><?php echo " - ";?><?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_lastuse") ; ?><?php echo " น.";?></td>
@@ -174,8 +174,8 @@ $(document).ready(function(){
                                                               <td>
                                                     <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">วันที่</font></label>
                                                     <div class='col-sm-5'>
-                                                  <div class='input-group date' id='datemoveq'>
-                                                                    <input type='text' class="form-control" name = 'datemoveq' />
+                                                  <div class='input-group date datemoveq' id='datemoveq'>
+                                                                    <input type='text' class="form-control" name = 'datemoveq[]' />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -184,8 +184,8 @@ $(document).ready(function(){
                                                       <br><br><br>
                                                       <label class="control-label col-md-3 col-sm-1 col-xs-1"><font color="black">เวลาที่เริ่มต้น </font></label>
                                                                 <div class='col-sm-4'>
-                                                                  <div class='input-group date' id='starttime'>
-                                                                      <input type='text' class="form-control" placeholder="00:00" name='starttime' />
+                                                                  <div class='input-group date starttime' id='starttime'>
+                                                                      <input type='text' class="form-control" placeholder="00:00" name='starttime[]' />
                                                                       <span class="input-group-addon">
                                                                           <span class="glyphicon glyphicon-calendar"></span>
                                                                       </span>
@@ -195,8 +195,8 @@ $(document).ready(function(){
                                                                   <label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black"> ถึง</font></label>
                                                                 </div>
                                                                 <div class='col-sm-4'>
-                                                                  <div class='input-group date' id='endtime'>
-                                                                      <input type='text' class="form-control"  placeholder="00:00" name='endtime'/>
+                                                                  <div class='input-group date endtime' id='endtime'>
+                                                                      <input type='text' class="form-control"  placeholder="00:00" name='endtime[]'/>
                                                                       <span class="input-group-addon">
                                                                           <span class="glyphicon glyphicon-calendar"></span>
                                                                       </span>
@@ -224,7 +224,7 @@ $(document).ready(function(){
                   </div>
                   
                   <!-- End Step 3 -->
-                </form>
+               
                             </div>
                   <!-- End Step 5 -->
                 </form>
@@ -271,14 +271,14 @@ $(document).ready(function(){
     <!-- Initialize datetimepicker -->
 <script>
 
-    $('#datemoveq').datetimepicker({
+    $('.datemoveq').datetimepicker({
       format: 'DD/MM/YYYY'
     });
 
-    $('#starttime').datetimepicker({
+    $('.starttime').datetimepicker({
         format: 'HH:mm'
     });
-    $('#endtime').datetimepicker({
+    $('.endtime').datetimepicker({
         format: 'HH:mm'
     });
     

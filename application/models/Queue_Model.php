@@ -4,13 +4,13 @@ class Queue_Model extends CI_Model {
 		public function __construct() {
 			parent::__construct();
 		}
-		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date,$data_std)
+		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date /*,$data_std*/)
         {
         	//echo "string";
            // var_dump($data_datetime);
            // die();
           // $this->db->set($data_queue);
-          echo ("<br/>xxxxxxx<br/>");
+       /*   echo ("<br/>xxxxxxx<br/>");
             echo ("<br/>xxxxxxx<br/>");
             var_dump( $data_queue);
             echo ("<br/>xxxxxxx<br/>");
@@ -25,9 +25,9 @@ class Queue_Model extends CI_Model {
             echo ("<br/>xxxxxxx<br/>");
             echo ("<br/>xxxxxxx<br/>");
             var_dump($data_std);
-            die();
+            die();*/
             
-           $this->db->insert('student',$data_std);
+          // $this->db->insert('student',$data_std);
             
           $this->db->insert('queue',$data_queue);
            $Cq_id = $this->db->insert_id();
@@ -73,7 +73,7 @@ class Queue_Model extends CI_Model {
                  var_dump($dateins);*/
         
   
-            redirect('Createq/content3');
+           
         }
         
         public function outqueue(){
@@ -117,6 +117,18 @@ class Queue_Model extends CI_Model {
         }
         public function updateq($data_queue,$data_step,$data_datetime){
            
+            
+            echo ("<br/>xxxxxxx<br/>");
+            echo ("<br/>xxxxxxx<br/>");
+            var_dump( $data_queue);
+            echo ("<br/>xxxxxxx<br/>");
+            echo ("<br/>xxxxxxx<br/>");
+            var_dump($data_step);
+            echo ("<br/>xxxxxxx<br/>");
+            echo ("<br/>xxxxxxx<br/>");
+            var_dump($data_datetime);
+            echo ("<br/>xxxxxxx<br/>");
+            echo ("<br/>xxxxxxx<br/>");
             die();
             // $this->db->set($data_queue);
             $this->db->where('Cq_id', $Cq_id);
@@ -135,6 +147,7 @@ class Queue_Model extends CI_Model {
                 $stepreplace['step_box']= $row['step_box'];
                 $stepreplace['step_alm']= $row['step_alm'];
                 // $this->db->set($data_step);
+                
                 $this->db->update('step',$stepreplace);
                // var_dump($stepreplace);
              //   echo ("<br/>--------------<br/>");
@@ -209,9 +222,13 @@ class Queue_Model extends CI_Model {
             from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  ='. $id .' GROUP BY qd.Date_usedate ');
             return $queryselectcountmovedate->result();
         }
-        public function changemoveq($datadate){
-            var_dump($datadate);
+        public function changemoveq($datadatetime){
+            var_dump($datadatetime);
             die();
+            $this->db->where('Datetime_id', $id);
+            $this->db->update('qdatetime', $data_datetime);
+          
+            
         }
         
 }
