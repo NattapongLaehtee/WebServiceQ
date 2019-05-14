@@ -1,6 +1,11 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script type="text/javascript">
 
 $(document).ready(function() {
+	
+	<?php if($this->session->flashdata('massageid')=='moveq'){
+	    echo "alert('".$this->session->flashdata('massage')."');";
+	}?>
+	
     $("#moveq").click(function(){
     	alert("คุณต้องการเลื่อนคิว ใช่หรือไม่");
     }); 

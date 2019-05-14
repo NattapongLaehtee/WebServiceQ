@@ -173,7 +173,7 @@ class Queue_Model extends CI_Model {
            // die();
             
             
-            redirect('Createq/content3');
+           
         }
         public function cancelq($id)
         {
@@ -222,11 +222,10 @@ class Queue_Model extends CI_Model {
             from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  ='. $id .' GROUP BY qd.Date_usedate ');
             return $queryselectcountmovedate->result();
         }
-        public function changemoveq($datadatetime){
-            var_dump($datadatetime);
-            die();
+        public function changemoveq($datadatetime, $id){
+          
             $this->db->where('Datetime_id', $id);
-            $this->db->update('qdatetime', $data_datetime);
+            $this->db->update('qdatetime', $datadatetime);
           
             
         }
