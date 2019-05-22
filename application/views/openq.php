@@ -2,6 +2,7 @@
 <<script type="text/javascript">
 
 $(document).ready(function() {
+	
     $("#openq").click(function(){
     	alert("คุณต้องการที่จะเปิดการใช้งานคิว ใช่หรือไม่");
     }); 

@@ -1,4 +1,5 @@
 
+
  <!-- page content -->
 	<font color="black"><div class="right_col" role="main">
 		<div class="">
@@ -34,15 +35,20 @@
                             				
                             				<?php foreach ($datasetdevice as $rowq) {?>
                             		<?php  echo '<tr><td>' . $rowq->Cq_name . '</td>
-       											 	  <td>' . $rowq ->sumbox  . '</td>
-        											  <td></td>
-       					 							  <td></td>
-        											  <td></td>
-        								              <td></td> '; ?> 
-               									                           				  
+       											 	  <td>' . $rowq ->sumbox  . '</td>'; ?>
+       											 	   
+       									<?php $rowful = $datafullyset-> row();?>
+       									 <?php  echo '<td>'.$rowful->Tool_name .'</td>';?>
+	                                       
+       					 				<?php  echo '  <td></td>
+        											  <td></td>';?>
+									
+        								 <?php  echo ' <td></td>'; ?> 
+        							                      				  
                         			 <td class=" "><a href="<?php echo site_url("Devices_control/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
-                          				
-                          		<?php } ?>
+                          			<?php echo '</tr>';?>
+                          			 <?php } ?>  	
+                          		
 										</tr>
                        						<tr role="row" class="odd">
                           						<td class="sorting_1">กองทุนกู้ยืมเพื่อการศึกษา (รายเก่า)</td>
@@ -67,3 +73,12 @@
 	<!-- /page content -->
 	</font>
 </form>	
+<?php 
+           function convertDBtoView($date){
+            $arr= explode('-',$date);
+            $re_date = $arr[2].'/'.$arr[1].'/'.$arr[0];
+            return $re_date;
+        }
+     
+      ?>    
+  

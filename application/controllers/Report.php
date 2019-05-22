@@ -121,6 +121,8 @@ class Report extends CI_Controller {
 	    $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 	    
 	    // กำหนดการแบ่งหน้าอัตโนมัติ
+	  
+	    
 	    $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 	    
 	    // กำหนดรูปแบบการปรับขนาดของรูปภาพ
@@ -139,7 +141,7 @@ class Report extends CI_Controller {
 	    
 	    // เพิ่มหน้า pdf
 	    // การกำหนดในส่วนนี้ สามารถปรับรูปแบบต่างๆ ได้ ดูวิธีใช้งานที่คู่มือของ tcpdf เพิ่มเติม
-	    $pdf->AddPage('L','A4');
+	    $pdf->AddPage('A4');
 	    
 	    // กำหนดเงาของข้อความ
 	    $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));

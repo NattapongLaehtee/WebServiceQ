@@ -5,6 +5,16 @@ $(document).ready(function() {
 	<?php if($this->session->flashdata('massageid')=='S001'){
 	    echo "alert('".$this->session->flashdata('massage')."');";
 	}?>
+
+	<?php if($this->session->flashdata('textid')=='cancelq'){
+	    echo "alert('".$this->session->flashdata('text')."');";
+	}?>
+
+	<?php if($this->session->flashdata('textboxid')=='openq'){
+	    echo "alert('".$this->session->flashdata('textbox')."');";
+	}?>
+
+	
    $("#closeq").click(function(){
     	alert("คุณต้องการที่จะยกเลิกคิว  ใช่หรือไม่");
     }); 

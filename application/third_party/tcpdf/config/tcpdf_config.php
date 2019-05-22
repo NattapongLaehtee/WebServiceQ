@@ -134,7 +134,7 @@ define ('PDF_MARGIN_FOOTER', 10);
 /**
  * Top margin.
  */
-define ('PDF_MARGIN_TOP', 27);
+define ('PDF_MARGIN_TOP', 2);
 
 /**
  * Bottom margin.
@@ -144,7 +144,7 @@ define ('PDF_MARGIN_BOTTOM', 25);
 /**
  * Left margin.
  */
-define ('PDF_MARGIN_LEFT', 15);
+define ('PDF_MARGIN_LEFT', 10);
 
 /**
  * Right margin.

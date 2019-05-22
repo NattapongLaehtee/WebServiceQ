@@ -25,11 +25,10 @@
 
                       <div class="form-group">
                       <input type="hidden" name="queueid" id="queueid" value="<?php echo $rowq->Cq_id; ?>">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><?php echo "ชื่อคิว "?>  
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">ชื่อคิว 
                         </label>
-                        <label class="control-label col-md-2  col-xs-12" for="first-name"> <?php echo  $rowq->Cq_name;?>  
+                        <label class="control-label col-sm-2 col-xs-12" for="first-name"><?php echo  $rowq->Cq_name;?>  
                         </label>
-                        
                         </div>
                         <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "วันที่ใช้คิว "?> 
@@ -46,7 +45,7 @@
                        <?php foreach ($datadevice as $rowdev){?>
                 
                    
-                    		<input type="hidden" name="stepid" id="stepid" value=<?php echo $rowdev->Step_id;?>> 
+                    		 
                   			 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><?php echo "ขั้นตอนบริการที  ". $s; ?> 
                        
                         </label>
@@ -55,18 +54,19 @@
                           <?php echo ("<br/><br/>"); ?>
                           
                          <?php for ($i=1; $i<= $rowdev->Step_box; $i++){?>
-                      
-                      <input type="hidden"  name="boxname" id="boxname" value="<?php echo "ช่องบริการที  ".  $i;?>">
+                      <input type="hidden" name="stepid[]" id="stepid[]" value=<?php echo $rowdev->Step_id;?>>
+                      <input type="hidden"  name="boxname[]" id="boxname[]" value="<?php echo "ช่องบริการที  ".  $i;?>">
                          <label class="control-label col-md-3 col-sm-3 col-xs-12" ><?php echo "ช่องบริการที  ".  $i;?>
                       
                         </label>
-                          <label class="control-'label col-md-3 col-sm-3 col-xs-12" for="last-name">รหัสบาร์โค้ดอุปกรณ์ </label>   
+                          <label class="control-'label col-md-2 col-sm-2 col-xs-12" for="last-name">รหัสบาร์โค้ดอุปกรณ์ </label>   
                            
          					<div class="col-md-3 col-sm-2 col-xs-3">
-                            <select name="selectqueue" id="selectqueue" class="form-control-sm form-control"> 
+                            <select name="selecttool[]" id="selecttool[]" class="form-control-sm form-control"> 
 							<option value="" disabled selected hidden>กรุณาเลือกรหัสอุปกรณ์</option>
 								<?php foreach ($datatool as $rowtool){?>
-                                     <option   id ="<?php echo  $rowtool->Tool_id; ?>" value="<?php echo  $rowtool->Tool_barcode;  ?>"> </option>
+								<option value="<?php echo  $rowtool->Tool_id; ?>" > <?php echo $rowtool->Tool_barcode;  ?> </option>
+                                     
                                  <?php  }?>
 						</select>
 					 </div>
@@ -75,12 +75,9 @@
            <?php echo ("<br/><br/>"); ?> 
 			
                     <?php }?>
-                  	 <?php $i++;?>
+                  	
                   	 <?php $s++;?>
-                  
-                          
-                
-                      <?php }?>
+                   <?php }?>
                       
                          		<input type="hidden" name="usingid" id="usingid">
                           				<div class="form-group">

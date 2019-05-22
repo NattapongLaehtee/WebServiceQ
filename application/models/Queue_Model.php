@@ -178,21 +178,12 @@ class Queue_Model extends CI_Model {
         public function cancelq($id)
         {
             $querycancelq =  $this->db->query('update queue SET statusq = 1 where Cq_id ='. $id);
-           
-           
-           
+          }
           
-            
-            redirect('Createq/openq');
-        }
         public function openstatusq($id)
         {
             $queryopenstatusq =  $this->db->query('update queue SET statusq = 0 where Cq_id ='. $id);
            
-            
-            
-            
-            redirect('Createq/content3');
         }
         
         public function get_q_all()
@@ -222,12 +213,40 @@ class Queue_Model extends CI_Model {
             from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  ='. $id .' GROUP BY qd.Date_usedate ');
             return $queryselectcountmovedate->result();
         }
-        public function changemoveq($datadatetime, $id){
+        public function changemoveq($datadatetime){
+            
+          /*  var_dump($datadatetime);
+            echo "</br>+++++++</br>";
+            
+            die();
+           */ 
           
-            $this->db->where('Datetime_id', $id);
-            $this->db->update('qdatetime', $datadatetime);
+          
+                
+                foreach ($datadatetime as $row){
+                    
+                    $dateupdate= array();
+                    $dateupdate['Date_usedate'] = $row['Date_usedate'];
+                    $dateupdate['Time_usedate'] = $row['Time_usedate'];
+                    $dateupdate['Time_lastuse'] = $row['Time_lastuse'];
+                    $this->db->where("Datetime_id",$row['Datetime_id']);
+                    $this->db->update ('qdatetime', $dateupdate);
+                    
+                } 
+                
+               
+                  
+                //$querymove = $this->db->where("Datetime_id",$row['Datetime_id']);
+                 //$querymove =$this->db->update('qdatetime', $dateupdate);
+                
+               // var_dump( $querymove );
+                //die();
+           
+            
+           
           
             
         }
         
 }
+

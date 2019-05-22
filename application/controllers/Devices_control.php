@@ -36,6 +36,8 @@ class Devices_control extends CI_Controller {
         $this->load->model('Device_model');
         $res = $this->Device_model->outqsetdevice();
         $data['datasetdevice'] = $res;
+        $res = $this->Device_model->fullysetdevice();
+        $data['datafullyset'] = $res;
   
       
         $this->load->view('head');
@@ -67,7 +69,7 @@ class Devices_control extends CI_Controller {
         $stepid = $this->input->post('stepid');
         // End Table Step 
         // Start Table Servicebox
-        $boxname = $this->input->post('boxname');
+        $boxname = $this->input->post("boxname");
         // End Table Servicebox
         // Start Table Usingdevice
         $usingid = $this->input->post('usingid');
@@ -75,65 +77,77 @@ class Devices_control extends CI_Controller {
         $enddevice = $this->input->post('enddevice');
         // End Table Usingdevice
         // Start Table Tool 
-        $toolid = $this->input->post('toolid');
+        $toolid = $this->input->post('selecttool');
         $toolbarcode = $this->input->post('barcode');
         // End Table Tool
-       /* var_dump($queueid);
+//        var_dump($_POST);
+//        die();
+     /*  var_dump($queueid);
         echo "</br>"."========"."</br>";
         var_dump($stepid);
         echo "</br>"."========"."</br>";
         var_dump($boxname);
         echo "</br>"."========"."</br>";
-        var_dump($usingid);
-        echo "</br>"."========"."</br>";
+      
         var_dump($startdevice);
         echo "</br>"."========"."</br>";
         var_dump($enddevice);
         echo "</br>"."========"."</br>";
         var_dump($toolid);
         echo "</br>"."========"."</br>";
-        var_dump($toolbarcode);
-        die();*/
+        var_dump($toolbarcode);*/
+        //die(); 
         $this->load->model('Util_model');
         $this->load->model('Device_model');
         $datausing = array(
          
             'startuse' => $this->Util_model->convertDateToDB($startdevice),
             'enduse' => $this->Util_model->convertDateToDB($enddevice),
-            'Cq_id' =>  $queueid
+            'Cq_id' =>  $queueid,
+         
         );
         $datastep = array();
-        $dataservicebox= array();
+        
         $recstep = 0;
+        
         foreach ($stepid as $step_id){
         $datastep[$recstep]= array (
             'Step_id' => $step_id
         );
-        for  ($i=1; $i<= $boxname[$recstep]; $i++){
-        $dataservicebox= array(
-            'Box_name' => $boxname[$recstep],
-            'Tool_id' => $toolid[$recstep],
-            'Step_id' => $stepid[$recstep],
-            'Using_id'=> $usingid[$recstep]
+        $recstep++;
+        
+        }
+        $dataservicebox= array();
+        $recbox = 0;
+        foreach ($boxname as $boxname){
+          
+            
+            $dataservicebox[$recbox]= array(
+                'Box_name' => $boxname,
+                'Tool_id' => $toolid[$recbox],
+                'Step_id' => $stepid[$recbox]
+               
+             
      
         );
+         $recbox++;
+       
+        
         }
-        $i++;
-        $recstep++;        
-        }
-    
+  
 
     
-          $dataservicebox= array(
+         /* $dataservicebox= array(
                'Box_name' => $boxname,
                    'Tool_id' => $toolid,
-              'Step_id' => $stepid,
-                           'Using_id'=> $usingid
-           );
+              'Step_id' => $stepid
+           );*/
    
            
         
           $this->Device_model->setdatedevice($datausing, $datastep, $dataservicebox);
+          
+          redirect("Devices_control/setdevice");
     }
     public function insert_device(){
         //var_dump($_POST);
@@ -210,12 +224,13 @@ class Devices_control extends CI_Controller {
             $this->load->model('Device_model');
             $this->Device_model->canceldevice($id);
            
-          
+            redirect('Devices_control/out_device');
     }
     public function opendevice($id){
         $this->load->model('Device_model');
         $this->Device_model->opendevice($id);
         
+        redirect('Devices_control/out_device');
     }
     
 }

@@ -33,7 +33,7 @@
         <div class="animate form login_form">
           <section class="login_content">
            
-             <h3>ระบบเว็บเซอร์วิสการจัดการแถวคอย</h3>
+            <font color="black"> <h3 >ระบบเว็บเซอร์วิสการจัดการแถวคอย</h3></font>
           	<br>
               <div>
                 <input type="text" class="form-control" placeholder="Username" name="username" />
@@ -49,11 +49,13 @@
                 
               </div>
               <br>
-              
+             <font color="black"> 
 			<div>
-                 
+			
+                <lable> Web Service for Queue Management</lable>
                   <p>©2018 All Rights Reserved. By Division of Student Affairs Walailak University </p>
                 </div> 
+                </font>
                     </section>
            </div>
         

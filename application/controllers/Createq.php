@@ -122,6 +122,28 @@ class Createq extends CI_Controller {
         $this->load->view('outstudent1',  $datastudent);
         $this->load->view('foot');
     }
+    
+    
+    public function cancelq($id){
+        $this->load->model("Queue_Model");
+        
+        $this->Queue_Model->cancelq($id);
+        
+        $this->session->set_flashdata('textid', 'cancelq' );
+        $this->session->set_flashdata('text', 'คุณได้ยกเลิกการใช้งานคิวเรียบร้อยแล้ว' );
+        redirect('Createq/content3');
+    }
+    
+    public function openstatusq($id){
+        $this->load->model("Queue_Model");
+        
+        $this->Queue_Model->openstatusq($id);
+        $this->session->set_flashdata('textboxid', 'openq' );
+        $this->session->set_flashdata('textbox', 'คุณได้เปิดการใช้งานคิวเรียบร้อยแล้ว' );
+        redirect('Createq/content3');
+        
+    } 
+    
     public function insert_queue() //สร้างคิว
     {
            // Start Table Queue            
@@ -384,18 +406,7 @@ class Createq extends CI_Controller {
         
         redirect('Createq/content3');
     }
-    public function cancelq($id){
-        $this->load->model("Queue_Model");
-   
-       $this->Queue_Model->cancelq($id);
-    }
-    
-    public function openstatusq($id){
-        $this->load->model("Queue_Model");
-        
-        $this->Queue_Model->openstatusq($id);
-        
-    } 
+
   
     public function changequeue(){//บันทึกการเลื่อนคิว
         
@@ -415,31 +426,40 @@ class Createq extends CI_Controller {
         $this->load->model('Util_model');
         $this->load->model('Queue_Model');
         
-        $id =  $datetimeid;
+        
+        
+        //var_dump($amounttime);
+   
+
         $datadatetime = array();
         $datadate = 0;
-        
-        // echo ("<br/><br/>");
-        //var_dump($amounttime);
         foreach ($starttime as $starttime){
             $datadatetime[$datadate] = array(
-                'Cq_id' => $queueid[$datadate],
+              
                 'Datetime_id' => $datetimeid[$datadate],
                 'Date_usedate' => $this->Util_model->convertDateToDB($datemoveq[$datadate]),
                 'Time_usedate' =>$this->Util_model->convertTimeToDB($starttime),
                 'Time_lastuse' =>$this->Util_model->convertTimeToDB($endtime[$datadate]),
                 
                 //'Cq_id'=> $queue_id[$datadate],
-              
+                
             );
             $datadate++;
+           
+           
+            
         }
-         
+        
+        $this->Queue_Model->changemoveq( $datadatetime);
+        // echo ("<br/><br/>");
+       
+     
+     
 
         
-        $this->Queue_Model->changemoveq( $datadatetime, $id);
+       
         $this->session->set_flashdata('massageid', 'moveq' );
-        $this->session->set_flashdata('massage', 'เลื่อคิวเรียบร้อยแล้ว' );
+        $this->session->set_flashdata('massage', 'คุณได้เลื่อนคิวเรียบร้อยแล้ว' );
         redirect('Createq/content2');
     }
 }

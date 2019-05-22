@@ -5,6 +5,8 @@ $(document).ready(function() {
 	<?php if($this->session->flashdata('massageid')=='moveq'){
 	    echo "alert('".$this->session->flashdata('massage')."');";
 	}?>
+
+	
 	
     $("#moveq").click(function(){
     	alert("คุณต้องการเลื่อนคิว ใช่หรือไม่");

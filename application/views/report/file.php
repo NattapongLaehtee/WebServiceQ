@@ -22,11 +22,11 @@
         <thead>
         
             <tr class="pdf_border" align="center">
-                <th class="header pdf_border"  style="width: 80px;">ลำดับที่</th>
-                <th class="header pdf_border" style="width: 100px;">รหัสนักศึกษา</th> 
-                <th class="header pdf_border" style="width: 300px;">ชื่อ - สกุล</th> 
-                <th class="header pdf_border" style="width: 250px;">สำนักวิชา</th>
-                  <th class="header pdf_border" style="width: 200px;">ลายมือชื่อ</th>
+                <th class="header pdf_border"  style="width: 50px;">ลำดับที่</th>
+                <th class="header pdf_border" style="width: 90px;">รหัสนักศึกษา</th> 
+                <th class="header pdf_border" style="width: 200px;">ชื่อ - สกุล</th> 
+                <th class="header pdf_border" style="width: 220px;">สำนักวิชา</th>
+                  <th class="header pdf_border" style="width: 150px;">ลายมือชื่อ</th>
             </tr>
         </thead>
         
@@ -35,12 +35,12 @@
            			<?php foreach ($stdqd_res as $rowstd){?>
            			
                     <tr class="pdf_border">
-                        <td class="pdf_border" align="center"  style="width: 80px;"><?php echo $i; ?></td>   
-                        <td class="pdf_border" align="center" style="width: 100px;" ><?php echo $rowstd->Studentid; ?></td> 
-                        <td class="pdf_border" style="width: 300px;"><?php echo "   ".($rowstd->Prefixname). "".($rowstd->Studentname). "  ".($rowstd->Studentsurname);   ?> </td> 
-                        <td class="pdf_border" align="center" style="width: 250px;"><?php echo " ".($rowstd->Facultyname); ?></td>
+                        <td class="pdf_border" align="center"  style="width: 50px;"><?php echo $i; ?></td>   
+                        <td class="pdf_border" align="center" style="width: 90px;" ><?php echo $rowstd->Studentid; ?></td> 
+                        <td class="pdf_border" style="width: 200px;"><?php echo "   ".($rowstd->Prefixname). "".($rowstd->Studentname). "  ".($rowstd->Studentsurname);   ?> </td> 
+                        <td class="pdf_border" align="center" style="width: 220px;"><?php echo " ".($rowstd->Facultyname); ?></td>
                                   
-                        <td class="pdf_border" style="width: 200px;" ></td>
+                        <td class="pdf_border" style="width: 150px;" ></td>
                     </tr>
                     <?php $i++;?>
                     <?php }?>

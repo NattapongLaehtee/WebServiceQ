@@ -52,7 +52,7 @@
                       <table class="table table-striped jambo_table bulk_action">
                         <thead>
                           <tr class="headings">
-                            
+                             <th class="column-title">ลำดับที่</th>
                             <th class="column-title">รหัสนักศึกษา </th>
                             <th class="column-title">ชื่อ - สกุล</th>
                             <th class="column-title">หลักสูตร </th>
@@ -68,15 +68,18 @@
 
                         <tbody>
                   
-                            
+                            <?php $i=1?>
   							<?php foreach ($dataqs as $row){?>
   							<tr>
+  							<td ><?php echo  $i;?></td>
                             <td ><?php echo  $row->Studentid;?></td>
                             <td><?php echo $row->Prefixname. "  ". $row->Studentname. "  ".$row->Studentsurname ; ?></td>
                             <td><?php echo $row->Programname;?></td>
                             <td><?php echo $this->Util_model->convertDateToView("$row->Date_usedate"); ?></td>
                             </tr>
+                              <?php $i++;?>
                             <?php }?>
+                          
                           
                          
                          
