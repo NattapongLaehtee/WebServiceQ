@@ -49,11 +49,11 @@
               <div class="menu_section">
                 
                 <ul class="nav side-menu">
-                <li><a><i class="fa fa-edit"></i>การจัดการข้อมูลผู้ใช้งาน<span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-edit" ></i>การจัดการข้อมูลผู้ใช้งาน<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url("Createq/staff")?>">บันทึกข้อมูลเจ้าหน้าที่</a></li>
                        <li><a href="<?php echo site_url("Createq/outstaff")?>">แสดงข้อมูลเจ้าหน้าที่</a></li>
-                       <li><a href="<?php echo site_url("Createq/outstudent1")?>">แสดงข้อมูลนักศึกษา</a></li>
+                       <li><a href="<?php echo site_url("Student_controller/outstudent1")?>">แสดงข้อมูลนักศึกษา</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-eyedropper"></i>ข้อมูลอุปกรณ์<span class="fa fa-chevron-down"></span></a>
@@ -75,7 +75,7 @@
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
               
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginfrom")?>">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginform")?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -179,7 +179,7 @@
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
               </a>
            		
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginfrom")?>">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?php echo site_url("Login/loginform")?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>

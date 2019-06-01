@@ -32,7 +32,7 @@
                             
                            					 <td class=" "><?php echo $row->Studentid; ?></td>
                         				    <td class=" "><?php echo  $row->Studentname . "   " . $row->Studentsurname; ?> </td>
-                            <td class=" "><?php echo  $row->Programname; ?></td>
+                            <td class=" "><?php echo  $row->Programabb; ?></td>
                            <td class=" "><?php echo  $row->Facultyname; ?></td>
                               
                           				</tr>

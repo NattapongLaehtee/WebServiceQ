@@ -105,22 +105,55 @@ class Device_model extends CI_Model {
         return   $querysetdevice->result();
     }
     public function outqsetdevice(){
-       $querysetdevice =    $this->db->query('select q.Cq_name ,s.Step_id, SUM(s.Step_box) as sumbox, q.Cq_id from queue q JOIN step s on q.Cq_id = s.Cq_id where s.Cq_id  GROUP BY s.Cq_id '); 
+       $querysetdevice =    $this->db->query('select q.Cq_id, q.Cq_name, q.statusq ,s.Step_id, SUM(s.Step_box) as sumbox, q.Cq_id from queue q JOIN step s on q.Cq_id = s.Cq_id where q.statusq = "0" GROUP BY s.Cq_id '); 
        return  $querysetdevice->result();
     }
     
     public function fullysetdevice(){
-        $queryfully = $this->db->query('SELECT  q.Cq_id, q.Cq_name, us.Using_id ,us.startuse, us.enduse, t.Tool_id, t.Tool_name ,
-                                            ser.Box_Name  
+        $querysetfully = $this->db->query('SELECT  q.Cq_id, q.Cq_name, us.Using_id ,us.startuse, us.enduse, t.Tool_id, t.Tool_name ,
+                                            ser.Box_Name, ser.Box_id  
                                             FROM queue q JOIN usingdevice us ON us.Cq_id = q.Cq_id
                                             			JOIN servicebox ser ON ser.Using_id = us.Using_id
                                                         JOIN step s ON ser.Step_id = s.Step_id
                                                         JOIN tool t ON ser.Tool_id = t.Tool_id
                                                         WHERE us.Cq_id 
-                                                        order by us.Cq_id ');
-        return   $queryfully;
+                                                        order by t.Tool_name ');
+        return   $querysetfully->result();
         
     }
+    public function fullydatesetdevice(){
+        $querydatesetfully = $this->db->query('SELECT  q.Cq_id, q.Cq_name, us.Using_id ,us.startuse, us.enduse, t.Tool_id, t.Tool_name ,
+                                            ser.Box_Name
+                                            FROM queue q JOIN usingdevice us ON us.Cq_id = q.Cq_id
+                                            			JOIN servicebox ser ON ser.Using_id = us.Using_id
+                                                        JOIN step s ON ser.Step_id = s.Step_id
+                                                        JOIN tool t ON ser.Tool_id = t.Tool_id
+                                                        WHERE q.Cq_id
+                                                        GROUP BY ser.Using_id
+                        
+                                                        ');
+        return   $querydatesetfully->result();
+        
+    }
+    public function fullysumsetdevice(){
+        $querysumsetfully = $this->db->query('SELECT  q.Cq_id, q.Cq_name, us.Using_id ,us.startuse, us.enduse, t.Tool_id, t.Tool_name ,
+                                           COUNT(ser.Box_Name) as countbox
+                                            FROM queue q JOIN usingdevice us ON us.Cq_id = q.Cq_id
+                                            			JOIN servicebox ser ON ser.Using_id = us.Using_id
+                                                        JOIN step s ON ser.Step_id = s.Step_id
+                                                        JOIN tool t ON ser.Tool_id = t.Tool_id
+                                                        WHERE us.Cq_id
+                                                        GROUP BY us.Cq_id
+                                                         ');
+        return   $querysumsetfully->result();
+        
+    }
+    public function fullysetall(){
+        $querysetfullyall = $this->db->query('SELECT q.Cq_id ,us.Using_id  FROM queue q LEFT JOIN usingdevice us   on  q.Cq_id = us.Cq_id where q.Cq_id');
+        return   $querysetfullyall->result();
+        
+    }
+    
     
    
     

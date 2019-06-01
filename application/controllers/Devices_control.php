@@ -38,8 +38,12 @@ class Devices_control extends CI_Controller {
         $data['datasetdevice'] = $res;
         $res = $this->Device_model->fullysetdevice();
         $data['datafullyset'] = $res;
-  
-      
+        $res = $this->Device_model->fullydatesetdevice();
+        $data['datadateset'] = $res;
+        $res = $this->Device_model->fullysumsetdevice();
+        $data['datasum'] = $res;
+    
+        
         $this->load->view('head');
         $this->load->view('setdevice', $data);
         $this->load->view('foot');
@@ -169,10 +173,13 @@ class Devices_control extends CI_Controller {
                 
             );
             $this->Device_model->insertdevice($data_device);
-            redirect("Devices_control/out_device");
+               
         }else{
-            echo "======E Lee 222=========";
-        }
+            echo "<script>
+                    alert('คุณกรอกข้อมูลไม่ครบ');
+                        window.location.href='device';
+                        </script>";
+         }
         
     }
     

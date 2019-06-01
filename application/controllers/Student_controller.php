@@ -47,6 +47,16 @@ class Student_controller extends CI_Controller {
         $this->load->view('foot');
     }
    
+    public function outstudent1()
+    {
+        $this->load->model('Student_model');
+        $res = $this->Student_model-> outstudent();
+        
+        $datastudent['student_res'] = $res;
+        $this->load->view('head');
+        $this->load->view('outstudent1',  $datastudent);
+        $this->load->view('foot');
+    }
  
 
 }

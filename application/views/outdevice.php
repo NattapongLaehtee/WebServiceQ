@@ -1,6 +1,18 @@
-
+<script>
+	function editdevice(id){
+		if(confirm('คุณต้องการแก้ไขข้อมูลอุปกรณ์ ใช่หรือไม่')){
+			 $('#outdevice'). attr('action', '<?php echo site_url("Devices_control/editdevice/")?>' + id);
+        	
+            $('#outdevice').submit();
+                                            }
+                                            
+                                        }
+</script>
+   
+   
+   
     <!-- page content -->
-	<div class="right_col" role="main">
+	<div class="right_col" role="main" >
 	<font color="black">
 	<div class="">
 			<div class="page-title">
@@ -13,7 +25,7 @@
                		<div class="x_content">
                     	<div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
   							<div class="row">
-                     			<div class="col-sm-12">
+                     			<div class="col-sm-12" id="outdevice">
                      				<table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="datatable_info">
                       					<thead>
                         					<tr role="row">
@@ -35,9 +47,10 @@
                            					 <td class=" "><?php echo $row->Tool_name; ?></td>
                         				    <td class=" "><?php echo $row->Tool_detail; ?> </td>
                             <td class=" "><?php echo $row->Tool_barcode; ?></td>
-                            <td class=" "><a href="<?php echo site_url("Devices_control/editdevice/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">แก้ไข  </button></a></td>
+                           
+                      <td><button id="editdevice" type="button"  class="btn btn-warning" onclick="editdevice(<?php echo $row->Tool_id?>)">แก้ไข</button> </td>
                                <td class=" "><a href="<?php echo site_url("Devices_control/cancel_device/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">ยกเลิกการใช้งาน  </button></a></td>
-                          				</tr>
+                          			</tr>
                           			<?php }?>
                         				</tbody>
                     				</table>

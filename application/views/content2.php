@@ -1,5 +1,11 @@
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script type="text/javascript">
-
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+ <script type="text/javascript">
+ 
+ function moveq() {
+		
+	 alert("คุณต้องการเลื่อนคิว ใช่หรือไม่");
+	 }
 $(document).ready(function() {
 	
 	<?php if($this->session->flashdata('massageid')=='moveq'){
@@ -7,11 +13,9 @@ $(document).ready(function() {
 	}?>
 
 	
-	
-    $("#moveq").click(function(){
-    	alert("คุณต้องการเลื่อนคิว ใช่หรือไม่");
-    }); 
+
 });
+
 </script>
 
 
@@ -49,7 +53,7 @@ $(document).ready(function() {
                            					 <td class=" "><?php echo $row->Cq_name; ?></td>
                         				    <td class=" "><?php echo convertDBtoDate( $row->Cq_usedate) . " ถึง " . convertDBtoDate($row->Cq_lastuse); ?> </td>
                             <td class=" "><?php echo convertDBtoDate( $row->Cq_reserdate) .  " ถึง " . convertDBtoDate( $row->Cq_lastreser); ?></td>
-                            <td class=" "><a href="<?php echo site_url("Createq/moveq/".$row->Cq_id);?>"><button type="submit" class="btn btn-success" id="moveq">เลื่อนคิว</button></a></td>
+                            <td class=" "><a href="<?php echo site_url("Createq/moveq/".$row->Cq_id);?>"><button onclick="moveq()" id="editq" class="btn btn-success">เลื่อนคิว</button></a></td>
                               
                           				</tr>
                            			<?php }?>

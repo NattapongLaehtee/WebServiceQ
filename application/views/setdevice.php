@@ -19,47 +19,61 @@
                         					<tr role="row">
                         						<th class="sorting_asc" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 250px;">ชื่อคิว</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">จำนวนช่องบริการ</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 200px;">อุปกรณ์ที่ใช้</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 180px;">อุปกรณ์ที่ใช้</th>
+                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">จำนวนอุปกรณ์</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">วันที่เริ่มใช้อุปกรณ์</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 200px;">วันที่สิ้นสุดการใช้อุปกรณ์</th>
-                        						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 130px;">จำนวนอุปกรณ์</th>
                         						<th class="sorting" tabindex="0" aria-controls="datatable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 90px;"></th>
                         					</tr>
                       					</thead>
                       					
 										<tbody>
 									
-                       						
-                       						 
-                          				<tr class="even pointer">
+                       					  <tr class="even pointer">   		
+                       						 	
                             				
-                            				<?php foreach ($datasetdevice as $rowq) {?>
-                            		<?php  echo '<tr><td>' . $rowq->Cq_name . '</td>
-       											 	  <td>' . $rowq ->sumbox  . '</td>'; ?>
-       											 	   
-       									<?php $rowful = $datafullyset-> row();?>
-       									 <?php  echo '<td>'.$rowful->Tool_name .'</td>';?>
-	                                       
-       					 				<?php  echo '  <td></td>
-        											  <td></td>';?>
+                            				<?php   foreach ($datasetdevice as $rowq) {   $ch = false; ?>
+                            			                              			           
+                            			    
+                            			       <td><?php echo $rowq ->Cq_name;?></td>
+                          						<td><?php echo $rowq ->sumbox; ?></td>
+                          						<td><?php 	foreach ($datafullyset as $rowt){
+                          						    if($rowq->Cq_id ==  $rowt->Cq_id ){ $ch=true;?>
+                          						
+                          								<?php echo $rowt->Tool_name; ?>
+                          								<?php echo '<br>'; ?>
+                          							<?php	}} ?></td>
+                          							
+                          							<?php foreach ($datasum as $rows){?>
+                          							
+                          						<?php if($rowq->Cq_id ==  $rows->Cq_id ) {  $ch=true;?>
+                          						<td><?php echo $rows ->countbox ;?></td>  
+                          						<?php }  } ?>
+                          						
+                          						<?php foreach ($datadateset as $rowdate){?>
+                          					
+                          						<?php if($rowq->Cq_id ==  $rowdate->Cq_id ) { $ch=true;?>
+                          						<td><?php echo convertDBtoView($rowdate ->startuse) ;?></td>
+                          						<td><?php echo convertDBtoView($rowdate ->enduse);?></td> 
+                          						<?php } }?>
+                          						
+                          						<?php if ($ch==true){?>       
+                          					
+                          			<td><button class="btn btn-success">สำเร็จ</button></td>
+                          				<?php }else  {?>
+                          				<td></td>
+                          				<td></td>
+                          				<td></td>
+                          						<td><a href="<?php echo site_url("Devices_control/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>          		
+                          				
+                          						<?php }?>
+                          						
+											</tr>
+											
+                                      	
+                  
 									
-        								 <?php  echo ' <td></td>'; ?> 
-        							                      				  
-                        			 <td class=" "><a href="<?php echo site_url("Devices_control/setdevice1/". $rowq->Cq_id)?>"><button type="submit" class="btn btn-danger">กำหนด</button></a></td>
-                          			<?php echo '</tr>';?>
-                          			 <?php } ?>  	
-                          		
-										</tr>
-                       						<tr role="row" class="odd">
-                          						<td class="sorting_1">กองทุนกู้ยืมเพื่อการศึกษา (รายเก่า)</td>
-                          						<td>6 </td>
-                          						<td>อุปกรณ์ชุดที่  1</td>
-                          						 <td>20/08/2561</td>
-                          						<td>25/08/2561</td>
-                          						<td>6</td>
-                          						<td><button class="btn btn-success">สำเร็จ</button></td>
-                        					</tr>
-                       						
+                       					  <?php } ?>  	
                         				</tbody>
                     				</table>
                     			</div>

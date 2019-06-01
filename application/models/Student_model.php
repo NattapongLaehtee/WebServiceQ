@@ -11,9 +11,9 @@ class Student_model extends CI_Model {
         public function outstudent()
         {
             
-            $querystudent = $this->db->query('select s.Studentid, s.Studentname, s.Studentsurname, f.Facultyname , p.Programname
-                                    from student s ,faculty f , program p
-                                    where   s.Facultyid = f.Facultyid and   s.Programid = p.Programid');
+            $querystudent = $this->db->query('select s.Studentid, s.Studentname, s.Studentsurname, f.Facultyname , p.Programname , p.Programabb
+                                                FROM student s JOIN program p ON s.Programid = p.Programid
+				                                JOIN faculty f ON p.Facultyid= f.Facultyid');
             return $querystudent->result();
         }
 
@@ -48,8 +48,8 @@ class Student_model extends CI_Model {
         public function selectstudent($id1,$id2){
             $queryselectstudent = $this->db->query('select * from bookingqueue b JOIN student s on b.Studentid = s.Studentid 
                                 JOIN qdatetime qd on b.Datetime_id = qd.Datetime_id 
-                                JOIN faculty f on s.Facultyid = f.Facultyid 
-                                JOIN program P on s.Programid = p.Programid 
+                                JOIN program p on s.Programid = p.Programid
+                                JOIN faculty f on p.Facultyid = f.Facultyid 
                                 JOIN queue q on b.Cq_id = q.Cq_id 
                                 JOIN prefix pr on s.Prefixid = pr.Prefixid
                                 WHERE q.Cq_id = ' .$id1 .'

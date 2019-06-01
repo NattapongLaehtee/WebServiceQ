@@ -32,7 +32,7 @@ $(document).ready(function(){
     $(".buttonNext").click(function(){
         //alert('คุณต้องการกดปุ่มถัดไปใช่หรือไม่');
         //$("#form_1");
-    	set_step5();
+    	set_step4();
         
         
           
@@ -52,50 +52,11 @@ $(document).ready(function(){
        });
 
 
-    function set_step5(){
-        $('#nameq_st_5').html($('#qname').val());
-    }
+  //  function set_step5(){
+    //    $('#nameq_st_5').html($('#qname').val());
+   // }
    
-    //$("#import1").hide();
-    //$("#import2").hide();
-    //$("#import3").hide();
-   // $("#import1").click(function(){
-      //  $("#importfile").show();
-       
-   // });
-   // $("#simport2").click(function(){
-       
-    //    $("#importfile").show();
-   // });
-   // $("#simport3").click(function(){
-     //   $("#importfile").hide();
-        
-   // });
-    
-    //function calculateuseq() {
-       // var du1 = $('#startuse').datepicker('getDate');
-      //  var du2 = $('.#enduse').datepicker('getDate');
-       // var oneDay = 24*60*60*1000;
-       // var diff = 0;
-       // if (du1 && du2) {
-      
-        //  diff = Math.round(Math.abs((du2.getTime() - du1.getTime())/(oneDay)));
-      //  }
-     ////   $('.calculated').val(diff);
-     //   $('.minim').val(d1)
-  //  }
-   // function calculatereservq() {
-     //   var dr1 = $('#stratreserv').datepicker('getDate');
-      //  var dr2 = $('#endreserv').datepicker('getDate');
-      //  var oneDay = 24*60*60*1000;
-      //  var diff = 0;
-       // if (dr1 && dr2) {
-      
-        //  diff = Math.round(Math.abs((dr2.getTime() - dr1.getTime())/(oneDay)));
-      //  }
-      //  $('.calculated').val(diff);
-      //  $('.minim').val(d1)
-    //} 
+ 
 });
 </script>
 <?php //var_dump($dataq);
@@ -159,7 +120,7 @@ $rowq = $dataq-> row();
                       </span>
                     </a>
                   </li>
-                  <li>
+               <!--   <li>
                     <a href="#step-5">
                       <span class="step_no">5</span>
                       <span class="step_descr">
@@ -167,7 +128,7 @@ $rowq = $dataq-> row();
                         
                       </span>
                     </a>
-                  </li>
+                  </li>-->  
                 </ul>
                <form class="form-horizontal form-label-left" id="form_2" 
                action="<?php echo(site_url("Createq/update_queue")); ?>" method="post">
@@ -239,6 +200,7 @@ $rowq = $dataq-> row();
                  <div id="step-2">
 				<div class="form-group">
                       <label class="control-label col-md-2 col-sm-2 col-xs-3"><font color="black">รายละเอียดการทำงาน<span style="color:red" >*</span></font></label>
+         		
          			<?php $i=1; ?>
          			
                      <?php foreach ($datastep as $row){?>
@@ -356,7 +318,7 @@ $rowq = $dataq-> row();
                   </div>
                       <!-- End Step 4 -->
                   <!-- Start Step 5 -->
-                  <div id="step-5">
+                <!--   <div id="step-5">
                   	<div class="form-group">
                   		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"> ชื่อคิว  </label>
                       <div class="col-md-3 col-sm-3 col-xs-12">
@@ -365,7 +327,7 @@ $rowq = $dataq-> row();
                   	</div>
                   
 
-                  </div>
+                  </div>--> 
                   <!-- End Step 5 -->
                 </form>
 

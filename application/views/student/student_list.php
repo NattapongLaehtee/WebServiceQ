@@ -61,20 +61,20 @@
                           
                             
                             <th class="bulk-actions" colspan="7">
-                             
-                            </th>
+
                           </tr>
                         </thead>
 
                         <tbody>
-                  
+                      
+                  			
                             <?php $i=1?>
   							<?php foreach ($dataqs as $row){?>
   							<tr>
   							<td ><?php echo  $i;?></td>
                             <td ><?php echo  $row->Studentid;?></td>
                             <td><?php echo $row->Prefixname. "  ". $row->Studentname. "  ".$row->Studentsurname ; ?></td>
-                            <td><?php echo $row->Programname;?></td>
+                            <td><?php echo $row->Programabb ;?></td>
                             <td><?php echo $this->Util_model->convertDateToView("$row->Date_usedate"); ?></td>
                             </tr>
                               <?php $i++;?>

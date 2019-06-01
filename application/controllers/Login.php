@@ -10,14 +10,14 @@ class Login extends CI_Controller {
         
         if($user_login==null){
             //echo "xxxxx";
-            $this->loginfrom();
+            $this->loginform();
             
         }else {
             echo "yyyy";
         }
        
     }
-    public function loginfrom()
+    public function loginform()
     {
         $this->load->view('login');
         
@@ -40,7 +40,7 @@ class Login extends CI_Controller {
         }else{
             echo "<script>
                     alert('คุณกรอกชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง');
-                        window.location.href='loginfrom';
+                        window.location.href='loginform';
                         </script>";
            // redirect("Login/loginfrom");
         }

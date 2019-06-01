@@ -112,16 +112,7 @@ class Createq extends CI_Controller {
     }
 
    
-    public function outstudent1()
-    {
-        $this->load->model('Student_model');
-        $res = $this->Student_model-> outstudent();
-        
-        $datastudent['student_res'] = $res;
-        $this->load->view('head');
-        $this->load->view('outstudent1',  $datastudent);
-        $this->load->view('foot');
-    }
+ 
     
     
     public function cancelq($id){
@@ -190,11 +181,10 @@ class Createq extends CI_Controller {
                 $date1 = str_replace('/', '/',  $startuse);
                $date2 = date('d/m/Y',strtotime($date1 ."+".$i." day"));
                $datadate[] = $date2;
-              //  echo $date2. "<br/>";
+              
                 
             }
-        //    print_r($datadate);
-        //    echo ("<br/>xxxxxxx<br/>");
+    
             
             $date2 = $this->input->post($date2);
             $rowdate = 0;
@@ -335,8 +325,8 @@ class Createq extends CI_Controller {
         // End Table Queue
         // Start Table Qdatetime
         $datetimeid = $this->input->post('datetimeid');
-        $starttime = $_POST['starttime'];
-        $endtime = $_POST['endtime'];
+        $starttime = $this->input->post('starttime');
+        $endtime = $this->input->post('endtime');
         $amountstd = $this->input->post('amountstdf1');
         // End Table Qdatetime
         // Start Table Step
@@ -347,9 +337,137 @@ class Createq extends CI_Controller {
         //var_dump($amounttime,$stepname );
         // End Table Step
         
+
+        // var_dump($amounttime,$stepname );
+        // End Table Step
+        $this->load->model("Util_Model");
         
-       
+        $startuse =   $this->Util_Model->convertDateToDB($startuse);
+        $enduse =  $this->Util_Model->convertDateToDB($enduse);
+        function DateDiff ( $startuse,$enduse)
+        {
+            
+            
+            return ((strtotime($enduse) - strtotime( $startuse)) /  ( 60 * 60 * 24 )) +1 ;  // 1 day = 60*60*24
+        }
+        $date = DateDiff( $startuse,$enduse);
+        
+        $datadate = array();
+        
+        for ($i=0; $i < $date; $i++) {
+            
+            
+            $date1 = str_replace('/', '/',  $startuse);
+            $date2 = date('d/m/Y',strtotime($date1 ."+".$i." day"));
+            $datadate[] = $date2;
+            
+            
+        }
+        
+        
+        $date2 = $this->input->post($date2);
+        $rowdate = 0;
+        foreach ($datadate as $datadate){
+            $data_date[ $rowdate] = array(
+                'Date_usedate ' => $this->Util_Model->convertDateToDB($datadate)
+            );
+            $rowdate++;
+        }
+        
+        /* foreach ($starttime as $starttime){
+         $data_datetime[ $datatime] = array(
+         
+         // 'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
+         
+         'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[ $datatime]),
+         'amount_std' => $amountstd[$datatime]
+         );
+         $datatime++;
+         }*/
+        //  $date2 = array();
+        //  $dateuse = $date2;
+        //$date_use = $date;'
+        //   $dateuse = $this->input->post('dateuse');
+        
+        //$date2 = $this->input->post('date2');
+        
+        /*   foreach ($date2 as $date2){
+         $datadate[$date] = array(
+         'Date_usedate '=>  $this->Util_Model->convertDateToDB($date2),
+         );
+         
+         
+         }*/
+        
         $this->load->model("Queue_Model");
+        $data_queue = array(
+            
+            'Cq_name' => $qname,
+            'Cq_reserdate' =>  $this->Util_Model->convertDateToDB($startreserv),
+            'Cq_lastreser' =>  $this->Util_Model->convertDateToDB($endreserv),
+            'Cq_usedate' =>  $this->Util_Model->convertDateToDB($startuse),
+            'Cq_lastuse' =>  $this->Util_Model->convertDateToDB($enduse)
+      
+        );
+        
+        $data_step = array();
+        
+        $rec = 0;
+        echo ("<br/><br/>");
+        //var_dump($amounttime);
+        foreach ($stepname as $stp_name){
+            $data_step[$rec] = array(
+                'step_id'=> $stepid[$rec],
+                'step_detail' => $stp_name ,
+                'step_box'=> $stepbox[$rec],
+                'step_alm'  => $amounttime[$rec]
+            );
+            $rec++;
+        }
+        
+        
+        /*  $data_std = array();
+        
+        $this->load->library('std_import_libraries');
+        $file_data = $this->std_import_libraries->get_array($_FILES[$csv_file]["tmp_name"]);
+        
+        foreach($file_data as $row)
+        {
+        $data_std[] = array(
+        
+        'Studentid' => $row["id"],
+        'Studentname' => $row["First Name"],
+        'Studentsurname'  => $row[ "Last Name"]
+        
+        );
+        
+        }*/
+        // var_dump($data_step);
+        //  $datadate = array(
+        //   'Date_usedate '=> $this->Util_Model->convertDateToDB($date2)
+        // );
+        
+        $data_datetime = array();
+        
+        $datatime = 0;
+        
+        echo ("<br/><br/>");
+        //var_dump($amounttime);
+        
+        foreach ($starttime as $starttime){
+            $data_datetime[ $datatime] = array(
+                'Datetime_id' =>  $datetimeid[$datatime],
+                'Time_usedate' =>$this->Util_Model->convertTimeToDB($starttime),
+                
+                'Time_lastuse' =>$this->Util_Model->convertTimeToDB($endtime[ $datatime]),
+                'amount_std' => $amountstd[$datatime]
+            );
+            $datatime++;
+        }
+        
+        //-----------------------------------------------------------
+       
+     /*   $this->load->model("Queue_Model");
         $this->load->model("Util_Model");
         $data_queue = array(
             'Cq_id'=> $queue_id,
@@ -396,7 +514,7 @@ class Createq extends CI_Controller {
                 'amount_std' => $amountstd[$datadate]
             );
             $datadate++;
-        }
+        }*/
         
         //var_dump($data_datetime);
        // echo ("<br/><br/>");
@@ -404,14 +522,15 @@ class Createq extends CI_Controller {
         
         $this->Queue_Model->updateq($data_queue,$data_step,$data_datetime);
         
+        $this->session->set_flashdata('editid', 'editq' );
+        $this->session->set_flashdata('edittext', 'คุณได้ทำการแก้ไขข้อมูลคิวเรียบร้อยแล้ว' );
         redirect('Createq/content3');
     }
 
   
     public function changequeue(){//บันทึกการเลื่อนคิว
         
-        
-        
+      
         $queueid =$this->input->post('queueid');
 
 
@@ -430,7 +549,7 @@ class Createq extends CI_Controller {
         
         //var_dump($amounttime);
    
-
+       
         $datadatetime = array();
         $datadate = 0;
         foreach ($starttime as $starttime){
@@ -445,20 +564,11 @@ class Createq extends CI_Controller {
                 
             );
             $datadate++;
-           
-           
-            
-        }
-        
-        $this->Queue_Model->changemoveq( $datadatetime);
+       }
+      
+       $this->Queue_Model->changemoveq( $datadatetime );
         // echo ("<br/><br/>");
-       
-     
-     
-
-        
-       
-        $this->session->set_flashdata('massageid', 'moveq' );
+         $this->session->set_flashdata('massageid', 'moveq' );
         $this->session->set_flashdata('massage', 'คุณได้เลื่อนคิวเรียบร้อยแล้ว' );
         redirect('Createq/content2');
     }

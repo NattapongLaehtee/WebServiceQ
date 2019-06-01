@@ -42,19 +42,10 @@ $(document).ready(function(){
         $("#form_1");
           
       });
-    $("#add").click(function(){
-     $('#slottime1_001').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="starttime[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amountstdf1[]" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
-	});
-    $("#add2").click(function(){
-        $('#slottime1_002').before('<div class="form-group slot_01" > <label class="control-label col-md-3 col-sm-3 col-xs-3"><font color="black">เวลาที่เริ่มต้น :</font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="starttime1[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ถึง </font></label></div><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" name="endtime1[]" required="required" class="form-control col-md-7 col-xs-12"><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div><div><label class="control-label col-md-2 col-sm-2 col-xs-2"><font color="black">จำนวนนักศึกษา</font></label></div><div class="col-md1 col-sm-1 col-xs-1"><input type="text" name="amountstdf2[]" required="required" class="form-control col-md-7 col-xs-12"></div> </div>');
-   	});
-
+  
 
 	
-    $("#add1").click(function(){
-        $('#step').before('<div class="form-group"><label class="control-label col-md-2 col-sm-1 col-xs-1"></label><label class="control-label col-md-1 col-sm-1 col-xs-1"><font color="black">ขั้นตอนที่   </font></label><div class="col-md-2 col-sm-2 col-xs-2"><input type="text" id="stepname" name="stepname[]"required="required" class="form-control col-md-7 col-xs-12"></div><label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนช่องบริการ  </font></label><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" id="stepbox" name="stepbox[]"required="required" class="form-control col-md-7 col-xs-12"></div><div><label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">จำนวนนาที<span style="color:red" >*</span></font></label></div><div class="col-md-1 col-sm-1 col-xs-1"><input type="text" maxlength="2"   name="amountstep[]" id="amountstep" required="required" class="form-control col-md-2 col-xs-12"></div> ');
-      });
-    
+
 	
     function set_step5(){
         $('#nameq_st_5').html($('#qname').val());
@@ -105,14 +96,14 @@ $(document).ready(function(){
                                               <b><font color="black">เปลี่ยนแปลงช่วงเวลา</font></b><br/>
                                       </a>
                               </li>
-                              <li>
+                              <!-- <li>
                                   <a href="#step-3">
                                     <span class="step_no">3</span>
                                     <span class="step_descr">
                                               <b><font color="black">แสดงผลการเลื่อนคิว</font></b><br />
                                             </span>
                                   </a>
-                              </li>
+                              </li>  -->
                             
                                 </ul>
                <form class="form-horizontal form-label-left" id="form_1" 
@@ -166,7 +157,7 @@ $(document).ready(function(){
                                                           <?php foreach ($move_date as $rowqd){?>
                                               <tbody>
                                                           <tr role="row" class="odd">
-                                                             <input type="hidden" name="datetimeid[]" id ="datetimeid" value="<?php echo $rowqd->Datetime_id;?>" > 
+                                                             <input type="hidden" name="datetimeid[]" id ="datetimeid[]" value="<?php echo $rowqd->Datetime_id;?>" > 
                                                               <td class="sorting_1"><?php echo  $this->Util_model->convertDateToView("$rowqd->Date_usedate") ; ?></td>
                                                      	
                                                               <td><?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_usedate ") ; ?><?php echo " - ";?><?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_lastuse") ; ?><?php echo " น.";?></td>
@@ -175,7 +166,7 @@ $(document).ready(function(){
                                                     <label class="control-label col-md-2 col-sm-1 col-xs-1"><font color="black">วันที่</font></label>
                                                     <div class='col-sm-5'>
                                                   <div class='input-group date datemoveq' id='datemoveq'>
-                                                                    <input type='text' class="form-control" name = 'datemoveq[]' />
+                                                                    <input type='text' class="form-control" name = 'datemoveq[]'  value="<?php echo  $this->Util_model->convertDateToView("$rowqd->Date_usedate") ;?>"/>
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -185,7 +176,7 @@ $(document).ready(function(){
                                                       <label class="control-label col-md-3 col-sm-1 col-xs-1"><font color="black">เวลาที่เริ่มต้น </font></label>
                                                                 <div class='col-sm-4'>
                                                                   <div class='input-group date starttime' id='starttime'>
-                                                                      <input type='text' class="form-control" placeholder="00:00" name='starttime[]' />
+                                                                      <input type='text' class="form-control" placeholder="00:00" name='starttime[]'  value="<?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_usedate ") ; ?>"/>
                                                                       <span class="input-group-addon">
                                                                           <span class="glyphicon glyphicon-calendar"></span>
                                                                       </span>
@@ -196,7 +187,7 @@ $(document).ready(function(){
                                                                 </div>
                                                                 <div class='col-sm-4'>
                                                                   <div class='input-group date endtime' id='endtime'>
-                                                                      <input type='text' class="form-control"  placeholder="00:00" name='endtime[]'/>
+                                                                      <input type='text' class="form-control"  placeholder="00:00" name='endtime[]' value="<?php echo  $this->Util_model->convertTimeToView("$rowqd->Time_lastuse") ; ?>"/>
                                                                       <span class="input-group-addon">
                                                                           <span class="glyphicon glyphicon-calendar"></span>
                                                                       </span>
@@ -219,9 +210,9 @@ $(document).ready(function(){
                       </div>
                     <!-- End Step 2 -->
                                 <!-- Start Step 3 -->
-                              <div id="step-3">
+                             <!--   <div id="step-3">
                               
-                  </div>
+                  </div> -->
                   
                   <!-- End Step 3 -->
                

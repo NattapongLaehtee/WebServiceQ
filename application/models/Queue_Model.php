@@ -4,29 +4,9 @@ class Queue_Model extends CI_Model {
 		public function __construct() {
 			parent::__construct();
 		}
-		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date /*,$data_std*/)
+		public function insertqueue($data_queue,$data_step,$data_datetime,$data_date /*,$data_std*/) //insertqueue
         {
-        	//echo "string";
-           // var_dump($data_datetime);
-           // die();
-          // $this->db->set($data_queue);
-       /*   echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump( $data_queue);
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_step);
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_datetime);
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_date); 
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_std);
-            die();*/
-            
+        	
           // $this->db->insert('student',$data_std);
             
           $this->db->insert('queue',$data_queue);
@@ -66,14 +46,7 @@ class Queue_Model extends CI_Model {
                   //   $data_datetime['Cq_id']= $this->db->insert_id();
                      //$this->db->set($data_datetime);
                     // $this->db->insert('qdatetime', $data_datetime);
-               /*  var_dump($data_queue);
-                 echo ("<br/>xxxxxxx<br/>");
-                 var_dump($stepinsert);
-                 echo ("<br/>xxxxxxx<br/>");
-                 var_dump($dateins);*/
-        
-  
-           
+               
         }
         
         public function outqueue(){
@@ -115,63 +88,53 @@ class Queue_Model extends CI_Model {
             $row = $query->row();
             return $row;
         }
-        public function updateq($data_queue,$data_step,$data_datetime){
+        public function updateq($data_queue,$data_step,$data_datetime){  //editq
            
             
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump( $data_queue);
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_step);
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            var_dump($data_datetime);
-            echo ("<br/>xxxxxxx<br/>");
-            echo ("<br/>xxxxxxx<br/>");
-            die();
+         
             // $this->db->set($data_queue);
-            $this->db->where('Cq_id', $Cq_id);
-            $this->db->update('queue',$data_queue);
-            $Cq_id = $this->db->update_id();
-           //var_dump($data_queue);
-           //  echo ("<br/>--------------<br/>");
+           
+              
+              $this->db->where('Cq_id');
+              $this->db->update('queue',$data_queue);
+              
+           
+            //($data_step);
+            // echo ("<br/>xxxxxxx<br/>");
             foreach ($data_step as $row){
                 
-                // var_dump($step);
-                $stepreplace = array();
+                //  var_dump($step);
+                $stepinsert = array();
                 
-                $stepreplace['Cq_id']= $Cq_id;
-                $stepreplace['step_id']= $row['step_id'];
-                $stepreplace['step_detail']= $row['step_detail'];
-                $stepreplace['step_box']= $row['step_box'];
-                $stepreplace['step_alm']= $row['step_alm'];
+             //   $stepinsert['Cq_id']=$Cq_id;
+                $stepinsert['step_detail']= $row['step_detail'];
+                $stepinsert['step_box']= $row['step_box'];
+                $stepinsert['step_alm']= $row['step_alm'];
                 // $this->db->set($data_step);
-                
-                $this->db->update('step',$stepreplace);
-               // var_dump($stepreplace);
-             //   echo ("<br/>--------------<br/>");
+                $this->db->where("step_id", $row['step_id']);
+                $this->db->update('step',$stepinsert);
+                // var_dump($stepinsert);
             }
             foreach ( $data_datetime as $row){
-                 //var_dump($row);
+                $dateins = array();
+             //   $dateins['Cq_id']= $Cq_id;
+                $dateins['Date_usedate '] = $row['Date_usedate '];
                 
-                $datetimerep = array();
-                $datetimerep['Cq_id']= $Cq_id;
-                $datetimerep['Datetime_id']= $row['Datetime_id'];
-                $datetimerep['Time_usedate']= $row['Time_usedate'];
-                $datetimerep['Time_lastuse']= $row['Time_lastuse'];
-                $datetimerep['amount_std']=$row['amount_std'];
-                $this->db->where('Cq_id', $Cq_id);
-                $this->db->update('qdatetime',  $datetimerep);
-                
+                foreach ( $data_datetime as $row){
+                    // var_dump($row);
+                    
+                   
+                    $dateins['Time_usedate']= $row['Time_usedate'];
+                    $dateins['Time_lastuse']= $row['Time_lastuse'];
+                    $dateins['amount_std']=$row['amount_std'];
+                    $this->db->insert('qdatetime', $dateins);
+                    $this->db->where("Datetime_id", $row['Datetime_id']);
+                    $this->db->update('qdatetime', $dateins);
+                    
+                }
+                // $this->db->insert('qdatetime', $dateins);
             }
-           // var_dump( $datetimerep);
-            //echo ("<br/>--------------<br/>");
-            //   $data_datetime['Cq_id']= $this->db->insert_id();
-            //$this->db->set($data_datetime);
-            // $this->db->insert('qdatetime', $data_datetime);
-           // die();
-            
+          
             
            
         }
@@ -213,15 +176,9 @@ class Queue_Model extends CI_Model {
             from qdatetime  qd JOIN queue q  on qd.Cq_id = q.Cq_id   where qd.Cq_id  ='. $id .' GROUP BY qd.Date_usedate ');
             return $queryselectcountmovedate->result();
         }
-        public function changemoveq($datadatetime){
+        public function changemoveq( $datadatetime){ //moveq
             
-          /*  var_dump($datadatetime);
-            echo "</br>+++++++</br>";
-            
-            die();
-           */ 
-          
-          
+   
                 
                 foreach ($datadatetime as $row){
                     
@@ -231,21 +188,8 @@ class Queue_Model extends CI_Model {
                     $dateupdate['Time_lastuse'] = $row['Time_lastuse'];
                     $this->db->where("Datetime_id",$row['Datetime_id']);
                     $this->db->update ('qdatetime', $dateupdate);
-                    
                 } 
-                
-               
-                  
-                //$querymove = $this->db->where("Datetime_id",$row['Datetime_id']);
-                 //$querymove =$this->db->update('qdatetime', $dateupdate);
-                
-               // var_dump( $querymove );
-                //die();
-           
-            
-           
           
-            
         }
         
 }
