@@ -156,8 +156,8 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i>ออกรายงาน <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                    <li><a href="<?php echo site_url("Student_controller/outstudent")?>">พิมพ์รายชื่อนักศึกษา</a></li>
-                      <li><a href="<?php echo site_url("Student_controller/student")?>">แสดงรายชื่อนักศึกษาจองคิว</a></li>
+                    <li><a href="<?php echo site_url("Student_controller/outstudent")?>">พิมพ์รายชื่อ</a></li>
+                      <li><a href="<?php echo site_url("Student_controller/student")?>">แสดงรายชื่อ</a></li>
                       
                       
                     </ul>

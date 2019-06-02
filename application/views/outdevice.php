@@ -1,12 +1,11 @@
 <script>
-	function editdevice(id){
-		if(confirm('คุณต้องการแก้ไขข้อมูลอุปกรณ์ ใช่หรือไม่')){
-			 $('#outdevice'). attr('action', '<?php echo site_url("Devices_control/editdevice/")?>' + id);
-        	
-            $('#outdevice').submit();
-                                            }
-                                            
-                                        }
+function editdevice() {
+	
+	alert("คุณต้องการแก้ไขข้อมูลอุปกรณ์ ใช่หรือไม่");
+ }
+function canceldevice(){
+	alert("คุณต้องการยกเลิกการใช้อุปกรณ์ ใช่หรือไม่");
+}
 </script>
    
    
@@ -47,9 +46,9 @@
                            					 <td class=" "><?php echo $row->Tool_name; ?></td>
                         				    <td class=" "><?php echo $row->Tool_detail; ?> </td>
                             <td class=" "><?php echo $row->Tool_barcode; ?></td>
-                           
-                      <td><button id="editdevice" type="button"  class="btn btn-warning" onclick="editdevice(<?php echo $row->Tool_id?>)">แก้ไข</button> </td>
-                               <td class=" "><a href="<?php echo site_url("Devices_control/cancel_device/".$row->Tool_id);?>"><button type="submit" class="btn btn-success">ยกเลิกการใช้งาน  </button></a></td>
+                           <td class=" "><a href="<?php echo site_url("Devices_control/editdevice/".$row->Tool_id);?>"><button onclick="editdevice()" class="btn btn-warning" >แก้ไข</button></a></td>
+                     
+                               <td class=" "><a href="<?php echo site_url("Devices_control/cancel_device/".$row->Tool_id);?>"><button type="submit"  onclick="canceldevice()" class="btn btn-success">ยกเลิกการใช้งาน  </button></a></td>
                           			</tr>
                           			<?php }?>
                         				</tbody>
